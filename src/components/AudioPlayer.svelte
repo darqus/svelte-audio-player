@@ -245,11 +245,6 @@
     opacity: var(--opacity-hover);
   }
 
-  /* .volume-control button img {
-    width: auto;
-    height: auto;
-  } */
-
   .volume-control input {
     /* margin-left: var(--gap); */
   }
