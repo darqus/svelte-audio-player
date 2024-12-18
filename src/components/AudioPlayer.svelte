@@ -135,7 +135,7 @@
       <button on:click={toggleMute}>
         <img
           src={isMuted ? icons.mute : icons.volume}
-          alt="Mute/Volume"
+          alt={isMuted ? 'Mute' : 'Volume'}
         />
       </button>
 
@@ -209,5 +209,6 @@
 
   .time {
     display: grid;
+    grid-template-columns: 1fr auto;
   }
 </style>

@@ -396,6 +396,7 @@ var app = (function () {
     	let button5;
     	let img5;
     	let img5_src_value;
+    	let img5_alt_value;
     	let t5;
     	let input;
     	let t6;
@@ -466,20 +467,20 @@ var app = (function () {
     			? /*icons*/ ctx[5].mute
     			: /*icons*/ ctx[5].volume)) attr(img5, "src", img5_src_value);
 
-    			attr(img5, "alt", "Mute/Volume");
+    			attr(img5, "alt", img5_alt_value = /*isMuted*/ ctx[4] ? 'Mute' : 'Volume');
     			attr(input, "type", "range");
     			attr(input, "min", "0");
     			attr(input, "max", "1");
     			attr(input, "step", "0.01");
     			input.value = /*volume*/ ctx[3];
-    			attr(input, "class", "svelte-15ok4q");
-    			attr(div0, "class", "volume-control svelte-15ok4q");
-    			attr(div1, "class", "controls svelte-15ok4q");
-    			attr(div2, "class", "progress-bar svelte-15ok4q");
+    			attr(input, "class", "svelte-1401xv4");
+    			attr(div0, "class", "volume-control svelte-1401xv4");
+    			attr(div1, "class", "controls svelte-1401xv4");
+    			attr(div2, "class", "progress-bar svelte-1401xv4");
     			set_style(div2, "width", /*currentTime*/ ctx[0] / /*duration*/ ctx[1] * 100 + "%");
-    			attr(div3, "class", "progress svelte-15ok4q");
-    			attr(div4, "class", "time svelte-15ok4q");
-    			attr(div5, "class", "audio-player svelte-15ok4q");
+    			attr(div3, "class", "progress svelte-1401xv4");
+    			attr(div4, "class", "time svelte-1401xv4");
+    			attr(div5, "class", "audio-player svelte-1401xv4");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);
@@ -544,6 +545,10 @@ var app = (function () {
     			? /*icons*/ ctx[5].mute
     			: /*icons*/ ctx[5].volume)) {
     				attr(img5, "src", img5_src_value);
+    			}
+
+    			if (dirty & /*isMuted*/ 16 && img5_alt_value !== (img5_alt_value = /*isMuted*/ ctx[4] ? 'Mute' : 'Volume')) {
+    				attr(img5, "alt", img5_alt_value);
     			}
 
     			if (dirty & /*volume*/ 8) {
