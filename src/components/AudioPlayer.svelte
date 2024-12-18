@@ -10,10 +10,10 @@
   let currentTime = 0
   let duration = 0
   let volume = 1
+  let cachedVolume = volume
   // let preset = 'full' // 'minimal', 'normal', 'full'
 
   const MIN_DURATION = 0
-  const MAX_DURATION = 1
   const STEP_DURATION = 0.01
 
   const XMLNS = 'http://www.w3.org/2000/svg'
@@ -52,12 +52,22 @@
 
   const changeVolume = (event) => {
     volume = event.target.value
-    audio.volume = volume
+    audio.volume = isMuted ? 0 : volume
+    if (!isMuted) {
+      cachedVolume = volume
+    }
   }
 
   const toggleMute = () => {
     isMuted = !isMuted
+    if (isMuted) {
+      cachedVolume = volume
+      volume = 0
+    } else {
+      volume = cachedVolume
+    }
     audio.muted = isMuted
+    audio.volume = volume
   }
 
   const nextTrack = () => {
@@ -168,10 +178,13 @@
         {XMLNS}
         {viewBox}
       >
-        <path d={isMuted ? paths.muteSpeaker : paths.volumeSpeaker}></path>
-        <path d={isMuted ? paths.muteClose : paths.volumeLeftLine}></path>
-
-        {#if !isMuted}
+        <path
+          d={isMuted || volume == 0 ? paths.muteSpeaker : paths.volumeSpeaker}
+        ></path>
+        <path
+          d={isMuted || volume == 0 ? paths.muteClose : paths.volumeLeftLine}
+        ></path>
+        {#if !isMuted && volume != 0}
           <path d={paths.volumeRightLine}></path>
         {/if}
       </svg>

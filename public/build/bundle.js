@@ -412,7 +412,7 @@ var app = (function () {
     	};
     }
 
-    // (174:8) {#if !isMuted}
+    // (187:8) {#if !isMuted && volume != 0}
     function create_if_block(ctx) {
     	let path;
 
@@ -484,7 +484,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	let if_block0 = /*isPlaying*/ ctx[0] && create_if_block_1();
-    	let if_block1 = !/*isMuted*/ ctx[1] && create_if_block();
+    	let if_block1 = !/*isMuted*/ ctx[1] && /*volume*/ ctx[4] != 0 && create_if_block();
 
     	return {
     		c() {
@@ -574,13 +574,13 @@ var app = (function () {
     			attr(div2, "class", "diration-time");
     			attr(div3, "class", "progress-control svelte-mkd8vk");
 
-    			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[1]
+    			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
     			? paths.muteSpeaker
     			: paths.volumeSpeaker);
 
     			attr(path8, "class", "svelte-mkd8vk");
 
-    			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[1]
+    			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
     			? paths.muteClose
     			: paths.volumeLeftLine);
 
@@ -689,19 +689,19 @@ var app = (function () {
 
     			if (dirty & /*duration*/ 8 && t8_value !== (t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[3]) + "")) set_data(t8, t8_value);
 
-    			if (dirty & /*isMuted*/ 2 && path8_d_value !== (path8_d_value = /*isMuted*/ ctx[1]
+    			if (dirty & /*isMuted, volume*/ 18 && path8_d_value !== (path8_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
     			? paths.muteSpeaker
     			: paths.volumeSpeaker)) {
     				attr(path8, "d", path8_d_value);
     			}
 
-    			if (dirty & /*isMuted*/ 2 && path9_d_value !== (path9_d_value = /*isMuted*/ ctx[1]
+    			if (dirty & /*isMuted, volume*/ 18 && path9_d_value !== (path9_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
     			? paths.muteClose
     			: paths.volumeLeftLine)) {
     				attr(path9, "d", path9_d_value);
     			}
 
-    			if (!/*isMuted*/ ctx[1]) {
+    			if (!/*isMuted*/ ctx[1] && /*volume*/ ctx[4] != 0) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
@@ -742,6 +742,7 @@ var app = (function () {
     	let currentTime = 0;
     	let duration = 0;
     	let volume = 1;
+    	let cachedVolume = volume;
     	let currentTrackIndex = 0;
 
     	onMount(() => {
@@ -776,12 +777,25 @@ var app = (function () {
 
     	const changeVolume = event => {
     		$$invalidate(4, volume = event.target.value);
-    		audio.volume = volume;
+    		audio.volume = isMuted ? 0 : volume;
+
+    		if (!isMuted) {
+    			cachedVolume = volume;
+    		}
     	};
 
     	const toggleMute = () => {
     		$$invalidate(1, isMuted = !isMuted);
+
+    		if (isMuted) {
+    			cachedVolume = volume;
+    			$$invalidate(4, volume = 0);
+    		} else {
+    			$$invalidate(4, volume = cachedVolume);
+    		}
+
     		audio.muted = isMuted;
+    		audio.volume = volume;
     	};
 
     	const nextTrack = () => {
