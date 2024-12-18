@@ -412,7 +412,7 @@ var app = (function () {
     	};
     }
 
-    // (187:8) {#if !isMuted && volume != 0}
+    // (186:8) {#if !isMuted && volume != 0}
     function create_if_block(ctx) {
     	let path;
 
@@ -571,7 +571,7 @@ var app = (function () {
     			attr(input0, "max", /*duration*/ ctx[3]);
     			attr(input0, "step", STEP_DURATION);
     			input0.value = /*currentTime*/ ctx[2];
-    			attr(div2, "class", "diration-time");
+    			attr(div2, "class", "duration-time");
     			attr(div3, "class", "progress-control svelte-mkd8vk");
 
     			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
@@ -747,6 +747,7 @@ var app = (function () {
 
     	onMount(() => {
     		audio = new Audio(tracks[currentTrackIndex].src);
+    		audio.volume = volume;
     		audio.addEventListener('timeupdate', updateTime);
     		audio.addEventListener('loadedmetadata', updateDuration);
     		audio.addEventListener('ended', nextTrack);
@@ -776,12 +777,9 @@ var app = (function () {
     	};
 
     	const changeVolume = event => {
-    		$$invalidate(4, volume = event.target.value);
-    		audio.volume = isMuted ? 0 : volume;
-
-    		if (!isMuted) {
-    			cachedVolume = volume;
-    		}
+    		$$invalidate(4, volume = parseFloat(event.target.value));
+    		audio.volume = volume;
+    		$$invalidate(1, isMuted = volume === 0);
     	};
 
     	const toggleMute = () => {

@@ -23,6 +23,7 @@
 
   onMount(() => {
     audio = new Audio(tracks[currentTrackIndex].src)
+    audio.volume = volume
     audio.addEventListener('timeupdate', updateTime)
     audio.addEventListener('loadedmetadata', updateDuration)
     audio.addEventListener('ended', nextTrack)
@@ -51,11 +52,9 @@
   }
 
   const changeVolume = (event) => {
-    volume = event.target.value
-    audio.volume = isMuted ? 0 : volume
-    if (!isMuted) {
-      cachedVolume = volume
-    }
+    volume = parseFloat(event.target.value)
+    audio.volume = volume
+    isMuted = volume === 0
   }
 
   const toggleMute = () => {
@@ -167,7 +166,7 @@
       value={currentTime}
       on:input={changeDuration}
     />
-    <div class="diration-time">
+    <div class="duration-time">
       <span>{formatTime(duration)}</span>
     </div>
   </div>
