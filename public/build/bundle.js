@@ -17,14 +17,6 @@ var app = (function () {
     function safe_not_equal(a, b) {
         return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
     }
-    let src_url_equal_anchor;
-    function src_url_equal(element_src, url) {
-        if (!src_url_equal_anchor) {
-            src_url_equal_anchor = document.createElement('a');
-        }
-        src_url_equal_anchor.href = url;
-        return element_src === src_url_equal_anchor.href;
-    }
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
     }
@@ -41,6 +33,9 @@ var app = (function () {
     }
     function element(name) {
         return document.createElement(name);
+    }
+    function svg_element(name) {
+        return document.createElementNS('http://www.w3.org/2000/svg', name);
     }
     function text(data) {
         return document.createTextNode(data);
@@ -372,31 +367,31 @@ var app = (function () {
     	let div5;
     	let div1;
     	let button0;
-    	let img0;
-    	let img0_src_value;
+    	let svg0;
+    	let path0;
     	let t0;
     	let button1;
-    	let img1;
-    	let img1_src_value;
-    	let img1_alt_value;
+    	let svg1;
+    	let path1;
+    	let path1_d_value;
     	let t1;
     	let button2;
-    	let img2;
-    	let img2_src_value;
+    	let svg2;
+    	let path2;
     	let t2;
     	let button3;
-    	let img3;
-    	let img3_src_value;
+    	let svg3;
+    	let path3;
     	let t3;
     	let button4;
-    	let img4;
-    	let img4_src_value;
+    	let svg4;
+    	let path4;
     	let t4;
     	let div0;
     	let button5;
-    	let img5;
-    	let img5_src_value;
-    	let img5_alt_value;
+    	let svg5;
+    	let path5;
+    	let path5_d_value;
     	let t5;
     	let input;
     	let t6;
@@ -419,23 +414,29 @@ var app = (function () {
     			div5 = element("div");
     			div1 = element("div");
     			button0 = element("button");
-    			img0 = element("img");
+    			svg0 = svg_element("svg");
+    			path0 = svg_element("path");
     			t0 = space();
     			button1 = element("button");
-    			img1 = element("img");
+    			svg1 = svg_element("svg");
+    			path1 = svg_element("path");
     			t1 = space();
     			button2 = element("button");
-    			img2 = element("img");
+    			svg2 = svg_element("svg");
+    			path2 = svg_element("path");
     			t2 = space();
     			button3 = element("button");
-    			img3 = element("img");
+    			svg3 = svg_element("svg");
+    			path3 = svg_element("path");
     			t3 = space();
     			button4 = element("button");
-    			img4 = element("img");
+    			svg4 = svg_element("svg");
+    			path4 = svg_element("path");
     			t4 = space();
     			div0 = element("div");
     			button5 = element("button");
-    			img5 = element("img");
+    			svg5 = svg_element("svg");
+    			path5 = svg_element("path");
     			t5 = space();
     			input = element("input");
     			t6 = space();
@@ -448,61 +449,79 @@ var app = (function () {
     			t9 = space();
     			span1 = element("span");
     			t10 = text(t10_value);
-    			if (!src_url_equal(img0.src, img0_src_value = /*icons*/ ctx[5].previous)) attr(img0, "src", img0_src_value);
-    			attr(img0, "alt", "Previous");
+    			attr(path0, "d", /*paths*/ ctx[5].previous);
+    			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg0, "viewBox", "0 0 320 512");
+    			attr(button0, "class", "svelte-ws6ryo");
 
-    			if (!src_url_equal(img1.src, img1_src_value = /*isPlaying*/ ctx[2]
-    			? /*icons*/ ctx[5].pause
-    			: /*icons*/ ctx[5].play)) attr(img1, "src", img1_src_value);
+    			attr(path1, "d", path1_d_value = /*isPlaying*/ ctx[2]
+    			? /*paths*/ ctx[5].play
+    			: /*paths*/ ctx[5].pause);
 
-    			attr(img1, "alt", img1_alt_value = /*isPlaying*/ ctx[2] ? 'Play' : 'Pause');
-    			if (!src_url_equal(img2.src, img2_src_value = /*icons*/ ctx[5].next)) attr(img2, "src", img2_src_value);
-    			attr(img2, "alt", "Next");
-    			if (!src_url_equal(img3.src, img3_src_value = /*icons*/ ctx[5].shuffle)) attr(img3, "src", img3_src_value);
-    			attr(img3, "alt", "Shuffle");
-    			if (!src_url_equal(img4.src, img4_src_value = /*icons*/ ctx[5].repeat)) attr(img4, "src", img4_src_value);
-    			attr(img4, "alt", "Repeat");
+    			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg1, "viewBox", "0 0 384 512");
+    			attr(button1, "class", "svelte-ws6ryo");
+    			attr(path2, "d", /*paths*/ ctx[5].next);
+    			attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg2, "viewBox", "0 0 320 512");
+    			attr(button2, "class", "svelte-ws6ryo");
+    			attr(path3, "d", /*paths*/ ctx[5].shuffle);
+    			attr(svg3, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg3, "viewBox", "0 0 512 512");
+    			attr(button3, "class", "svelte-ws6ryo");
+    			attr(path4, "d", /*paths*/ ctx[5].repeat);
+    			attr(svg4, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg4, "viewBox", "0 0 512 512");
+    			attr(button4, "class", "svelte-ws6ryo");
 
-    			if (!src_url_equal(img5.src, img5_src_value = /*isMuted*/ ctx[4]
-    			? /*icons*/ ctx[5].mute
-    			: /*icons*/ ctx[5].volume)) attr(img5, "src", img5_src_value);
+    			attr(path5, "d", path5_d_value = /*isMuted*/ ctx[4]
+    			? /*paths*/ ctx[5].mute
+    			: /*paths*/ ctx[5].volume);
 
-    			attr(img5, "alt", img5_alt_value = /*isMuted*/ ctx[4] ? 'Mute' : 'Volume');
+    			attr(svg5, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg5, "viewBox", "0 0 640 512");
+    			attr(button5, "class", "svelte-ws6ryo");
     			attr(input, "type", "range");
     			attr(input, "min", "0");
     			attr(input, "max", "1");
     			attr(input, "step", "0.01");
     			input.value = /*volume*/ ctx[3];
-    			attr(input, "class", "svelte-11hgxa8");
-    			attr(div0, "class", "volume-control svelte-11hgxa8");
-    			attr(div1, "class", "controls svelte-11hgxa8");
-    			attr(div2, "class", "progress-bar svelte-11hgxa8");
+    			attr(input, "class", "svelte-ws6ryo");
+    			attr(div0, "class", "volume-control svelte-ws6ryo");
+    			attr(div1, "class", "controls svelte-ws6ryo");
+    			attr(div2, "class", "progress-bar svelte-ws6ryo");
     			set_style(div2, "width", /*currentTime*/ ctx[0] / /*duration*/ ctx[1] * 100 + "%");
-    			attr(div3, "class", "progress svelte-11hgxa8");
-    			attr(div4, "class", "time svelte-11hgxa8");
-    			attr(div5, "class", "audio-player svelte-11hgxa8");
+    			attr(div3, "class", "progress svelte-ws6ryo");
+    			attr(div4, "class", "time svelte-ws6ryo");
+    			attr(div5, "class", "audio-player svelte-ws6ryo");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);
     			append(div5, div1);
     			append(div1, button0);
-    			append(button0, img0);
+    			append(button0, svg0);
+    			append(svg0, path0);
     			append(div1, t0);
     			append(div1, button1);
-    			append(button1, img1);
+    			append(button1, svg1);
+    			append(svg1, path1);
     			append(div1, t1);
     			append(div1, button2);
-    			append(button2, img2);
+    			append(button2, svg2);
+    			append(svg2, path2);
     			append(div1, t2);
     			append(div1, button3);
-    			append(button3, img3);
+    			append(button3, svg3);
+    			append(svg3, path3);
     			append(div1, t3);
     			append(div1, button4);
-    			append(button4, img4);
+    			append(button4, svg4);
+    			append(svg4, path4);
     			append(div1, t4);
     			append(div1, div0);
     			append(div0, button5);
-    			append(button5, img5);
+    			append(button5, svg5);
+    			append(svg5, path5);
     			append(div0, t5);
     			append(div0, input);
     			append(div5, t6);
@@ -531,24 +550,16 @@ var app = (function () {
     			}
     		},
     		p(ctx, [dirty]) {
-    			if (dirty & /*isPlaying*/ 4 && !src_url_equal(img1.src, img1_src_value = /*isPlaying*/ ctx[2]
-    			? /*icons*/ ctx[5].pause
-    			: /*icons*/ ctx[5].play)) {
-    				attr(img1, "src", img1_src_value);
+    			if (dirty & /*isPlaying*/ 4 && path1_d_value !== (path1_d_value = /*isPlaying*/ ctx[2]
+    			? /*paths*/ ctx[5].play
+    			: /*paths*/ ctx[5].pause)) {
+    				attr(path1, "d", path1_d_value);
     			}
 
-    			if (dirty & /*isPlaying*/ 4 && img1_alt_value !== (img1_alt_value = /*isPlaying*/ ctx[2] ? 'Play' : 'Pause')) {
-    				attr(img1, "alt", img1_alt_value);
-    			}
-
-    			if (dirty & /*isMuted*/ 16 && !src_url_equal(img5.src, img5_src_value = /*isMuted*/ ctx[4]
-    			? /*icons*/ ctx[5].mute
-    			: /*icons*/ ctx[5].volume)) {
-    				attr(img5, "src", img5_src_value);
-    			}
-
-    			if (dirty & /*isMuted*/ 16 && img5_alt_value !== (img5_alt_value = /*isMuted*/ ctx[4] ? 'Mute' : 'Volume')) {
-    				attr(img5, "alt", img5_alt_value);
+    			if (dirty & /*isMuted*/ 16 && path5_d_value !== (path5_d_value = /*isMuted*/ ctx[4]
+    			? /*paths*/ ctx[5].mute
+    			: /*paths*/ ctx[5].volume)) {
+    				attr(path5, "d", path5_d_value);
     			}
 
     			if (dirty & /*volume*/ 8) {
@@ -580,15 +591,15 @@ var app = (function () {
     	let volume = 1;
     	let isMuted = false;
 
-    	const icons = {
-    		play: 'icons/play.svg',
-    		pause: 'icons/pause.svg',
-    		next: 'icons/next.svg',
-    		previous: 'icons/previous.svg',
-    		shuffle: 'icons/shuffle.svg',
-    		repeat: 'icons/repeat.svg',
-    		volume: 'icons/volume.svg',
-    		mute: 'icons/mute.svg'
+    	const paths = {
+    		volume: 'M533.6 32.5C598.5 85.2 640 165.8 640 256s-41.5 170.7-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64l0 384c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352 64 352c-35.3 0-64-28.7-64-64l0-64c0-35.3 28.7-64 64-64l67.8 0L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z',
+    		mute: 'M320 64c0-12.6-7.4-24-18.9-29.2s-25-3.1-34.4 5.3L131.8 160 64 160c-35.3 0-64 28.7-64 64l0 64c0 35.3 28.7 64 64 64l67.8 0L266.7 471.9c9.4 8.4 22.9 10.4 34.4 5.3S320 460.6 320 448l0-384z',
+    		play: 'M48 64C21.5 64 0 85.5 0 112L0 400c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48L48 64zm192 0c-26.5 0-48 21.5-48 48l0 288c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48l-32 0z',
+    		pause: 'M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z',
+    		previous: 'M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29l0-320c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241 64 96c0-17.7-14.3-32-32-32S0 78.3 0 96L0 416c0 17.7 14.3 32 32 32s32-14.3 32-32l0-145 11.5 9.6 192 160z',
+    		next: 'M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416L0 96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4l192 160L256 241l0-145c0-17.7 14.3-32 32-32s32 14.3 32 32l0 320c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-145-11.5 9.6-192 160z',
+    		shuffle: 'M403.8 34.4c12-5 25.7-2.2 34.9 6.9l64 64c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-64 64c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6l0-32-32 0c-10.1 0-19.6 4.7-25.6 12.8L284 229.3 244 176l31.2-41.6C293.3 110.2 321.8 96 352 96l32 0 0-32c0-12.9 7.8-24.6 19.8-29.6zM164 282.7L204 336l-31.2 41.6C154.7 401.8 126.2 416 96 416l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c10.1 0 19.6-4.7 25.6-12.8L164 282.7zm274.6 188c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6l0-32-32 0c-30.2 0-58.7-14.2-76.8-38.4L121.6 172.8c-6-8.1-15.5-12.8-25.6-12.8l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c30.2 0 58.7 14.2 76.8 38.4L326.4 339.2c6 8.1 15.5 12.8 25.6 12.8l32 0 0-32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l64 64c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-64 64z',
+    		repeat: 'M0 224c0 17.7 14.3 32 32 32s32-14.3 32-32c0-53 43-96 96-96l160 0 0 32c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-9.2-9.2-22.9-11.9-34.9-6.9S320 19.1 320 32l0 32L160 64C71.6 64 0 135.6 0 224zm512 64c0-17.7-14.3-32-32-32s-32 14.3-32 32c0 53-43 96-96 96l-160 0 0-32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6l0-32 160 0c88.4 0 160-71.6 160-160z'
     	};
 
     	const tracks = [
@@ -676,7 +687,7 @@ var app = (function () {
     		isPlaying,
     		volume,
     		isMuted,
-    		icons,
+    		paths,
     		playPause,
     		changeVolume,
     		toggleMute,
