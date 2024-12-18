@@ -11,7 +11,7 @@
   let repeat = false
   // let preset = 'full' // 'minimal', 'normal', 'full'
 
-  const xmlns = 'http://www.w3.org/2000/svg'
+  const XMLNS = 'http://www.w3.org/2000/svg'
   const viewBox = '0 0 32 32'
 
   const paths = {
@@ -122,7 +122,7 @@
   <div class="controls">
     <button on:click={prevTrack}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        {XMLNS}
         {viewBox}
       >
         <path d={paths.previousLeft}></path>
@@ -132,7 +132,7 @@
 
     <button on:click={playPause}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        {XMLNS}
         {viewBox}
       >
         <path d={isPlaying ? paths.pauseLeft : paths.play}></path>
@@ -145,7 +145,7 @@
 
     <button on:click={nextTrack}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        {XMLNS}
         {viewBox}
       >
         <path d={paths.nextLeft}></path>
@@ -155,7 +155,7 @@
 
     <button on:click={toggleShuffle}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        {XMLNS}
         {viewBox}
       >
         <path d={paths.shuffle}></path>
@@ -164,7 +164,7 @@
 
     <button on:click={toggleRepeat}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        {XMLNS}
         {viewBox}
       >
         <path d={paths.repeatLeft}></path>
@@ -175,7 +175,7 @@
     <div class="volume-control">
       <button on:click={toggleMute}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
+          {XMLNS}
           {viewBox}
         >
           <path d={isMuted ? paths.muteSpeaker : paths.volumeSpeaker}></path>

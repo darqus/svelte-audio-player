@@ -505,7 +505,7 @@ var app = (function () {
     			attr(path0, "class", "svelte-11u4sf4");
     			attr(path1, "d", /*paths*/ ctx[5].previousRight);
     			attr(path1, "class", "svelte-11u4sf4");
-    			attr(svg0, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg0, "xmlns", XMLNS);
     			attr(svg0, "viewBox", viewBox);
     			attr(button0, "class", "svelte-11u4sf4");
 
@@ -514,26 +514,26 @@ var app = (function () {
     			: /*paths*/ ctx[5].play);
 
     			attr(path2, "class", "svelte-11u4sf4");
-    			attr(svg1, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg1, "xmlns", XMLNS);
     			attr(svg1, "viewBox", viewBox);
     			attr(button1, "class", "svelte-11u4sf4");
     			attr(path3, "d", /*paths*/ ctx[5].nextLeft);
     			attr(path3, "class", "svelte-11u4sf4");
     			attr(path4, "d", /*paths*/ ctx[5].nextRight);
     			attr(path4, "class", "svelte-11u4sf4");
-    			attr(svg2, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg2, "xmlns", XMLNS);
     			attr(svg2, "viewBox", viewBox);
     			attr(button2, "class", "svelte-11u4sf4");
     			attr(path5, "d", /*paths*/ ctx[5].shuffle);
     			attr(path5, "class", "svelte-11u4sf4");
-    			attr(svg3, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg3, "xmlns", XMLNS);
     			attr(svg3, "viewBox", viewBox);
     			attr(button3, "class", "svelte-11u4sf4");
     			attr(path6, "d", /*paths*/ ctx[5].repeatLeft);
     			attr(path6, "class", "svelte-11u4sf4");
     			attr(path7, "d", /*paths*/ ctx[5].repeatRight);
     			attr(path7, "class", "svelte-11u4sf4");
-    			attr(svg4, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg4, "xmlns", XMLNS);
     			attr(svg4, "viewBox", viewBox);
     			attr(button4, "class", "svelte-11u4sf4");
 
@@ -548,7 +548,7 @@ var app = (function () {
     			: /*paths*/ ctx[5].volumeLeftLine);
 
     			attr(path9, "class", "svelte-11u4sf4");
-    			attr(svg5, "xmlns", "http://www.w3.org/2000/svg");
+    			attr(svg5, "xmlns", XMLNS);
     			attr(svg5, "viewBox", viewBox);
     			attr(button5, "class", "svelte-11u4sf4");
     			attr(input, "type", "range");
@@ -692,6 +692,8 @@ var app = (function () {
     		}
     	};
     }
+
+    const XMLNS = 'http://www.w3.org/2000/svg';
     const viewBox = '0 0 32 32';
 
     function instance($$self, $$props, $$invalidate) {
