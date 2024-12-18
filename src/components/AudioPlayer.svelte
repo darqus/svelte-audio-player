@@ -127,11 +127,15 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
   }
 
   .controls {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) auto;
+    gap: 10px;
     align-items: center;
   }
 
@@ -139,7 +143,6 @@
     width: 100%;
     height: 5px;
     background: #ddd;
-    margin: 10px 0;
     position: relative;
   }
 

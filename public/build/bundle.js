@@ -382,7 +382,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (169:6) {#each buttons as { handler, source, alt }}
+    // (172:6) {#each buttons as { handler, source, alt }}
     function create_each_block(ctx) {
     	let button;
     	let img;
@@ -484,14 +484,14 @@ var app = (function () {
     			attr(input, "max", "1");
     			attr(input, "step", "0.01");
     			input.value = /*volume*/ ctx[2];
-    			attr(input, "class", "svelte-dm448y");
-    			attr(div0, "class", "volume-control svelte-dm448y");
-    			attr(div1, "class", "controls svelte-dm448y");
-    			attr(div2, "class", "progress-bar svelte-dm448y");
+    			attr(input, "class", "svelte-dmfbnm");
+    			attr(div0, "class", "volume-control svelte-dmfbnm");
+    			attr(div1, "class", "controls svelte-dmfbnm");
+    			attr(div2, "class", "progress-bar svelte-dmfbnm");
     			set_style(div2, "width", /*currentTime*/ ctx[0] / /*duration*/ ctx[1] * 100 + "%");
-    			attr(div3, "class", "progress svelte-dm448y");
-    			attr(div4, "class", "time svelte-dm448y");
-    			attr(div5, "class", "audio-player svelte-dm448y");
+    			attr(div3, "class", "progress svelte-dmfbnm");
+    			attr(div4, "class", "time svelte-dmfbnm");
+    			attr(div5, "class", "audio-player svelte-dmfbnm");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);
