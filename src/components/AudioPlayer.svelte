@@ -22,6 +22,34 @@
         mute: 'icons/mute.svg',
     };
 
+    const buttons = [
+      {
+        handler: prevTrack,
+        source: icons.previous,
+        alt: 'Previous',
+      },
+      {
+        handler: playPause,
+        source: isPlaying ? icons.pause : icons.play,
+        alt: 'Play/Pause',
+      },
+      {
+        handler: nextTrack,
+        source: icons.next,
+        alt: 'Next',
+      },
+      {
+        handler: toggleShuffle,
+        source: icons.shuffle,
+        alt: 'Shuffle',
+      },
+      {
+        handler: toggleRepeat,
+        source: icons.repeat,
+        alt: 'Repeat',
+      },
+    ]
+
     const tracks = [
         { src: 'tracks/01. NWO.mp3', title: '01. NWO' },
         { src: 'tracks/02. Just One Fix.mp3', title: '02. Just One Fix' },
@@ -138,16 +166,15 @@
 
 <div class="audio-player">
     <div class="controls">
-      <button on:click={prevTrack}><img src={icons.previous} alt="Previous"></button>
-      <button on:click={playPause}>
-        <img src={isPlaying ? icons.pause : icons.play} alt="Play/Pause">
+      {#each buttons as { handler, source, alt }}
+      <button on:click={handler}>
+        <img src={source} alt={alt}>
       </button>
-      <button on:click={nextTrack}><img src={icons.next} alt="Next"></button>
-      <button on:click={toggleShuffle}><img src={icons.shuffle} alt="Shuffle"></button>
-      <button on:click={toggleRepeat}><img src={icons.repeat} alt="Repeat"></button>
+      {/each}
+
       <div class="volume-control">
-        <button on:click={toggleMute}><img src={isMuted ? icons.mute : icons.volume} alt="Mute/Volume"></button>
-        <input type="range" min="0" max="1" step="0.01" value={volume} on:input={changeVolume}>
+      <button on:click={toggleMute}><img src={isMuted ? icons.mute : icons.volume} alt="Mute/Volume"></button>
+      <input type="range" min="0" max="1" step="0.01" value={volume} on:input={changeVolume}>
       </div>
     </div>
     <div class="progress">
