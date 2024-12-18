@@ -400,7 +400,7 @@ var app = (function () {
     		c() {
     			path = svg_element("path");
     			attr(path, "d", paths.pauseRight);
-    			attr(path, "class", "svelte-w4kj65");
+    			attr(path, "class", "svelte-1uvqy1b");
     		},
     		m(target, anchor) {
     			insert(target, path, anchor);
@@ -420,7 +420,7 @@ var app = (function () {
     		c() {
     			path = svg_element("path");
     			attr(path, "d", paths.volumeRightLine);
-    			attr(path, "class", "svelte-w4kj65");
+    			attr(path, "class", "svelte-1uvqy1b");
     		},
     		m(target, anchor) {
     			insert(target, path, anchor);
@@ -534,37 +534,37 @@ var app = (function () {
     			t10 = space();
     			input1 = element("input");
     			attr(path0, "d", paths.previousLeft);
-    			attr(path0, "class", "svelte-w4kj65");
+    			attr(path0, "class", "svelte-1uvqy1b");
     			attr(path1, "d", paths.previousRight);
-    			attr(path1, "class", "svelte-w4kj65");
+    			attr(path1, "class", "svelte-1uvqy1b");
     			attr(svg0, "xmlns", XMLNS);
     			attr(svg0, "viewBox", viewBox);
-    			attr(button0, "class", "svelte-w4kj65");
+    			attr(button0, "class", "svelte-1uvqy1b");
     			attr(path2, "d", path2_d_value = /*isPlaying*/ ctx[2] ? paths.pauseLeft : paths.play);
-    			attr(path2, "class", "svelte-w4kj65");
+    			attr(path2, "class", "svelte-1uvqy1b");
     			attr(svg1, "xmlns", XMLNS);
     			attr(svg1, "viewBox", viewBox);
-    			attr(button1, "class", "svelte-w4kj65");
+    			attr(button1, "class", "svelte-1uvqy1b");
     			attr(path3, "d", paths.nextLeft);
-    			attr(path3, "class", "svelte-w4kj65");
+    			attr(path3, "class", "svelte-1uvqy1b");
     			attr(path4, "d", paths.nextRight);
-    			attr(path4, "class", "svelte-w4kj65");
+    			attr(path4, "class", "svelte-1uvqy1b");
     			attr(svg2, "xmlns", XMLNS);
     			attr(svg2, "viewBox", viewBox);
-    			attr(button2, "class", "svelte-w4kj65");
+    			attr(button2, "class", "svelte-1uvqy1b");
     			attr(path5, "d", paths.shuffle);
-    			attr(path5, "class", "svelte-w4kj65");
+    			attr(path5, "class", "svelte-1uvqy1b");
     			attr(svg3, "xmlns", XMLNS);
     			attr(svg3, "viewBox", viewBox);
-    			attr(button3, "class", "svelte-w4kj65");
+    			attr(button3, "class", "svelte-1uvqy1b");
     			attr(path6, "d", paths.repeatLeft);
-    			attr(path6, "class", "svelte-w4kj65");
+    			attr(path6, "class", "svelte-1uvqy1b");
     			attr(path7, "d", paths.repeatRight);
-    			attr(path7, "class", "svelte-w4kj65");
+    			attr(path7, "class", "svelte-1uvqy1b");
     			attr(svg4, "xmlns", XMLNS);
     			attr(svg4, "viewBox", viewBox);
-    			attr(button4, "class", "svelte-w4kj65");
-    			attr(div0, "class", "buttons-control svelte-w4kj65");
+    			attr(button4, "class", "svelte-1uvqy1b");
+    			attr(div0, "class", "buttons-control svelte-1uvqy1b");
     			attr(div1, "class", "current-time");
     			attr(input0, "type", "range");
     			attr(input0, "min", "0");
@@ -572,30 +572,30 @@ var app = (function () {
     			attr(input0, "step", "0.01");
     			input0.value = /*duration*/ ctx[1];
     			attr(div2, "class", "diration-time");
-    			attr(div3, "class", "progress-control svelte-w4kj65");
+    			attr(div3, "class", "progress-control svelte-1uvqy1b");
 
     			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[4]
     			? paths.muteSpeaker
     			: paths.volumeSpeaker);
 
-    			attr(path8, "class", "svelte-w4kj65");
+    			attr(path8, "class", "svelte-1uvqy1b");
 
     			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[4]
     			? paths.muteClose
     			: paths.volumeLeftLine);
 
-    			attr(path9, "class", "svelte-w4kj65");
+    			attr(path9, "class", "svelte-1uvqy1b");
     			attr(svg5, "xmlns", XMLNS);
     			attr(svg5, "viewBox", viewBox);
-    			attr(button5, "class", "svelte-w4kj65");
+    			attr(button5, "class", "svelte-1uvqy1b");
     			attr(input1, "type", "range");
     			attr(input1, "min", "0");
     			attr(input1, "max", "1");
     			attr(input1, "step", "0.01");
     			input1.value = /*volume*/ ctx[3];
-    			attr(input1, "class", "svelte-w4kj65");
-    			attr(div4, "class", "volume-control svelte-w4kj65");
-    			attr(div5, "class", "audio-player svelte-w4kj65");
+    			attr(input1, "class", "svelte-1uvqy1b");
+    			attr(div4, "class", "volume-control svelte-1uvqy1b");
+    			attr(div5, "class", "audio-player svelte-1uvqy1b");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);

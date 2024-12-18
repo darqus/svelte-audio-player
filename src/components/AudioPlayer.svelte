@@ -197,7 +197,7 @@
     padding: var(--gap);
     box-shadow: 0 0 10px var(--box-shadow-color);
     display: grid;
-    grid-template-columns: auto repeat(2, 1fr);
+    grid-template-columns: auto 1fr auto;
     gap: var(--gap);
   }
 
@@ -237,7 +237,7 @@
 
   .volume-control {
     display: grid;
-    grid-template-columns: var(--control-size) 1fr;
+    grid-template-columns: var(--control-size) minmax(100px, 150px);
     gap: var(--gap);
   }
 
