@@ -62,14 +62,6 @@ var app = (function () {
             return;
         text.data = data;
     }
-    function set_style(node, key, value, important) {
-        if (value == null) {
-            node.style.removeProperty(key);
-        }
-        else {
-            node.style.setProperty(key, value, important ? 'important' : '');
-        }
-    }
 
     let current_component;
     function set_current_component(component) {
@@ -408,7 +400,7 @@ var app = (function () {
     		c() {
     			path = svg_element("path");
     			attr(path, "d", paths.pauseRight);
-    			attr(path, "class", "svelte-vh9ct8");
+    			attr(path, "class", "svelte-w4kj65");
     		},
     		m(target, anchor) {
     			insert(target, path, anchor);
@@ -420,7 +412,7 @@ var app = (function () {
     	};
     }
 
-    // (147:10) {#if !isMuted}
+    // (165:8) {#if !isMuted}
     function create_if_block(ctx) {
     	let path;
 
@@ -428,7 +420,7 @@ var app = (function () {
     		c() {
     			path = svg_element("path");
     			attr(path, "d", paths.volumeRightLine);
-    			attr(path, "class", "svelte-vh9ct8");
+    			attr(path, "class", "svelte-w4kj65");
     		},
     		m(target, anchor) {
     			insert(target, path, anchor);
@@ -442,7 +434,7 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let div5;
-    	let div1;
+    	let div0;
     	let button0;
     	let svg0;
     	let path0;
@@ -467,27 +459,28 @@ var app = (function () {
     	let path6;
     	let path7;
     	let t4;
-    	let div0;
+    	let div3;
+    	let div1;
+    	let span0;
+    	let t5_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[0]) + "";
+    	let t5;
+    	let t6;
+    	let input0;
+    	let t7;
+    	let div2;
+    	let span1;
+    	let t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[1]) + "";
+    	let t8;
+    	let t9;
+    	let div4;
     	let button5;
     	let svg5;
     	let path8;
     	let path8_d_value;
     	let path9;
     	let path9_d_value;
-    	let t5;
-    	let input;
-    	let t6;
-    	let div3;
-    	let div2;
-    	let t7;
-    	let div4;
-    	let span0;
-    	let t8_value = /*formatTime*/ ctx[12](/*currentTime*/ ctx[0]) + "";
-    	let t8;
-    	let t9;
-    	let span1;
-    	let t10_value = /*formatTime*/ ctx[12](/*duration*/ ctx[1]) + "";
     	let t10;
+    	let input1;
     	let mounted;
     	let dispose;
     	let if_block0 = /*isPlaying*/ ctx[2] && create_if_block_1();
@@ -496,7 +489,7 @@ var app = (function () {
     	return {
     		c() {
     			div5 = element("div");
-    			div1 = element("div");
+    			div0 = element("div");
     			button0 = element("button");
     			svg0 = svg_element("svg");
     			path0 = svg_element("path");
@@ -521,139 +514,146 @@ var app = (function () {
     			path6 = svg_element("path");
     			path7 = svg_element("path");
     			t4 = space();
-    			div0 = element("div");
+    			div3 = element("div");
+    			div1 = element("div");
+    			span0 = element("span");
+    			t5 = text(t5_value);
+    			t6 = space();
+    			input0 = element("input");
+    			t7 = space();
+    			div2 = element("div");
+    			span1 = element("span");
+    			t8 = text(t8_value);
+    			t9 = space();
+    			div4 = element("div");
     			button5 = element("button");
     			svg5 = svg_element("svg");
     			path8 = svg_element("path");
     			path9 = svg_element("path");
     			if (if_block1) if_block1.c();
-    			t5 = space();
-    			input = element("input");
-    			t6 = space();
-    			div3 = element("div");
-    			div2 = element("div");
-    			t7 = space();
-    			div4 = element("div");
-    			span0 = element("span");
-    			t8 = text(t8_value);
-    			t9 = space();
-    			span1 = element("span");
-    			t10 = text(t10_value);
+    			t10 = space();
+    			input1 = element("input");
     			attr(path0, "d", paths.previousLeft);
-    			attr(path0, "class", "svelte-vh9ct8");
+    			attr(path0, "class", "svelte-w4kj65");
     			attr(path1, "d", paths.previousRight);
-    			attr(path1, "class", "svelte-vh9ct8");
+    			attr(path1, "class", "svelte-w4kj65");
     			attr(svg0, "xmlns", XMLNS);
     			attr(svg0, "viewBox", viewBox);
-    			attr(button0, "class", "svelte-vh9ct8");
+    			attr(button0, "class", "svelte-w4kj65");
     			attr(path2, "d", path2_d_value = /*isPlaying*/ ctx[2] ? paths.pauseLeft : paths.play);
-    			attr(path2, "class", "svelte-vh9ct8");
+    			attr(path2, "class", "svelte-w4kj65");
     			attr(svg1, "xmlns", XMLNS);
     			attr(svg1, "viewBox", viewBox);
-    			attr(button1, "class", "svelte-vh9ct8");
+    			attr(button1, "class", "svelte-w4kj65");
     			attr(path3, "d", paths.nextLeft);
-    			attr(path3, "class", "svelte-vh9ct8");
+    			attr(path3, "class", "svelte-w4kj65");
     			attr(path4, "d", paths.nextRight);
-    			attr(path4, "class", "svelte-vh9ct8");
+    			attr(path4, "class", "svelte-w4kj65");
     			attr(svg2, "xmlns", XMLNS);
     			attr(svg2, "viewBox", viewBox);
-    			attr(button2, "class", "svelte-vh9ct8");
+    			attr(button2, "class", "svelte-w4kj65");
     			attr(path5, "d", paths.shuffle);
-    			attr(path5, "class", "svelte-vh9ct8");
+    			attr(path5, "class", "svelte-w4kj65");
     			attr(svg3, "xmlns", XMLNS);
     			attr(svg3, "viewBox", viewBox);
-    			attr(button3, "class", "svelte-vh9ct8");
+    			attr(button3, "class", "svelte-w4kj65");
     			attr(path6, "d", paths.repeatLeft);
-    			attr(path6, "class", "svelte-vh9ct8");
+    			attr(path6, "class", "svelte-w4kj65");
     			attr(path7, "d", paths.repeatRight);
-    			attr(path7, "class", "svelte-vh9ct8");
+    			attr(path7, "class", "svelte-w4kj65");
     			attr(svg4, "xmlns", XMLNS);
     			attr(svg4, "viewBox", viewBox);
-    			attr(button4, "class", "svelte-vh9ct8");
+    			attr(button4, "class", "svelte-w4kj65");
+    			attr(div0, "class", "buttons-control svelte-w4kj65");
+    			attr(div1, "class", "current-time");
+    			attr(input0, "type", "range");
+    			attr(input0, "min", "0");
+    			attr(input0, "max", "1");
+    			attr(input0, "step", "0.01");
+    			input0.value = /*duration*/ ctx[1];
+    			attr(div2, "class", "diration-time");
+    			attr(div3, "class", "progress-control svelte-w4kj65");
 
     			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[4]
     			? paths.muteSpeaker
     			: paths.volumeSpeaker);
 
-    			attr(path8, "class", "svelte-vh9ct8");
+    			attr(path8, "class", "svelte-w4kj65");
 
     			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[4]
     			? paths.muteClose
     			: paths.volumeLeftLine);
 
-    			attr(path9, "class", "svelte-vh9ct8");
+    			attr(path9, "class", "svelte-w4kj65");
     			attr(svg5, "xmlns", XMLNS);
     			attr(svg5, "viewBox", viewBox);
-    			attr(button5, "class", "svelte-vh9ct8");
-    			attr(input, "type", "range");
-    			attr(input, "min", "0");
-    			attr(input, "max", "1");
-    			attr(input, "step", "0.01");
-    			input.value = /*volume*/ ctx[3];
-    			attr(input, "class", "svelte-vh9ct8");
-    			attr(div0, "class", "volume-control svelte-vh9ct8");
-    			attr(div1, "class", "controls svelte-vh9ct8");
-    			attr(div2, "class", "progress-bar svelte-vh9ct8");
-    			set_style(div2, "width", /*currentTime*/ ctx[0] / /*duration*/ ctx[1] * 100 + "%");
-    			attr(div3, "class", "progress svelte-vh9ct8");
-    			attr(div4, "class", "time svelte-vh9ct8");
-    			attr(div5, "class", "audio-player svelte-vh9ct8");
+    			attr(button5, "class", "svelte-w4kj65");
+    			attr(input1, "type", "range");
+    			attr(input1, "min", "0");
+    			attr(input1, "max", "1");
+    			attr(input1, "step", "0.01");
+    			input1.value = /*volume*/ ctx[3];
+    			attr(input1, "class", "svelte-w4kj65");
+    			attr(div4, "class", "volume-control svelte-w4kj65");
+    			attr(div5, "class", "audio-player svelte-w4kj65");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);
-    			append(div5, div1);
-    			append(div1, button0);
+    			append(div5, div0);
+    			append(div0, button0);
     			append(button0, svg0);
     			append(svg0, path0);
     			append(svg0, path1);
-    			append(div1, t0);
-    			append(div1, button1);
+    			append(div0, t0);
+    			append(div0, button1);
     			append(button1, svg1);
     			append(svg1, path2);
     			if (if_block0) if_block0.m(svg1, null);
-    			append(div1, t1);
-    			append(div1, button2);
+    			append(div0, t1);
+    			append(div0, button2);
     			append(button2, svg2);
     			append(svg2, path3);
     			append(svg2, path4);
-    			append(div1, t2);
-    			append(div1, button3);
+    			append(div0, t2);
+    			append(div0, button3);
     			append(button3, svg3);
     			append(svg3, path5);
-    			append(div1, t3);
-    			append(div1, button4);
+    			append(div0, t3);
+    			append(div0, button4);
     			append(button4, svg4);
     			append(svg4, path6);
     			append(svg4, path7);
-    			append(div1, t4);
-    			append(div1, div0);
-    			append(div0, button5);
+    			append(div5, t4);
+    			append(div5, div3);
+    			append(div3, div1);
+    			append(div1, span0);
+    			append(span0, t5);
+    			append(div3, t6);
+    			append(div3, input0);
+    			append(div3, t7);
+    			append(div3, div2);
+    			append(div2, span1);
+    			append(span1, t8);
+    			append(div5, t9);
+    			append(div5, div4);
+    			append(div4, button5);
     			append(button5, svg5);
     			append(svg5, path8);
     			append(svg5, path9);
     			if (if_block1) if_block1.m(svg5, null);
-    			append(div0, t5);
-    			append(div0, input);
-    			append(div5, t6);
-    			append(div5, div3);
-    			append(div3, div2);
-    			append(div5, t7);
-    			append(div5, div4);
-    			append(div4, span0);
-    			append(span0, t8);
-    			append(div4, t9);
-    			append(div4, span1);
-    			append(span1, t10);
+    			append(div4, t10);
+    			append(div4, input1);
 
     			if (!mounted) {
     				dispose = [
-    					listen(button0, "click", /*prevTrack*/ ctx[9]),
+    					listen(button0, "click", /*prevTrack*/ ctx[10]),
     					listen(button1, "click", /*playPause*/ ctx[5]),
-    					listen(button2, "click", /*nextTrack*/ ctx[8]),
-    					listen(button3, "click", /*toggleShuffle*/ ctx[10]),
-    					listen(button4, "click", /*toggleRepeat*/ ctx[11]),
-    					listen(button5, "click", /*toggleMute*/ ctx[7]),
-    					listen(input, "input", /*changeVolume*/ ctx[6])
+    					listen(button2, "click", /*nextTrack*/ ctx[9]),
+    					listen(button3, "click", /*toggleShuffle*/ ctx[11]),
+    					listen(button4, "click", /*toggleRepeat*/ ctx[12]),
+    					listen(input0, "input", /*updateDuration*/ ctx[6]),
+    					listen(button5, "click", /*toggleMute*/ ctx[8]),
+    					listen(input1, "input", /*changeVolume*/ ctx[7])
     				];
 
     				mounted = true;
@@ -676,6 +676,14 @@ var app = (function () {
     				if_block0.d(1);
     				if_block0 = null;
     			}
+
+    			if (dirty & /*currentTime*/ 1 && t5_value !== (t5_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[0]) + "")) set_data(t5, t5_value);
+
+    			if (dirty & /*duration*/ 2) {
+    				input0.value = /*duration*/ ctx[1];
+    			}
+
+    			if (dirty & /*duration*/ 2 && t8_value !== (t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[1]) + "")) set_data(t8, t8_value);
 
     			if (dirty & /*isMuted*/ 16 && path8_d_value !== (path8_d_value = /*isMuted*/ ctx[4]
     			? paths.muteSpeaker
@@ -703,15 +711,8 @@ var app = (function () {
     			}
 
     			if (dirty & /*volume*/ 8) {
-    				input.value = /*volume*/ ctx[3];
+    				input1.value = /*volume*/ ctx[3];
     			}
-
-    			if (dirty & /*currentTime, duration*/ 3) {
-    				set_style(div2, "width", /*currentTime*/ ctx[0] / /*duration*/ ctx[1] * 100 + "%");
-    			}
-
-    			if (dirty & /*currentTime*/ 1 && t8_value !== (t8_value = /*formatTime*/ ctx[12](/*currentTime*/ ctx[0]) + "")) set_data(t8, t8_value);
-    			if (dirty & /*duration*/ 2 && t10_value !== (t10_value = /*formatTime*/ ctx[12](/*duration*/ ctx[1]) + "")) set_data(t10, t10_value);
     		},
     		i: noop,
     		o: noop,
@@ -810,6 +811,7 @@ var app = (function () {
     		volume,
     		isMuted,
     		playPause,
+    		updateDuration,
     		changeVolume,
     		toggleMute,
     		nextTrack,

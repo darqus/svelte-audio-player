@@ -81,8 +81,8 @@
 </script>
 
 <div class="audio-player">
-  <!-- {isPlaying} -->
-  <div class="controls">
+  <!-- {duration} -->
+  <div class="buttons-control">
     <button on:click={prevTrack}>
       <svg
         {XMLNS}
@@ -134,43 +134,48 @@
         <path d={paths.repeatRight}></path>
       </svg>
     </button>
+  </div>
 
-    <div class="volume-control">
-      <button on:click={toggleMute}>
-        <svg
-          {XMLNS}
-          {viewBox}
-        >
-          <path d={isMuted ? paths.muteSpeaker : paths.volumeSpeaker}></path>
-          <path d={isMuted ? paths.muteClose : paths.volumeLeftLine}></path>
-
-          {#if !isMuted}
-            <path d={paths.volumeRightLine}></path>
-          {/if}
-        </svg>
-      </button>
-
-      <input
-        type="range"
-        min="0"
-        max="1"
-        step="0.01"
-        value={volume}
-        on:input={changeVolume}
-      />
+  <div class="progress-control">
+    <div class="current-time">
+      <span>{formatTime(currentTime)}</span>
+    </div>
+    <input
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      value={duration}
+      on:input={updateDuration}
+    />
+    <div class="diration-time">
+      <span>{formatTime(duration)}</span>
     </div>
   </div>
 
-  <div class="progress">
-    <div
-      class="progress-bar"
-      style="width: {(currentTime / duration) * 100}%"
-    ></div>
-  </div>
+  <div class="volume-control">
+    <button on:click={toggleMute}>
+      <svg
+        {XMLNS}
+        {viewBox}
+      >
+        <path d={isMuted ? paths.muteSpeaker : paths.volumeSpeaker}></path>
+        <path d={isMuted ? paths.muteClose : paths.volumeLeftLine}></path>
 
-  <div class="time">
-    <span>{formatTime(currentTime)}</span>
-    <span>{formatTime(duration)}</span>
+        {#if !isMuted}
+          <path d={paths.volumeRightLine}></path>
+        {/if}
+      </svg>
+    </button>
+
+    <input
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      value={volume}
+      on:input={changeVolume}
+    />
   </div>
 </div>
 
@@ -192,18 +197,18 @@
     padding: var(--gap);
     box-shadow: 0 0 10px var(--box-shadow-color);
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: auto repeat(2, 1fr);
     gap: var(--gap);
   }
 
-  .controls {
+  .buttons-control {
     display: grid;
-    grid-template-columns: repeat(5, var(--control-size)) 1fr;
+    grid-template-columns: repeat(5, var(--control-size));
     gap: var(--gap);
     align-items: center;
   }
 
-  .controls button {
+  .buttons-control button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -211,16 +216,23 @@
     transition: opacity var(--duration);
   }
 
-  .controls button:focus {
+  .buttons-control button:focus {
     opacity: var(--opacity-focus);
   }
 
-  .controls button:hover {
+  .buttons-control button:hover {
     opacity: var(--opacity-hover);
   }
 
-  .controls button svg path {
+  .buttons-control button svg path {
     fill: var(--control-color);
+  }
+
+  .progress-control {
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 250px) 1fr;
+    align-items: center;
+    gap: var(--gap);
   }
 
   .volume-control {
@@ -246,23 +258,6 @@
   }
 
   .volume-control input {
-    /* margin-left: var(--gap); */
-  }
-
-  .progress {
-    width: 100%;
-    height: 5px;
-    background-color: var(--progress-bg);
-  }
-
-  .progress-bar {
-    height: 100%;
-    background-color: var(--progress-bar-color);
-    width: 0;
-  }
-
-  .time {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    margin: 0;
   }
 </style>
