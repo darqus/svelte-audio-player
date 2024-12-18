@@ -372,16 +372,24 @@ var app = (function () {
     	let div5;
     	let div1;
     	let button0;
+    	let img0;
+    	let img0_src_value;
     	let t0;
     	let button1;
     	let img1;
     	let img1_src_value;
     	let t1;
     	let button2;
+    	let img2;
+    	let img2_src_value;
     	let t2;
     	let button3;
+    	let img3;
+    	let img3_src_value;
     	let t3;
     	let button4;
+    	let img4;
+    	let img4_src_value;
     	let t4;
     	let div0;
     	let button5;
@@ -409,19 +417,19 @@ var app = (function () {
     			div5 = element("div");
     			div1 = element("div");
     			button0 = element("button");
-    			button0.innerHTML = `<img src="icons/previous.svg" alt="Previous"/>`;
+    			img0 = element("img");
     			t0 = space();
     			button1 = element("button");
     			img1 = element("img");
     			t1 = space();
     			button2 = element("button");
-    			button2.innerHTML = `<img src="icons/next.svg" alt="Next"/>`;
+    			img2 = element("img");
     			t2 = space();
     			button3 = element("button");
-    			button3.innerHTML = `<img src="icons/shuffle.svg" alt="Shuffle"/>`;
+    			img3 = element("img");
     			t3 = space();
     			button4 = element("button");
-    			button4.innerHTML = `<img src="icons/repeat.svg" alt="Repeat"/>`;
+    			img4 = element("img");
     			t4 = space();
     			div0 = element("div");
     			button5 = element("button");
@@ -438,16 +446,24 @@ var app = (function () {
     			t9 = space();
     			span1 = element("span");
     			t10 = text(t10_value);
+    			if (!src_url_equal(img0.src, img0_src_value = /*icons*/ ctx[5].previous)) attr(img0, "src", img0_src_value);
+    			attr(img0, "alt", "Previous");
 
     			if (!src_url_equal(img1.src, img1_src_value = /*isPlaying*/ ctx[0]
-    			? 'icons/pause.svg'
-    			: 'icons/play.svg')) attr(img1, "src", img1_src_value);
+    			? /*icons*/ ctx[5].pause
+    			: /*icons*/ ctx[5].play)) attr(img1, "src", img1_src_value);
 
     			attr(img1, "alt", "Play/Pause");
+    			if (!src_url_equal(img2.src, img2_src_value = /*icons*/ ctx[5].next)) attr(img2, "src", img2_src_value);
+    			attr(img2, "alt", "Next");
+    			if (!src_url_equal(img3.src, img3_src_value = /*icons*/ ctx[5].shuffle)) attr(img3, "src", img3_src_value);
+    			attr(img3, "alt", "Shuffle");
+    			if (!src_url_equal(img4.src, img4_src_value = /*icons*/ ctx[5].repeat)) attr(img4, "src", img4_src_value);
+    			attr(img4, "alt", "Repeat");
 
     			if (!src_url_equal(img5.src, img5_src_value = /*isMuted*/ ctx[4]
-    			? 'icons/mute.svg'
-    			: 'icons/volume.svg')) attr(img5, "src", img5_src_value);
+    			? /*icons*/ ctx[5].mute
+    			: /*icons*/ ctx[5].volume)) attr(img5, "src", img5_src_value);
 
     			attr(img5, "alt", "Mute/Volume");
     			attr(input, "type", "range");
@@ -468,15 +484,19 @@ var app = (function () {
     			insert(target, div5, anchor);
     			append(div5, div1);
     			append(div1, button0);
+    			append(button0, img0);
     			append(div1, t0);
     			append(div1, button1);
     			append(button1, img1);
     			append(div1, t1);
     			append(div1, button2);
+    			append(button2, img2);
     			append(div1, t2);
     			append(div1, button3);
+    			append(button3, img3);
     			append(div1, t3);
     			append(div1, button4);
+    			append(button4, img4);
     			append(div1, t4);
     			append(div1, div0);
     			append(div0, button5);
@@ -496,13 +516,13 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen(button0, "click", /*prevTrack*/ ctx[9]),
-    					listen(button1, "click", /*playPause*/ ctx[5]),
-    					listen(button2, "click", /*nextTrack*/ ctx[8]),
-    					listen(button3, "click", /*toggleShuffle*/ ctx[10]),
-    					listen(button4, "click", /*toggleRepeat*/ ctx[11]),
-    					listen(button5, "click", /*toggleMute*/ ctx[7]),
-    					listen(input, "input", /*changeVolume*/ ctx[6])
+    					listen(button0, "click", /*prevTrack*/ ctx[10]),
+    					listen(button1, "click", /*playPause*/ ctx[6]),
+    					listen(button2, "click", /*nextTrack*/ ctx[9]),
+    					listen(button3, "click", /*toggleShuffle*/ ctx[11]),
+    					listen(button4, "click", /*toggleRepeat*/ ctx[12]),
+    					listen(button5, "click", /*toggleMute*/ ctx[8]),
+    					listen(input, "input", /*changeVolume*/ ctx[7])
     				];
 
     				mounted = true;
@@ -510,14 +530,14 @@ var app = (function () {
     		},
     		p(ctx, [dirty]) {
     			if (dirty & /*isPlaying*/ 1 && !src_url_equal(img1.src, img1_src_value = /*isPlaying*/ ctx[0]
-    			? 'icons/pause.svg'
-    			: 'icons/play.svg')) {
+    			? /*icons*/ ctx[5].pause
+    			: /*icons*/ ctx[5].play)) {
     				attr(img1, "src", img1_src_value);
     			}
 
     			if (dirty & /*isMuted*/ 16 && !src_url_equal(img5.src, img5_src_value = /*isMuted*/ ctx[4]
-    			? 'icons/mute.svg'
-    			: 'icons/volume.svg')) {
+    			? /*icons*/ ctx[5].mute
+    			: /*icons*/ ctx[5].volume)) {
     				attr(img5, "src", img5_src_value);
     			}
 
@@ -555,6 +575,17 @@ var app = (function () {
     	let duration = 0;
     	let volume = 1;
     	let isMuted = false;
+
+    	const icons = {
+    		play: 'icons/play.svg',
+    		pause: 'icons/pause.svg',
+    		next: 'icons/next.svg',
+    		previous: 'icons/previous.svg',
+    		shuffle: 'icons/shuffle.svg',
+    		repeat: 'icons/repeat.svg',
+    		volume: 'icons/volume.svg',
+    		mute: 'icons/mute.svg'
+    	};
 
     	const tracks = [
     		{
@@ -630,6 +661,7 @@ var app = (function () {
     		duration,
     		volume,
     		isMuted,
+    		icons,
     		playPause,
     		changeVolume,
     		toggleMute,

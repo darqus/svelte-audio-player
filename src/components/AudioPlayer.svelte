@@ -11,6 +11,17 @@
     let repeat = false;
     let preset = 'full'; // 'minimal', 'normal', 'full'
 
+    const icons = {
+        play: 'icons/play.svg',
+        pause: 'icons/pause.svg',
+        next: 'icons/next.svg',
+        previous: 'icons/previous.svg',
+        shuffle: 'icons/shuffle.svg',
+        repeat: 'icons/repeat.svg',
+        volume: 'icons/volume.svg',
+        mute: 'icons/mute.svg',
+    };
+
     const tracks = [
         { src: 'tracks/01. NWO.mp3', title: '01. NWO' },
         { src: 'tracks/02. Just One Fix.mp3', title: '02. Just One Fix' },
@@ -127,17 +138,17 @@
 
 <div class="audio-player">
     <div class="controls">
-        <button on:click={prevTrack}><img src="icons/previous.svg" alt="Previous"></button>
-        <button on:click={playPause}>
-            <img src={isPlaying ? 'icons/pause.svg' : 'icons/play.svg'} alt="Play/Pause">
-        </button>
-        <button on:click={nextTrack}><img src="icons/next.svg" alt="Next"></button>
-        <button on:click={toggleShuffle}><img src="icons/shuffle.svg" alt="Shuffle"></button>
-        <button on:click={toggleRepeat}><img src="icons/repeat.svg" alt="Repeat"></button>
-        <div class="volume-control">
-            <button on:click={toggleMute}><img src={isMuted ? 'icons/mute.svg' : 'icons/volume.svg'} alt="Mute/Volume"></button>
-            <input type="range" min="0" max="1" step="0.01" value={volume} on:input={changeVolume}>
-        </div>
+      <button on:click={prevTrack}><img src={icons.previous} alt="Previous"></button>
+      <button on:click={playPause}>
+        <img src={isPlaying ? icons.pause : icons.play} alt="Play/Pause">
+      </button>
+      <button on:click={nextTrack}><img src={icons.next} alt="Next"></button>
+      <button on:click={toggleShuffle}><img src={icons.shuffle} alt="Shuffle"></button>
+      <button on:click={toggleRepeat}><img src={icons.repeat} alt="Repeat"></button>
+      <div class="volume-control">
+        <button on:click={toggleMute}><img src={isMuted ? icons.mute : icons.volume} alt="Mute/Volume"></button>
+        <input type="range" min="0" max="1" step="0.01" value={volume} on:input={changeVolume}>
+      </div>
     </div>
     <div class="progress">
         <div class="progress-bar" style="width: {currentTime / duration * 100}%"></div>
