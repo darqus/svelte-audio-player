@@ -122,11 +122,16 @@
 </script>
 
 <style lang="scss">
+  $background-color: #aaa;
+  $box-shadow-color: rgba(0, 0, 0, 0.1);
+  $progress-background: #ddd;
+  $progress-bar-color: #007bff;
+
   .audio-player {
-    background: #aaa;
+    background: $background-color;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px $box-shadow-color;
     display: grid;
     grid-template-rows: auto auto auto;
     gap: 10px;
@@ -150,11 +155,11 @@
     .progress {
       width: 100%;
       height: 5px;
-      background: #ddd;
+      background: $progress-background;
 
       .progress-bar {
         height: 100%;
-        background: #007bff;
+        background: $progress-bar-color;
         width: 0;
       }
     }
