@@ -370,87 +370,83 @@ var app = (function () {
 
     function create_fragment$1(ctx) {
     	let div5;
-    	let t0;
-    	let t1;
     	let div1;
     	let button0;
     	let img0;
     	let img0_src_value;
-    	let t2;
+    	let t0;
     	let button1;
     	let img1;
     	let img1_src_value;
     	let img1_alt_value;
-    	let t3;
+    	let t1;
     	let button2;
     	let img2;
     	let img2_src_value;
-    	let t4;
+    	let t2;
     	let button3;
     	let img3;
     	let img3_src_value;
-    	let t5;
+    	let t3;
     	let button4;
     	let img4;
     	let img4_src_value;
-    	let t6;
+    	let t4;
     	let div0;
     	let button5;
     	let img5;
     	let img5_src_value;
-    	let t7;
+    	let t5;
     	let input;
-    	let t8;
+    	let t6;
     	let div3;
     	let div2;
-    	let t9;
+    	let t7;
     	let div4;
     	let span0;
-    	let t10_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[0]) + "";
-    	let t10;
-    	let t11;
+    	let t8_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[0]) + "";
+    	let t8;
+    	let t9;
     	let span1;
-    	let t12_value = /*formatTime*/ ctx[13](/*duration*/ ctx[1]) + "";
-    	let t12;
+    	let t10_value = /*formatTime*/ ctx[13](/*duration*/ ctx[1]) + "";
+    	let t10;
     	let mounted;
     	let dispose;
 
     	return {
     		c() {
     			div5 = element("div");
-    			t0 = text(/*isPlaying*/ ctx[2]);
-    			t1 = space();
     			div1 = element("div");
     			button0 = element("button");
     			img0 = element("img");
-    			t2 = space();
+    			t0 = space();
     			button1 = element("button");
     			img1 = element("img");
-    			t3 = space();
+    			t1 = space();
     			button2 = element("button");
     			img2 = element("img");
-    			t4 = space();
+    			t2 = space();
     			button3 = element("button");
     			img3 = element("img");
-    			t5 = space();
+    			t3 = space();
     			button4 = element("button");
     			img4 = element("img");
-    			t6 = space();
+    			t4 = space();
     			div0 = element("div");
     			button5 = element("button");
     			img5 = element("img");
-    			t7 = space();
+    			t5 = space();
     			input = element("input");
-    			t8 = space();
+    			t6 = space();
     			div3 = element("div");
     			div2 = element("div");
-    			t9 = space();
+    			t7 = space();
     			div4 = element("div");
     			span0 = element("span");
-    			t10 = text(t10_value);
-    			t11 = space();
+    			t8 = text(t8_value);
+    			t9 = space();
     			span1 = element("span");
-    			t12 = text(t12_value);
+    			t10 = text(t10_value);
     			if (!src_url_equal(img0.src, img0_src_value = /*icons*/ ctx[5].previous)) attr(img0, "src", img0_src_value);
     			attr(img0, "alt", "Previous");
 
@@ -476,50 +472,48 @@ var app = (function () {
     			attr(input, "max", "1");
     			attr(input, "step", "0.01");
     			input.value = /*volume*/ ctx[3];
-    			attr(input, "class", "svelte-1duzo9n");
-    			attr(div0, "class", "volume-control svelte-1duzo9n");
-    			attr(div1, "class", "controls svelte-1duzo9n");
-    			attr(div2, "class", "progress-bar svelte-1duzo9n");
+    			attr(input, "class", "svelte-15ok4q");
+    			attr(div0, "class", "volume-control svelte-15ok4q");
+    			attr(div1, "class", "controls svelte-15ok4q");
+    			attr(div2, "class", "progress-bar svelte-15ok4q");
     			set_style(div2, "width", /*currentTime*/ ctx[0] / /*duration*/ ctx[1] * 100 + "%");
-    			attr(div3, "class", "progress svelte-1duzo9n");
-    			attr(div4, "class", "time svelte-1duzo9n");
-    			attr(div5, "class", "audio-player svelte-1duzo9n");
+    			attr(div3, "class", "progress svelte-15ok4q");
+    			attr(div4, "class", "time svelte-15ok4q");
+    			attr(div5, "class", "audio-player svelte-15ok4q");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);
-    			append(div5, t0);
-    			append(div5, t1);
     			append(div5, div1);
     			append(div1, button0);
     			append(button0, img0);
-    			append(div1, t2);
+    			append(div1, t0);
     			append(div1, button1);
     			append(button1, img1);
-    			append(div1, t3);
+    			append(div1, t1);
     			append(div1, button2);
     			append(button2, img2);
-    			append(div1, t4);
+    			append(div1, t2);
     			append(div1, button3);
     			append(button3, img3);
-    			append(div1, t5);
+    			append(div1, t3);
     			append(div1, button4);
     			append(button4, img4);
-    			append(div1, t6);
+    			append(div1, t4);
     			append(div1, div0);
     			append(div0, button5);
     			append(button5, img5);
-    			append(div0, t7);
+    			append(div0, t5);
     			append(div0, input);
-    			append(div5, t8);
+    			append(div5, t6);
     			append(div5, div3);
     			append(div3, div2);
-    			append(div5, t9);
+    			append(div5, t7);
     			append(div5, div4);
     			append(div4, span0);
-    			append(span0, t10);
-    			append(div4, t11);
+    			append(span0, t8);
+    			append(div4, t9);
     			append(div4, span1);
-    			append(span1, t12);
+    			append(span1, t10);
 
     			if (!mounted) {
     				dispose = [
@@ -536,8 +530,6 @@ var app = (function () {
     			}
     		},
     		p(ctx, [dirty]) {
-    			if (dirty & /*isPlaying*/ 4) set_data(t0, /*isPlaying*/ ctx[2]);
-
     			if (dirty & /*isPlaying*/ 4 && !src_url_equal(img1.src, img1_src_value = /*isPlaying*/ ctx[2]
     			? /*icons*/ ctx[5].pause
     			: /*icons*/ ctx[5].play)) {
@@ -562,8 +554,8 @@ var app = (function () {
     				set_style(div2, "width", /*currentTime*/ ctx[0] / /*duration*/ ctx[1] * 100 + "%");
     			}
 
-    			if (dirty & /*currentTime*/ 1 && t10_value !== (t10_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[0]) + "")) set_data(t10, t10_value);
-    			if (dirty & /*duration*/ 2 && t12_value !== (t12_value = /*formatTime*/ ctx[13](/*duration*/ ctx[1]) + "")) set_data(t12, t12_value);
+    			if (dirty & /*currentTime*/ 1 && t8_value !== (t8_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[0]) + "")) set_data(t8, t8_value);
+    			if (dirty & /*duration*/ 2 && t10_value !== (t10_value = /*formatTime*/ ctx[13](/*duration*/ ctx[1]) + "")) set_data(t10, t10_value);
     		},
     		i: noop,
     		o: noop,
