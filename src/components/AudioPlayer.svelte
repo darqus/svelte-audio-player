@@ -65,60 +65,60 @@
         audio.addEventListener('ended', nextTrack);
     });
 
-    function playPause() {
-        if (isPlaying) {
-            audio.pause();
-        } else {
-            audio.play();
-        }
-        isPlaying = !isPlaying;
-    }
-
-    function updateTime() {
-        currentTime = audio.currentTime;
-    }
-
-    function updateDuration() {
-        duration = audio.duration;
-    }
-
-    function changeVolume(event) {
-        volume = event.target.value;
-        audio.volume = volume;
-    }
-
-    function toggleMute() {
-        isMuted = !isMuted;
-        audio.muted = isMuted;
-    }
-
-    function nextTrack() {
-        currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-        audio.src = tracks[currentTrackIndex].src;
+    const playPause = () => {
+      if (isPlaying) {
+        audio.pause();
+      } else {
         audio.play();
-        isPlaying = true;
-    }
+      }
+      isPlaying = !isPlaying;
+    };
 
-    function prevTrack() {
-        currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
-        audio.src = tracks[currentTrackIndex].src;
-        audio.play();
-        isPlaying = true;
-    }
+    const updateTime = () => {
+      currentTime = audio.currentTime;
+    };
 
-    function toggleShuffle() {
-        shuffle = !shuffle;
-    }
+    const updateDuration = () => {
+      duration = audio.duration;
+    };
 
-    function toggleRepeat() {
-        repeat = !repeat;
-    }
+    const changeVolume = (event) => {
+      volume = event.target.value;
+      audio.volume = volume;
+    };
 
-    function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-    }
+    const toggleMute = () => {
+      isMuted = !isMuted;
+      audio.muted = isMuted;
+    };
+
+    const nextTrack = () => {
+      currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+      audio.src = tracks[currentTrackIndex].src;
+      audio.play();
+      isPlaying = true;
+    };
+
+    const prevTrack = () => {
+      currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+      audio.src = tracks[currentTrackIndex].src;
+      audio.play();
+      isPlaying = true;
+    };
+
+    const toggleShuffle = () => {
+      shuffle = !shuffle;
+    };
+
+    const toggleRepeat = () => {
+      repeat = !repeat;
+    };
+
+    const formatTime = (seconds) => {
+      const minutes = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    };
 </script>
 
 <style lang="scss">
