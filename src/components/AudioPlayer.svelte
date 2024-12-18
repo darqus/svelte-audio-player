@@ -256,6 +256,12 @@
     gap: var(--gap);
   }
 
+  .progress-control .current-time,
+  .progress-control .duration-time {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
   .volume-control {
     display: grid;
     grid-template-columns: var(--control-size) minmax(100px, 150px);
