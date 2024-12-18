@@ -130,40 +130,40 @@
     display: grid;
     grid-template-rows: auto auto auto;
     gap: 10px;
-  }
 
-  .controls {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr) auto;
-    gap: 10px;
-    align-items: center;
-  }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr) auto;
+      gap: 10px;
+      align-items: center;
 
-  .progress {
-    width: 100%;
-    height: 5px;
-    background: #ddd;
-    position: relative;
-  }
+      .volume-control {
+        display: flex;
+        align-items: center;
 
-  .progress-bar {
-    height: 100%;
-    background: #007bff;
-    width: 0;
-  }
+        input {
+          margin-left: 10px;
+        }
+      }
+    }
 
-  .time {
-    display: flex;
-    justify-content: space-between;
-  }
+    .progress {
+      width: 100%;
+      height: 5px;
+      background: #ddd;
 
-  .volume-control {
-    display: flex;
-    align-items: center;
-  }
+      .progress-bar {
+        height: 100%;
+        background: #007bff;
+        width: 0;
+      }
+    }
 
-  .volume-control input {
-    margin-left: 10px;
+    .time {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+    }
   }
 </style>
 
