@@ -269,4 +269,15 @@
   .volume-control input {
     margin: 0;
   }
+
+  @media (max-width: 600px) {
+    .audio-player {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    .progress-control {
+      grid-template-columns: 1fr minmax(80px, 120px) 1fr;
+    }
+  }
 </style>
