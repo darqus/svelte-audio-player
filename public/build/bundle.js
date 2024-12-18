@@ -412,7 +412,7 @@ var app = (function () {
     	};
     }
 
-    // (165:8) {#if !isMuted}
+    // (174:8) {#if !isMuted}
     function create_if_block(ctx) {
     	let path;
 
@@ -462,14 +462,14 @@ var app = (function () {
     	let div3;
     	let div1;
     	let span0;
-    	let t5_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[0]) + "";
+    	let t5_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[2]) + "";
     	let t5;
     	let t6;
     	let input0;
     	let t7;
     	let div2;
     	let span1;
-    	let t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[1]) + "";
+    	let t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[3]) + "";
     	let t8;
     	let t9;
     	let div4;
@@ -483,8 +483,8 @@ var app = (function () {
     	let input1;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*isPlaying*/ ctx[2] && create_if_block_1();
-    	let if_block1 = !/*isMuted*/ ctx[4] && create_if_block();
+    	let if_block0 = /*isPlaying*/ ctx[0] && create_if_block_1();
+    	let if_block1 = !/*isMuted*/ ctx[1] && create_if_block();
 
     	return {
     		c() {
@@ -540,7 +540,7 @@ var app = (function () {
     			attr(svg0, "xmlns", XMLNS);
     			attr(svg0, "viewBox", viewBox);
     			attr(button0, "class", "svelte-1uvqy1b");
-    			attr(path2, "d", path2_d_value = /*isPlaying*/ ctx[2] ? paths.pauseLeft : paths.play);
+    			attr(path2, "d", path2_d_value = /*isPlaying*/ ctx[0] ? paths.pauseLeft : paths.play);
     			attr(path2, "class", "svelte-1uvqy1b");
     			attr(svg1, "xmlns", XMLNS);
     			attr(svg1, "viewBox", viewBox);
@@ -567,20 +567,20 @@ var app = (function () {
     			attr(div0, "class", "buttons-control svelte-1uvqy1b");
     			attr(div1, "class", "current-time");
     			attr(input0, "type", "range");
-    			attr(input0, "min", "0");
-    			attr(input0, "max", "1");
-    			attr(input0, "step", "0.01");
-    			input0.value = /*duration*/ ctx[1];
+    			attr(input0, "min", MIN_DURATION);
+    			attr(input0, "max", /*duration*/ ctx[3]);
+    			attr(input0, "step", STEP_DURATION);
+    			input0.value = /*currentTime*/ ctx[2];
     			attr(div2, "class", "diration-time");
     			attr(div3, "class", "progress-control svelte-1uvqy1b");
 
-    			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[4]
+    			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[1]
     			? paths.muteSpeaker
     			: paths.volumeSpeaker);
 
     			attr(path8, "class", "svelte-1uvqy1b");
 
-    			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[4]
+    			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[1]
     			? paths.muteClose
     			: paths.volumeLeftLine);
 
@@ -592,7 +592,7 @@ var app = (function () {
     			attr(input1, "min", "0");
     			attr(input1, "max", "1");
     			attr(input1, "step", "0.01");
-    			input1.value = /*volume*/ ctx[3];
+    			input1.value = /*volume*/ ctx[4];
     			attr(input1, "class", "svelte-1uvqy1b");
     			attr(div4, "class", "volume-control svelte-1uvqy1b");
     			attr(div5, "class", "audio-player svelte-1uvqy1b");
@@ -651,7 +651,7 @@ var app = (function () {
     					listen(button2, "click", /*nextTrack*/ ctx[9]),
     					listen(button3, "click", /*toggleShuffle*/ ctx[11]),
     					listen(button4, "click", /*toggleRepeat*/ ctx[12]),
-    					listen(input0, "input", /*updateDuration*/ ctx[6]),
+    					listen(input0, "input", /*changeDuration*/ ctx[6]),
     					listen(button5, "click", /*toggleMute*/ ctx[8]),
     					listen(input1, "input", /*changeVolume*/ ctx[7])
     				];
@@ -660,11 +660,11 @@ var app = (function () {
     			}
     		},
     		p(ctx, [dirty]) {
-    			if (dirty & /*isPlaying*/ 4 && path2_d_value !== (path2_d_value = /*isPlaying*/ ctx[2] ? paths.pauseLeft : paths.play)) {
+    			if (dirty & /*isPlaying*/ 1 && path2_d_value !== (path2_d_value = /*isPlaying*/ ctx[0] ? paths.pauseLeft : paths.play)) {
     				attr(path2, "d", path2_d_value);
     			}
 
-    			if (/*isPlaying*/ ctx[2]) {
+    			if (/*isPlaying*/ ctx[0]) {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -677,27 +677,31 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (dirty & /*currentTime*/ 1 && t5_value !== (t5_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[0]) + "")) set_data(t5, t5_value);
+    			if (dirty & /*currentTime*/ 4 && t5_value !== (t5_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[2]) + "")) set_data(t5, t5_value);
 
-    			if (dirty & /*duration*/ 2) {
-    				input0.value = /*duration*/ ctx[1];
+    			if (dirty & /*duration*/ 8) {
+    				attr(input0, "max", /*duration*/ ctx[3]);
     			}
 
-    			if (dirty & /*duration*/ 2 && t8_value !== (t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[1]) + "")) set_data(t8, t8_value);
+    			if (dirty & /*currentTime*/ 4) {
+    				input0.value = /*currentTime*/ ctx[2];
+    			}
 
-    			if (dirty & /*isMuted*/ 16 && path8_d_value !== (path8_d_value = /*isMuted*/ ctx[4]
+    			if (dirty & /*duration*/ 8 && t8_value !== (t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[3]) + "")) set_data(t8, t8_value);
+
+    			if (dirty & /*isMuted*/ 2 && path8_d_value !== (path8_d_value = /*isMuted*/ ctx[1]
     			? paths.muteSpeaker
     			: paths.volumeSpeaker)) {
     				attr(path8, "d", path8_d_value);
     			}
 
-    			if (dirty & /*isMuted*/ 16 && path9_d_value !== (path9_d_value = /*isMuted*/ ctx[4]
+    			if (dirty & /*isMuted*/ 2 && path9_d_value !== (path9_d_value = /*isMuted*/ ctx[1]
     			? paths.muteClose
     			: paths.volumeLeftLine)) {
     				attr(path9, "d", path9_d_value);
     			}
 
-    			if (!/*isMuted*/ ctx[4]) {
+    			if (!/*isMuted*/ ctx[1]) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
@@ -710,8 +714,8 @@ var app = (function () {
     				if_block1 = null;
     			}
 
-    			if (dirty & /*volume*/ 8) {
-    				input1.value = /*volume*/ ctx[3];
+    			if (dirty & /*volume*/ 16) {
+    				input1.value = /*volume*/ ctx[4];
     			}
     		},
     		i: noop,
@@ -726,16 +730,18 @@ var app = (function () {
     	};
     }
 
+    const MIN_DURATION = 0;
+    const STEP_DURATION = 0.01;
     const XMLNS = 'http://www.w3.org/2000/svg';
     const viewBox = '0 0 32 32';
 
     function instance($$self, $$props, $$invalidate) {
     	let audio;
     	let isPlaying = false;
-    	let { currentTime = 0 } = $$props;
-    	let { duration = 0 } = $$props;
-    	let volume = 1;
     	let isMuted = false;
+    	let currentTime = 0;
+    	let duration = 0;
+    	let volume = 1;
     	let currentTrackIndex = 0;
 
     	onMount(() => {
@@ -752,24 +758,29 @@ var app = (function () {
     			audio.play();
     		}
 
-    		$$invalidate(2, isPlaying = !isPlaying);
+    		$$invalidate(0, isPlaying = !isPlaying);
     	};
 
     	const updateTime = () => {
-    		$$invalidate(0, currentTime = audio.currentTime);
+    		$$invalidate(2, currentTime = audio.currentTime);
     	};
 
     	const updateDuration = () => {
-    		$$invalidate(1, duration = audio.duration);
+    		$$invalidate(3, duration = audio.duration);
+    	};
+
+    	const changeDuration = event => {
+    		audio.currentTime = event.target.value;
+    		$$invalidate(2, currentTime = audio.currentTime);
     	};
 
     	const changeVolume = event => {
-    		$$invalidate(3, volume = event.target.value);
+    		$$invalidate(4, volume = event.target.value);
     		audio.volume = volume;
     	};
 
     	const toggleMute = () => {
-    		$$invalidate(4, isMuted = !isMuted);
+    		$$invalidate(1, isMuted = !isMuted);
     		audio.muted = isMuted;
     	};
 
@@ -777,14 +788,14 @@ var app = (function () {
     		currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
     		audio.src = tracks[currentTrackIndex].src;
     		audio.play();
-    		$$invalidate(2, isPlaying = true);
+    		$$invalidate(0, isPlaying = true);
     	};
 
     	const prevTrack = () => {
     		currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
     		audio.src = tracks[currentTrackIndex].src;
     		audio.play();
-    		$$invalidate(2, isPlaying = true);
+    		$$invalidate(0, isPlaying = true);
     	};
 
     	const toggleShuffle = () => {
@@ -799,19 +810,14 @@ var app = (function () {
     		return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
     	};
 
-    	$$self.$$set = $$props => {
-    		if ('currentTime' in $$props) $$invalidate(0, currentTime = $$props.currentTime);
-    		if ('duration' in $$props) $$invalidate(1, duration = $$props.duration);
-    	};
-
     	return [
+    		isPlaying,
+    		isMuted,
     		currentTime,
     		duration,
-    		isPlaying,
     		volume,
-    		isMuted,
     		playPause,
-    		updateDuration,
+    		changeDuration,
     		changeVolume,
     		toggleMute,
     		nextTrack,
@@ -825,7 +831,7 @@ var app = (function () {
     class AudioPlayer extends SvelteComponent {
     	constructor(options) {
     		super();
-    		init(this, options, instance, create_fragment$1, safe_not_equal, { currentTime: 0, duration: 1 });
+    		init(this, options, instance, create_fragment$1, safe_not_equal, {});
     	}
     }
 

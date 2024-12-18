@@ -4,13 +4,17 @@
 
   let audio
   let isPlaying = false
-  export let currentTime = 0
-  export let duration = 0
-  let volume = 1
   let isMuted = false
   let shuffle = false
   let repeat = false
+  let currentTime = 0
+  let duration = 0
+  let volume = 1
   // let preset = 'full' // 'minimal', 'normal', 'full'
+
+  const MIN_DURATION = 0
+  const MAX_DURATION = 1
+  const STEP_DURATION = 0.01
 
   const XMLNS = 'http://www.w3.org/2000/svg'
   const viewBox = '0 0 32 32'
@@ -39,6 +43,11 @@
 
   const updateDuration = () => {
     duration = audio.duration
+  }
+
+  const changeDuration = (event) => {
+    audio.currentTime = event.target.value
+    currentTime = audio.currentTime
   }
 
   const changeVolume = (event) => {
@@ -142,11 +151,11 @@
     </div>
     <input
       type="range"
-      min="0"
-      max="1"
-      step="0.01"
-      value={duration}
-      on:input={updateDuration}
+      min={MIN_DURATION}
+      max={duration}
+      step={STEP_DURATION}
+      value={currentTime}
+      on:input={changeDuration}
     />
     <div class="diration-time">
       <span>{formatTime(duration)}</span>
