@@ -473,14 +473,14 @@ var app = (function () {
     			attr(input, "max", "1");
     			attr(input, "step", "0.01");
     			input.value = /*volume*/ ctx[3];
-    			attr(input, "class", "svelte-10vsb2n");
-    			attr(div0, "class", "volume-control svelte-10vsb2n");
-    			attr(div1, "class", "controls svelte-10vsb2n");
-    			attr(div2, "class", "progress-bar svelte-10vsb2n");
+    			attr(input, "class", "svelte-11hgxa8");
+    			attr(div0, "class", "volume-control svelte-11hgxa8");
+    			attr(div1, "class", "controls svelte-11hgxa8");
+    			attr(div2, "class", "progress-bar svelte-11hgxa8");
     			set_style(div2, "width", /*currentTime*/ ctx[0] / /*duration*/ ctx[1] * 100 + "%");
-    			attr(div3, "class", "progress svelte-10vsb2n");
-    			attr(div4, "class", "time svelte-10vsb2n");
-    			attr(div5, "class", "audio-player svelte-10vsb2n");
+    			attr(div3, "class", "progress svelte-11hgxa8");
+    			attr(div4, "class", "time svelte-11hgxa8");
+    			attr(div5, "class", "audio-player svelte-11hgxa8");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);

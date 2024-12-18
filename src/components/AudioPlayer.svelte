@@ -169,6 +169,7 @@
     --progress-bg: #ccc; /* Define appropriate color */
     --progress-bar-color: #f00; /* Define appropriate color */
     --gap: 10px;
+    --control-size: 3rem;
   }
 
   .audio-player {
@@ -182,14 +183,14 @@
 
   .controls {
     display: grid;
-    grid-template-columns: repeat(5, 3rem) 1fr;
+    grid-template-columns: repeat(5, var(--control-size)) 1fr;
     gap: var(--gap);
     align-items: center;
   }
 
   .volume-control {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: var(--control-size) 1fr;
     gap: var(--gap);
   }
 
