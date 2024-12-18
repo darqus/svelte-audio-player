@@ -219,6 +219,9 @@
     --gap: 10px;
     --control-size: 2rem;
     --control-color: #000;
+    --duration: 0.3s;
+    --opacity-hover: 0.6;
+    --opacity-focus: 0.7;
   }
 
   .audio-player {
@@ -242,6 +245,15 @@
     border: none;
     cursor: pointer;
     padding: 0;
+    transition: opacity var(--duration);
+  }
+
+  .controls button:focus {
+    opacity: var(--opacity-focus);
+  }
+
+  .controls button:hover {
+    opacity: var(--opacity-hover);
   }
 
   .controls button svg path {
@@ -259,8 +271,15 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    /* width: var(--control-size); */
-    /* height: inherit; */
+    transition: opacity var(--duration);
+  }
+
+  .volume-control button:focus {
+    opacity: var(--opacity-focus);
+  }
+
+  .volume-control button:hover {
+    opacity: var(--opacity-hover);
   }
 
   /* .volume-control button img {
