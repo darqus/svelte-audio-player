@@ -3,8 +3,8 @@
 
   let audio
   let isPlaying = false
-  let currentTime = 0
-  let duration = 0
+  export let currentTime = 0
+  export let duration = 0
   let volume = 1
   let isMuted = false
   let shuffle = false
@@ -163,53 +163,50 @@
   </div>
 </div>
 
-<style lang="scss">
-  $bg-color: #aaa;
-  $box-shadow-color: rgba(0, 0, 0, 0.1);
-  $progress-bg: #ddd;
-  $progress-bar-color: #007bff;
+<style>
+  :root {
+    --box-shadow-color: #000; /* Define appropriate color */
+    --progress-bg: #ccc; /* Define appropriate color */
+    --progress-bar-color: #f00; /* Define appropriate color */
+  }
 
   .audio-player {
-    background-color: $bg-color;
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px $box-shadow-color;
+    box-shadow: 0 0 10px var(--box-shadow-color);
     display: grid;
     grid-template-rows: auto auto auto;
     gap: 10px;
+  }
 
-    .controls {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr) auto;
-      gap: 10px;
-      align-items: center;
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) auto;
+    gap: 10px;
+    align-items: center;
+  }
 
-      .volume-control {
-        display: flex;
-        align-items: center;
+  .volume-control {
+    display: flex;
+    align-items: center;
+  }
 
-        input {
-          margin-left: 10px;
-        }
-      }
-    }
+  .volume-control input {
+    margin-left: 10px;
+  }
 
-    .progress {
-      width: 100%;
-      height: 5px;
-      background-color: $progress-bg;
+  .progress {
+    width: 100%;
+    height: 5px;
+    background-color: var(--progress-bg);
+  }
 
-      .progress-bar {
-        height: 100%;
-        background-color: $progress-bar-color;
-        width: 0;
-      }
-    }
+  .progress-bar {
+    height: 100%;
+    background-color: var(--progress-bar-color);
+    width: 0;
+  }
 
-    .time {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: space-between;
-    }
+  .time {
+    display: grid;
   }
 </style>
