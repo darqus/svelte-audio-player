@@ -168,31 +168,33 @@
     --box-shadow-color: #000; /* Define appropriate color */
     --progress-bg: #ccc; /* Define appropriate color */
     --progress-bar-color: #f00; /* Define appropriate color */
+    --gap: 10px;
   }
 
   .audio-player {
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: var(--gap);
+    padding: var(--gap);
     box-shadow: 0 0 10px var(--box-shadow-color);
     display: grid;
     grid-template-rows: auto auto auto;
-    gap: 10px;
+    gap: var(--gap);
   }
 
   .controls {
     display: grid;
-    grid-template-columns: repeat(5, 1fr) auto;
-    gap: 10px;
+    grid-template-columns: repeat(5, 3rem) 1fr;
+    gap: var(--gap);
     align-items: center;
   }
 
   .volume-control {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: var(--gap);
   }
 
   .volume-control input {
-    margin-left: 10px;
+    /* margin-left: var(--gap); */
   }
 
   .progress {
