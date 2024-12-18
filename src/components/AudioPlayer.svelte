@@ -187,6 +187,7 @@
     --progress-bar-color: #f00; /* Define appropriate color */
     --gap: 10px;
     --control-size: 2rem;
+    --control-color: #000;
   }
 
   .audio-player {
@@ -210,6 +211,10 @@
     border: none;
     cursor: pointer;
     padding: 0;
+  }
+
+  .controls button svg path {
+    fill: var(--control-color);
   }
 
   .volume-control {
