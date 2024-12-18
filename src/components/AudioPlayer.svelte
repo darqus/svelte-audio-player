@@ -82,64 +82,60 @@
     }
 </script>
 
-<style>
-    .audio-player {
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+<style lang="scss">
+  .audio-player {
+    background: #aaa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
-    .controls {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .progress {
-        width: 100%;
-        height: 5px;
-        background: #ddd;
-        margin: 10px 0;
-        position: relative;
-    }
+  .progress {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    margin: 10px 0;
+    position: relative;
+  }
 
-    .progress-bar {
-        height: 100%;
-        background: #007bff;
-        width: 0;
-    }
+  .progress-bar {
+    height: 100%;
+    background: #007bff;
+    width: 0;
+  }
 
-    .time {
-        display: flex;
-        justify-content: space-between;
-    }
+  .time {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .volume-control {
-        display: flex;
-        align-items: center;
-    }
+  .volume-control {
+    display: flex;
+    align-items: center;
+  }
 
-    .volume-control input {
-        margin-left: 10px;
-    }
-
-    .hidden {
-        display: none;
-    }
+  .volume-control input {
+    margin-left: 10px;
+  }
 </style>
 
 <div class="audio-player">
     <div class="controls">
-        <button on:click={prevTrack}><img src="/icons/previous.svg" alt="Previous"></button>
+        <button on:click={prevTrack}><img src="icons/previous.svg" alt="Previous"></button>
         <button on:click={playPause}>
-            <img src={isPlaying ? '/icons/pause.svg' : '/icons/play.svg'} alt="Play/Pause">
+            <img src={isPlaying ? 'icons/pause.svg' : 'icons/play.svg'} alt="Play/Pause">
         </button>
-        <button on:click={nextTrack}><img src="/icons/next.svg" alt="Next"></button>
-        <button on:click={toggleShuffle}><img src="/icons/shuffle.svg" alt="Shuffle"></button>
-        <button on:click={toggleRepeat}><img src="/icons/repeat.svg" alt="Repeat"></button>
+        <button on:click={nextTrack}><img src="icons/next.svg" alt="Next"></button>
+        <button on:click={toggleShuffle}><img src="icons/shuffle.svg" alt="Shuffle"></button>
+        <button on:click={toggleRepeat}><img src="icons/repeat.svg" alt="Repeat"></button>
         <div class="volume-control">
-            <button on:click={toggleMute}><img src={isMuted ? '/icons/mute.svg' : '/icons/volume.svg'} alt="Mute/Volume"></button>
+            <button on:click={toggleMute}><img src={isMuted ? 'icons/mute.svg' : 'icons/volume.svg'} alt="Mute/Volume"></button>
             <input type="range" min="0" max="1" step="0.01" value={volume} on:input={changeVolume}>
         </div>
     </div>

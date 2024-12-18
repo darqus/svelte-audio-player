@@ -409,19 +409,19 @@ var app = (function () {
     			div5 = element("div");
     			div1 = element("div");
     			button0 = element("button");
-    			button0.innerHTML = `<img src="/icons/previous.svg" alt="Previous"/>`;
+    			button0.innerHTML = `<img src="icons/previous.svg" alt="Previous"/>`;
     			t0 = space();
     			button1 = element("button");
     			img1 = element("img");
     			t1 = space();
     			button2 = element("button");
-    			button2.innerHTML = `<img src="/icons/next.svg" alt="Next"/>`;
+    			button2.innerHTML = `<img src="icons/next.svg" alt="Next"/>`;
     			t2 = space();
     			button3 = element("button");
-    			button3.innerHTML = `<img src="/icons/shuffle.svg" alt="Shuffle"/>`;
+    			button3.innerHTML = `<img src="icons/shuffle.svg" alt="Shuffle"/>`;
     			t3 = space();
     			button4 = element("button");
-    			button4.innerHTML = `<img src="/icons/repeat.svg" alt="Repeat"/>`;
+    			button4.innerHTML = `<img src="icons/repeat.svg" alt="Repeat"/>`;
     			t4 = space();
     			div0 = element("div");
     			button5 = element("button");
@@ -440,14 +440,14 @@ var app = (function () {
     			t10 = text(t10_value);
 
     			if (!src_url_equal(img1.src, img1_src_value = /*isPlaying*/ ctx[0]
-    			? '/icons/pause.svg'
-    			: '/icons/play.svg')) attr(img1, "src", img1_src_value);
+    			? 'icons/pause.svg'
+    			: 'icons/play.svg')) attr(img1, "src", img1_src_value);
 
     			attr(img1, "alt", "Play/Pause");
 
     			if (!src_url_equal(img5.src, img5_src_value = /*isMuted*/ ctx[4]
-    			? '/icons/mute.svg'
-    			: '/icons/volume.svg')) attr(img5, "src", img5_src_value);
+    			? 'icons/mute.svg'
+    			: 'icons/volume.svg')) attr(img5, "src", img5_src_value);
 
     			attr(img5, "alt", "Mute/Volume");
     			attr(input, "type", "range");
@@ -455,14 +455,14 @@ var app = (function () {
     			attr(input, "max", "1");
     			attr(input, "step", "0.01");
     			input.value = /*volume*/ ctx[3];
-    			attr(input, "class", "svelte-19zknk2");
-    			attr(div0, "class", "volume-control svelte-19zknk2");
-    			attr(div1, "class", "controls svelte-19zknk2");
-    			attr(div2, "class", "progress-bar svelte-19zknk2");
+    			attr(input, "class", "svelte-dm448y");
+    			attr(div0, "class", "volume-control svelte-dm448y");
+    			attr(div1, "class", "controls svelte-dm448y");
+    			attr(div2, "class", "progress-bar svelte-dm448y");
     			set_style(div2, "width", /*currentTime*/ ctx[1] / /*duration*/ ctx[2] * 100 + "%");
-    			attr(div3, "class", "progress svelte-19zknk2");
-    			attr(div4, "class", "time svelte-19zknk2");
-    			attr(div5, "class", "audio-player svelte-19zknk2");
+    			attr(div3, "class", "progress svelte-dm448y");
+    			attr(div4, "class", "time svelte-dm448y");
+    			attr(div5, "class", "audio-player svelte-dm448y");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);
@@ -510,14 +510,14 @@ var app = (function () {
     		},
     		p(ctx, [dirty]) {
     			if (dirty & /*isPlaying*/ 1 && !src_url_equal(img1.src, img1_src_value = /*isPlaying*/ ctx[0]
-    			? '/icons/pause.svg'
-    			: '/icons/play.svg')) {
+    			? 'icons/pause.svg'
+    			: 'icons/play.svg')) {
     				attr(img1, "src", img1_src_value);
     			}
 
     			if (dirty & /*isMuted*/ 16 && !src_url_equal(img5.src, img5_src_value = /*isMuted*/ ctx[4]
-    			? '/icons/mute.svg'
-    			: '/icons/volume.svg')) {
+    			? 'icons/mute.svg'
+    			: 'icons/volume.svg')) {
     				attr(img5, "src", img5_src_value);
     			}
 
@@ -692,4 +692,3 @@ var app = (function () {
     return app;
 
 })();
-//# sourceMappingURL=bundle.js.map
