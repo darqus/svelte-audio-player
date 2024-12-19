@@ -9,8 +9,10 @@
   let isMuted = false
   let shuffle = false
   let repeat = false
+  let showElapsedTime = false
   let currentTime = 0
   let duration = 0
+  let elapsedTime = 0
   let volume = 1
   let currentTrackIndex = 0
   let cachedVolume = volume
@@ -72,6 +74,10 @@
     audio.volume = volume
   }
 
+  const toggleTimeDisplay = () => {
+    showElapsedTime = !showElapsedTime
+  }
+
   const handleTrackEnd = () => {
     if (repeat) {
       audio.currentTime = 0
@@ -111,15 +117,27 @@
     repeat = !repeat
   }
 
-  const formatTime = (seconds) => {
-    const minutes = Math.floor(seconds / 60)
-    const secs = Math.floor(seconds % 60)
-    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`
+  const formatTime = (seconds, isElapsedTime) => {
+    if (isNaN(seconds)) {
+      return '0:00'
+    }
+    if (showElapsedTime && isElapsedTime) {
+      let elapsed = duration - currentTime
+      if (elapsed < 0) elapsed = 0
+      const minutes = Math.floor(elapsed / 60)
+      const secs = Math.floor(elapsed % 60)
+      return `-${minutes}:${secs < 10 ? '0' : ''}${secs}`
+    } else {
+      const minutes = Math.floor(seconds / 60)
+      const secs = Math.floor(seconds % 60)
+      return `${minutes}:${secs < 10 ? '0' : ''}${secs}`
+    }
   }
 </script>
 
 <div class="audio-player">
   <div class="buttons-control">
+    <!-- {elapsedTime} -->
     <button on:click={prevTrack}>
       <svg
         {XMLNS}
@@ -198,7 +216,7 @@
     <div class="track-ranges">
       <div class="progress-control">
         <div class="current-time">
-          <span>{formatTime(currentTime)}</span>
+          <span>{formatTime(currentTime, false)}</span>
         </div>
         <input
           type="range"
@@ -209,7 +227,12 @@
           on:input={changeDuration}
         />
         <div class="duration-time">
-          <span>{formatTime(duration)}</span>
+          <span
+            on:click={toggleTimeDisplay}
+            on:keydown={(e) => e.key === 'Enter' && toggleTimeDisplay()}
+          >
+            {formatTime(currentTime, true)}
+          </span>
         </div>
       </div>
 
