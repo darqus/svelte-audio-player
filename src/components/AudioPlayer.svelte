@@ -182,7 +182,13 @@
   <div class="track-info">
     <div class="track-name">
       <strong>{currentTrackIndex + 1} [{tracks.length}]</strong>
-      <small>{tracks[currentTrackIndex].title}</small>
+      <marquee
+        behavior="scroll"
+        direction="left"
+        scrollamount="2"
+      >
+        {tracks[currentTrackIndex].title}
+      </marquee>
     </div>
 
     <div class="track-ranges">
@@ -243,7 +249,7 @@
     --box-shadow-color: #000;
     --gap: 10px;
     --control-size: 2rem;
-    --control-color: #000;
+    --control-color: #888;
     --duration: 0.3s;
     --opacity-hover: 0.6;
     --opacity-focus: 0.7;
@@ -266,15 +272,16 @@
     display: grid;
     grid-template-columns: auto 1fr;
     font-size: 1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     gap: var(--gap);
     align-items: end;
   }
 
   .track-name strong {
-    color: #444;
+    color: #888;
+  }
+
+  .track-name marquee {
+    color: #222;
   }
 
   .track-ranges {
@@ -327,6 +334,7 @@
     font-size: 1rem;
     font-weight: bold;
     font-family: monospace;
+    color: #888;
   }
 
   .volume-control {
@@ -341,6 +349,10 @@
     cursor: pointer;
     padding: 0;
     transition: opacity var(--duration);
+  }
+
+  .volume-control button svg path {
+    fill: var(--control-color);
   }
 
   .volume-control button:focus {
