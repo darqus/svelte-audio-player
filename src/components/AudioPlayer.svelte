@@ -375,11 +375,11 @@
     }
 
     .volume-control {
-      grid-template-columns: var(--control-size) minmax(100px, 150px);
+      grid-template-columns: var(--control-size) minmax(50px, 100px);
     }
 
     .progress-control {
-      grid-template-columns: 1fr minmax(200px, 250px) 1fr;
+      grid-template-columns: 1fr minmax(250px, 300px) 1fr;
     }
   }
 </style>
