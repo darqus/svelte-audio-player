@@ -279,6 +279,8 @@
     --gap: 10px;
     --control-size: 2rem;
     --control-size-small: 1.4rem;
+    --current-time-width: 30px;
+    --duration-time-width: 40px;
     --control-color: #888;
     --text-color: #888;
     --name-color: #222;
@@ -357,7 +359,10 @@
 
   .progress-control {
     display: grid;
-    grid-template-columns: 1fr minmax(80px, 120px) 1fr;
+    grid-template-columns:
+      var(--current-time-width)
+      minmax(80px, 120px)
+      var(--duration-time-width);
     align-items: center;
     gap: var(--gap);
   }
@@ -367,13 +372,14 @@
     display: grid;
     font-size: 0.9rem;
     font-weight: bold;
-    /* font-family: monospace; */
     color: var(--text-color);
   }
 
   .volume-control {
     display: grid;
-    grid-template-columns: var(--control-size-small) minmax(40px, 60px);
+    grid-template-columns:
+      var(--control-size-small)
+      minmax(40px, 60px);
     gap: 2px;
     align-items: center;
   }
@@ -409,11 +415,16 @@
     }
 
     .progress-control {
-      grid-template-columns: 1fr minmax(250px, 300px) 1fr;
+      grid-template-columns:
+        var(--current-time-width)
+        minmax(250px, 300px)
+        var(--duration-time-width);
     }
 
     .volume-control {
-      grid-template-columns: var(--control-size-small) minmax(50px, 100px);
+      grid-template-columns:
+        var(--control-size-small)
+        minmax(50px, 100px);
     }
   }
 </style>
