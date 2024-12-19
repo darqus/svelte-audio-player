@@ -378,7 +378,6 @@
   .progress-control .duration-time {
     display: grid;
     font-size: 0.9rem;
-    font-weight: bold;
     color: var(--text-color);
   }
 
