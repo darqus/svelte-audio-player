@@ -118,20 +118,21 @@
   }
 
   const formatTime = (seconds, isElapsedTime) => {
-    if (isNaN(seconds)) {
-      return '0:00'
+    if (isNaN(seconds)) return '0:00'
+
+    const format = (time) => {
+      const minutes = Math.floor(time / 60)
+      const secs = Math.floor(time % 60)
+      return `${minutes}:${secs < 10 ? '0' : ''}${secs}`
     }
+
     if (isElapsedTime) {
       let elapsed = showElapsedTime ? duration - currentTime : duration
       if (elapsed < 0) elapsed = 0
-      const minutes = Math.floor(elapsed / 60)
-      const secs = Math.floor(elapsed % 60)
-      const time = `${minutes}:${secs < 10 ? '0' : ''}${secs}`
+      const time = format(elapsed)
       return showElapsedTime ? `-${time}` : time
     } else {
-      const minutes = Math.floor(seconds / 60)
-      const secs = Math.floor(seconds % 60)
-      return `${minutes}:${secs < 10 ? '0' : ''}${secs}`
+      return format(seconds)
     }
   }
 </script>
