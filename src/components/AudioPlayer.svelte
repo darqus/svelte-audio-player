@@ -305,6 +305,7 @@
   }
 
   .buttons-control button {
+    display: grid;
     background-color: transparent;
     border: none;
     cursor: pointer;
