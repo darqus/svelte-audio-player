@@ -175,49 +175,62 @@
     </button>
   </div>
 
-  <div class="progress-control">
-    <div class="current-time">
-      <span>{formatTime(currentTime)}</span>
+  <div class="track-info">
+    <div class="track-name">
+      <strong>{currentTrackIndex + 1} [{tracks.length}]</strong>
+      <small>{tracks[currentTrackIndex].title}</small>
     </div>
-    <input
-      type="range"
-      min={MIN_DURATION}
-      max={duration}
-      step={STEP_DURATION}
-      value={currentTime}
-      on:input={changeDuration}
-    />
-    <div class="duration-time">
-      <span>{formatTime(duration)}</span>
+
+    <div class="track-ranges">
+      <div class="progress-control">
+        <div class="current-time">
+          <span>{formatTime(currentTime)}</span>
+        </div>
+        <input
+          type="range"
+          min={MIN_DURATION}
+          max={duration}
+          step={STEP_DURATION}
+          value={currentTime}
+          on:input={changeDuration}
+        />
+        <div class="duration-time">
+          <span>{formatTime(duration)}</span>
+        </div>
+      </div>
+
+      <div class="volume-control">
+        <button on:click={toggleMute}>
+          <svg
+            {XMLNS}
+            {viewBox}
+          >
+            <path
+              d={isMuted || volume == 0
+                ? paths.muteSpeaker
+                : paths.volumeSpeaker}
+            ></path>
+            <path
+              d={isMuted || volume == 0
+                ? paths.muteClose
+                : paths.volumeLeftLine}
+            ></path>
+            {#if !isMuted && volume != 0}
+              <path d={paths.volumeRightLine}></path>
+            {/if}
+          </svg>
+        </button>
+
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={volume}
+          on:input={changeVolume}
+        />
+      </div>
     </div>
-  </div>
-
-  <div class="volume-control">
-    <button on:click={toggleMute}>
-      <svg
-        {XMLNS}
-        {viewBox}
-      >
-        <path
-          d={isMuted || volume == 0 ? paths.muteSpeaker : paths.volumeSpeaker}
-        ></path>
-        <path
-          d={isMuted || volume == 0 ? paths.muteClose : paths.volumeLeftLine}
-        ></path>
-        {#if !isMuted && volume != 0}
-          <path d={paths.volumeRightLine}></path>
-        {/if}
-      </svg>
-    </button>
-
-    <input
-      type="range"
-      min="0"
-      max="1"
-      step="0.01"
-      value={volume}
-      on:input={changeVolume}
-    />
   </div>
 </div>
 
@@ -237,7 +250,34 @@
     padding: var(--gap);
     box-shadow: 0 0 10px var(--box-shadow-color);
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    /* gap: var(--gap); */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .track-info {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  .track-name {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    gap: var(--gap);
+    align-items: end;
+  }
+
+  .track-name strong {
+    color: #444;
+  }
+
+  .track-ranges {
+    display: grid;
+    grid-template-columns: auto auto;
     gap: var(--gap);
   }
 
@@ -275,7 +315,7 @@
 
   .progress-control {
     display: grid;
-    grid-template-columns: 1fr minmax(200px, 250px) 1fr;
+    grid-template-columns: 1fr minmax(80px, 120px) 1fr;
     align-items: center;
     gap: var(--gap);
   }
@@ -284,6 +324,7 @@
   .progress-control .duration-time {
     font-size: 1rem;
     font-weight: bold;
+    font-family: monospace;
   }
 
   .volume-control {
@@ -312,14 +353,13 @@
     margin: 0;
   }
 
-  @media (max-width: 600px) {
+  @media (min-width: 600px) {
     .audio-player {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
+      grid-template-columns: auto 1fr;
     }
 
     .progress-control {
-      grid-template-columns: 1fr minmax(80px, 120px) 1fr;
+      grid-template-columns: 1fr minmax(200px, 250px) 1fr;
     }
   }
 </style>
