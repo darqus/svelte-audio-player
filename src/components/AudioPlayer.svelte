@@ -246,7 +246,7 @@
 
 <style>
   :root {
-    --box-shadow-color: #000;
+    --box-shadow-color: #888;
     --gap: 10px;
     --control-size: 2rem;
     --control-color: #888;
