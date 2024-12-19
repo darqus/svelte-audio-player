@@ -99,7 +99,6 @@
 </script>
 
 <div class="audio-player">
-  <!-- {duration} -->
   <div class="buttons-control">
     <button on:click={prevTrack}>
       <svg
@@ -202,9 +201,7 @@
 
 <style>
   :root {
-    --box-shadow-color: #000; /* Define appropriate color */
-    --progress-bg: #ccc; /* Define appropriate color */
-    --progress-bar-color: #f00; /* Define appropriate color */
+    --box-shadow-color: #000;
     --gap: 10px;
     --control-size: 2rem;
     --control-color: #000;
