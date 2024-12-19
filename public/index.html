@@ -22,19 +22,5 @@
   </head>
   <body>
     <div id="app"></div>
-    <script>
-      import AudioPlayer from './src/AudioPlayer.svelte'
-
-      const app = new AudioPlayer({
-        target: document.getElementById('app'),
-        props: {
-          tracks: [
-            { src: 'tracks/01. NWO.mp3', title: '01. NWO' },
-            { src: 'tracks/02. Just One Fix.mp3', title: '02. Just One Fix' },
-            // Add more tracks as needed
-          ],
-        },
-      })
-    </script>
   </body>
 </html>

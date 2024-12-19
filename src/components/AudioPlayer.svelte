@@ -1,6 +1,8 @@
 <script>
   import { onMount } from 'svelte'
-  import { tracks, paths } from './config.js'
+  import { paths } from './config.js'
+
+  export let tracks = []
 
   let audio
   let isPlaying = false
@@ -21,11 +23,13 @@
   const viewBox = '0 0 32 32'
 
   onMount(() => {
-    audio = new Audio(tracks[currentTrackIndex].src)
-    audio.volume = volume
-    audio.addEventListener('timeupdate', updateTime)
-    audio.addEventListener('loadedmetadata', updateDuration)
-    audio.addEventListener('ended', handleTrackEnd)
+    if (tracks.length > 0) {
+      audio = new Audio(tracks[currentTrackIndex].src)
+      audio.volume = volume
+      audio.addEventListener('timeupdate', updateTime)
+      audio.addEventListener('loadedmetadata', updateDuration)
+      audio.addEventListener('ended', handleTrackEnd)
+    }
   })
 
   const playPause = () => {

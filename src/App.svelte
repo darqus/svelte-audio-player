@@ -1,5 +1,7 @@
 <script>
-    import AudioPlayer from './components/AudioPlayer.svelte';
+  import AudioPlayer from './components/AudioPlayer.svelte'
+
+  export let tracks = []
 </script>
 
-<AudioPlayer />
+<AudioPlayer {tracks} />
