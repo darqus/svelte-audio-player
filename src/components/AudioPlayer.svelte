@@ -183,11 +183,15 @@
     <div class="track-name">
       <strong>{currentTrackIndex + 1} [{tracks.length}]</strong>
       <marquee
-        behavior="scroll"
+        behavior="alternate"
+        width="100%"
         direction="left"
         scrollamount="2"
       >
-        {tracks[currentTrackIndex].title}
+        {tracks[currentTrackIndex].author}:
+        <strong>
+          [{tracks[currentTrackIndex].title}]
+        </strong>
       </marquee>
     </div>
 
@@ -249,6 +253,7 @@
     --box-shadow-color: #888;
     --gap: 10px;
     --control-size: 2rem;
+    --control-size-small: 1.4rem;
     --control-color: #888;
     --text-color: #888;
     --name-color: #222;
@@ -333,7 +338,8 @@
 
   .progress-control .current-time,
   .progress-control .duration-time {
-    font-size: 1rem;
+    display: grid;
+    font-size: 0.9rem;
     font-weight: bold;
     font-family: monospace;
     color: var(--text-color);
@@ -341,11 +347,13 @@
 
   .volume-control {
     display: grid;
-    grid-template-columns: var(--control-size) minmax(40px, 60px);
-    gap: var(--gap);
+    grid-template-columns: var(--control-size-small) minmax(40px, 60px);
+    gap: 2px;
+    align-items: center;
   }
 
   .volume-control button {
+    display: grid;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -374,12 +382,12 @@
       grid-template-columns: auto 1fr;
     }
 
-    .volume-control {
-      grid-template-columns: var(--control-size) minmax(50px, 100px);
-    }
-
     .progress-control {
       grid-template-columns: 1fr minmax(250px, 300px) 1fr;
+    }
+
+    .volume-control {
+      grid-template-columns: var(--control-size-small) minmax(50px, 100px);
     }
   }
 </style>
