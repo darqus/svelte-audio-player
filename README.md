@@ -1,4 +1,4 @@
-# Svalte Audio Player Package
+# Svelte Audio Player Package
 
 A customizable HTML audio player built with Svelte.
 
