@@ -10,6 +10,7 @@
   let currentTime = 0
   let duration = 0
   let volume = 1
+  let currentTrackIndex = 0
   let cachedVolume = volume
   // let preset = 'full' // 'minimal', 'normal', 'full'
 
@@ -18,8 +19,6 @@
 
   const XMLNS = 'http://www.w3.org/2000/svg'
   const viewBox = '0 0 32 32'
-
-  let currentTrackIndex = 0
 
   onMount(() => {
     audio = new Audio(tracks[currentTrackIndex].src)
@@ -79,7 +78,13 @@
   }
 
   const nextTrack = () => {
-    if (!repeat) {
+    if (shuffle) {
+      let newIndex
+      do {
+        newIndex = Math.floor(Math.random() * tracks.length)
+      } while (newIndex === currentTrackIndex)
+      currentTrackIndex = newIndex
+    } else if (!repeat) {
       currentTrackIndex = (currentTrackIndex + 1) % tracks.length
     }
     audio.src = tracks[currentTrackIndex].src
@@ -111,7 +116,6 @@
 
 <div class="audio-player">
   <div class="buttons-control">
-    <!-- {repeat} -->
     <button on:click={prevTrack}>
       <svg
         {XMLNS}
@@ -145,7 +149,10 @@
       </svg>
     </button>
 
-    <button on:click={toggleShuffle}>
+    <button
+      on:click={toggleShuffle}
+      class={shuffle ? '' : 'shuffle'}
+    >
       <svg
         {XMLNS}
         {viewBox}
@@ -261,7 +268,8 @@
     opacity: var(--opacity-hover);
   }
 
-  .buttons-control button.repeat {
+  .buttons-control button.repeat,
+  .buttons-control button.shuffle {
     opacity: 0.2;
   }
 
