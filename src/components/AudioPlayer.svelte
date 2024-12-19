@@ -254,9 +254,7 @@
     padding: var(--gap);
     box-shadow: 0 0 10px var(--box-shadow-color);
     display: grid;
-    /* gap: var(--gap); */
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    gap: var(--gap);
   }
 
   .track-info {
@@ -333,7 +331,7 @@
 
   .volume-control {
     display: grid;
-    grid-template-columns: var(--control-size) minmax(100px, 150px);
+    grid-template-columns: var(--control-size) minmax(40px, 60px);
     gap: var(--gap);
   }
 
@@ -360,6 +358,10 @@
   @media (min-width: 600px) {
     .audio-player {
       grid-template-columns: auto 1fr;
+    }
+
+    .volume-control {
+      grid-template-columns: var(--control-size) minmax(100px, 150px);
     }
 
     .progress-control {
