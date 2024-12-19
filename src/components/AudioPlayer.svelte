@@ -369,7 +369,7 @@
     margin: 0;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 800px) {
     .audio-player {
       grid-template-columns: auto 1fr;
     }
