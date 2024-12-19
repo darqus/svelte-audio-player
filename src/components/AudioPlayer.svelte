@@ -283,7 +283,9 @@
     --duration-time-width: 40px;
     --track-background-color: #4a4a4a;
     --track-background-color-focus: #595959;
+    --track-border-radius: 4px;
     --thumb-background-color: #4a4a4a;
+    --thumb-size: 14px;
     --track-height: 5px;
     --control-color: #000;
     --text-color: #888;
@@ -428,15 +430,15 @@
     cursor: pointer;
     animate: 0.2s;
     background: var(--track-background-color);
-    border-radius: 4px;
+    border-radius: var(--track-border-radius);
   }
 
   .volume-control input[type='range']::-webkit-slider-thumb,
   .progress-control input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 14px;
-    height: 14px;
+    width: var(--thumb-size);
+    height: var(--thumb-size);
     background-color: var(--thumb-background-color);
     border-radius: 50%;
     cursor: pointer;
@@ -452,15 +454,15 @@
     height: var(--track-height);
     cursor: pointer;
     background-color: var(--track-background-color);
-    border-radius: 4px;
+    border-radius: var(--track-border-radius);
     border: 2px solid #fff;
     box-shadow: 0px 1px 4px 0px #00000026;
   }
 
   .volume-control input[type='range']::-moz-range-thumb,
   .progress-control input[type='range']::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
+    width: var(--thumb-size);
+    height: var(--thumb-size);
     background-color: var(--thumb-background-color);
     border-radius: 50%;
     cursor: pointer;
@@ -482,19 +484,19 @@
   .volume-control input[type='range']::-ms-fill-lower,
   .progress-control input[type='range']::-ms-fill-lower {
     background-color: var(--track-background-color);
-    border-radius: 4px;
+    border-radius: var(--track-border-radius);
   }
 
   .volume-control input[type='range']::-ms-fill-upper,
   .progress-control input[type='range']::-ms-fill-upper {
     background-color: var(--track-background-color);
-    border-radius: 4px;
+    border-radius: var(--track-border-radius);
   }
 
   .volume-control input[type='range']::-ms-thumb,
   .progress-control input[type='range']::-ms-thumb {
-    width: 14px;
-    height: 14px;
+    width: var(--thumb-size);
+    height: var(--thumb-size);
     background-color: var(--thumb-background-color);
     border-radius: 50%;
     cursor: pointer;
