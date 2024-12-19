@@ -1,17 +1,3 @@
-export const tracks = [
-  { src: 'tracks/01. NWO.mp3', title: '01. NWO' },
-  { src: 'tracks/02. Just One Fix.mp3', title: '02. Just One Fix' },
-  {
-    src: 'tracks/01. Antonyo feat. Bradley - Supernatural Lover (Original Mix).mp3',
-    title: '01. Antonyo feat. Bradley - Supernatural Lover (Original Mix)',
-  },
-  {
-    src: 'tracks/02. Mark Picchiotti, Kenyata - Rumors (Mark Picchiotti Vocal).mp3',
-    title: '02. Mark Picchiotti, Kenyata - Rumors (Mark Picchiotti Vocal)',
-  },
-  // Add more tracks here
-]
-
 export const paths = {
   volumeSpeaker:
     'M17.5091 24.6595C17.5091 25.2066 16.8864 25.5208 16.4463 25.1956L9.44847 20.0252C9.42553 20.0083 9.39776 19.9992 9.36923 19.9992H4.66667C4.29848 19.9992 4 19.7007 4 19.3325V12.6658C4 12.2976 4.29848 11.9992 4.66667 11.9992H9.37115C9.39967 11.9992 9.42745 11.99 9.45039 11.9731L16.4463 6.80363C16.8863 6.47845 17.5091 6.79262 17.5091 7.3398L17.5091 24.6595Z',

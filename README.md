@@ -25,7 +25,7 @@ Import the AudioPlayer component and use it in your Svelte application.
 
 ```js
 <script>
-    import AudioPlayer from 'audio-player-package/src/components/AudioPlayer.svelte';
+  import AudioPlayer from 'audio-player-package/src/components/AudioPlayer.svelte';
 </script>
 
 <AudioPlayer />
