@@ -26,7 +26,7 @@
     audio.volume = volume
     audio.addEventListener('timeupdate', updateTime)
     audio.addEventListener('loadedmetadata', updateDuration)
-    audio.addEventListener('ended', nextTrack)
+    audio.addEventListener('ended', handleTrackEnd)
   })
 
   const playPause = () => {
@@ -69,8 +69,19 @@
     audio.volume = volume
   }
 
+  const handleTrackEnd = () => {
+    if (repeat) {
+      audio.currentTime = 0
+      audio.play()
+    } else {
+      nextTrack()
+    }
+  }
+
   const nextTrack = () => {
-    currentTrackIndex = (currentTrackIndex + 1) % tracks.length
+    if (!repeat) {
+      currentTrackIndex = (currentTrackIndex + 1) % tracks.length
+    }
     audio.src = tracks[currentTrackIndex].src
     audio.play()
     isPlaying = true
@@ -100,6 +111,7 @@
 
 <div class="audio-player">
   <div class="buttons-control">
+    <!-- {repeat} -->
     <button on:click={prevTrack}>
       <svg
         {XMLNS}
@@ -142,7 +154,10 @@
       </svg>
     </button>
 
-    <button on:click={toggleRepeat}>
+    <button
+      on:click={toggleRepeat}
+      class={repeat ? '' : 'repeat'}
+    >
       <svg
         {XMLNS}
         {viewBox}
@@ -234,6 +249,10 @@
     transition: opacity var(--duration);
   }
 
+  .buttons-control button svg path {
+    fill: var(--control-color);
+  }
+
   .buttons-control button:focus {
     opacity: var(--opacity-focus);
   }
@@ -242,8 +261,8 @@
     opacity: var(--opacity-hover);
   }
 
-  .buttons-control button svg path {
-    fill: var(--control-color);
+  .buttons-control button.repeat {
+    opacity: 0.2;
   }
 
   .progress-control {

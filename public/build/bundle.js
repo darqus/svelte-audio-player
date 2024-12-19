@@ -20,6 +20,9 @@ var app = (function () {
     function is_empty(obj) {
         return Object.keys(obj).length === 0;
     }
+    function null_to_empty(value) {
+        return value == null ? '' : value;
+    }
     function append(target, node) {
         target.appendChild(node);
     }
@@ -400,7 +403,7 @@ var app = (function () {
     		c() {
     			path = svg_element("path");
     			attr(path, "d", paths.pauseRight);
-    			attr(path, "class", "svelte-amv8oi");
+    			attr(path, "class", "svelte-s24gyi");
     		},
     		m(target, anchor) {
     			insert(target, path, anchor);
@@ -412,7 +415,7 @@ var app = (function () {
     	};
     }
 
-    // (186:8) {#if !isMuted && volume != 0}
+    // (200:8) {#if !isMuted && volume != 0}
     function create_if_block(ctx) {
     	let path;
 
@@ -420,7 +423,7 @@ var app = (function () {
     		c() {
     			path = svg_element("path");
     			attr(path, "d", paths.volumeRightLine);
-    			attr(path, "class", "svelte-amv8oi");
+    			attr(path, "class", "svelte-s24gyi");
     		},
     		m(target, anchor) {
     			insert(target, path, anchor);
@@ -458,18 +461,19 @@ var app = (function () {
     	let svg4;
     	let path6;
     	let path7;
+    	let button4_class_value;
     	let t4;
     	let div3;
     	let div1;
     	let span0;
-    	let t5_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[2]) + "";
+    	let t5_value = /*formatTime*/ ctx[14](/*currentTime*/ ctx[3]) + "";
     	let t5;
     	let t6;
     	let input0;
     	let t7;
     	let div2;
     	let span1;
-    	let t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[3]) + "";
+    	let t8_value = /*formatTime*/ ctx[14](/*duration*/ ctx[4]) + "";
     	let t8;
     	let t9;
     	let div4;
@@ -484,7 +488,7 @@ var app = (function () {
     	let mounted;
     	let dispose;
     	let if_block0 = /*isPlaying*/ ctx[0] && create_if_block_1();
-    	let if_block1 = !/*isMuted*/ ctx[1] && /*volume*/ ctx[4] != 0 && create_if_block();
+    	let if_block1 = !/*isMuted*/ ctx[1] && /*volume*/ ctx[5] != 0 && create_if_block();
 
     	return {
     		c() {
@@ -534,68 +538,68 @@ var app = (function () {
     			t10 = space();
     			input1 = element("input");
     			attr(path0, "d", paths.previousLeft);
-    			attr(path0, "class", "svelte-amv8oi");
+    			attr(path0, "class", "svelte-s24gyi");
     			attr(path1, "d", paths.previousRight);
-    			attr(path1, "class", "svelte-amv8oi");
+    			attr(path1, "class", "svelte-s24gyi");
     			attr(svg0, "xmlns", XMLNS);
     			attr(svg0, "viewBox", viewBox);
-    			attr(button0, "class", "svelte-amv8oi");
+    			attr(button0, "class", "svelte-s24gyi");
     			attr(path2, "d", path2_d_value = /*isPlaying*/ ctx[0] ? paths.pauseLeft : paths.play);
-    			attr(path2, "class", "svelte-amv8oi");
+    			attr(path2, "class", "svelte-s24gyi");
     			attr(svg1, "xmlns", XMLNS);
     			attr(svg1, "viewBox", viewBox);
-    			attr(button1, "class", "svelte-amv8oi");
+    			attr(button1, "class", "svelte-s24gyi");
     			attr(path3, "d", paths.nextLeft);
-    			attr(path3, "class", "svelte-amv8oi");
+    			attr(path3, "class", "svelte-s24gyi");
     			attr(path4, "d", paths.nextRight);
-    			attr(path4, "class", "svelte-amv8oi");
+    			attr(path4, "class", "svelte-s24gyi");
     			attr(svg2, "xmlns", XMLNS);
     			attr(svg2, "viewBox", viewBox);
-    			attr(button2, "class", "svelte-amv8oi");
+    			attr(button2, "class", "svelte-s24gyi");
     			attr(path5, "d", paths.shuffle);
-    			attr(path5, "class", "svelte-amv8oi");
+    			attr(path5, "class", "svelte-s24gyi");
     			attr(svg3, "xmlns", XMLNS);
     			attr(svg3, "viewBox", viewBox);
-    			attr(button3, "class", "svelte-amv8oi");
+    			attr(button3, "class", "svelte-s24gyi");
     			attr(path6, "d", paths.repeatLeft);
-    			attr(path6, "class", "svelte-amv8oi");
+    			attr(path6, "class", "svelte-s24gyi");
     			attr(path7, "d", paths.repeatRight);
-    			attr(path7, "class", "svelte-amv8oi");
+    			attr(path7, "class", "svelte-s24gyi");
     			attr(svg4, "xmlns", XMLNS);
     			attr(svg4, "viewBox", viewBox);
-    			attr(button4, "class", "svelte-amv8oi");
-    			attr(div0, "class", "buttons-control svelte-amv8oi");
-    			attr(div1, "class", "current-time svelte-amv8oi");
+    			attr(button4, "class", button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[2] ? '' : 'repeat') + " svelte-s24gyi"));
+    			attr(div0, "class", "buttons-control svelte-s24gyi");
+    			attr(div1, "class", "current-time svelte-s24gyi");
     			attr(input0, "type", "range");
     			attr(input0, "min", MIN_DURATION);
-    			attr(input0, "max", /*duration*/ ctx[3]);
+    			attr(input0, "max", /*duration*/ ctx[4]);
     			attr(input0, "step", STEP_DURATION);
-    			input0.value = /*currentTime*/ ctx[2];
-    			attr(div2, "class", "duration-time svelte-amv8oi");
-    			attr(div3, "class", "progress-control svelte-amv8oi");
+    			input0.value = /*currentTime*/ ctx[3];
+    			attr(div2, "class", "duration-time svelte-s24gyi");
+    			attr(div3, "class", "progress-control svelte-s24gyi");
 
-    			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
+    			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[5] == 0
     			? paths.muteSpeaker
     			: paths.volumeSpeaker);
 
-    			attr(path8, "class", "svelte-amv8oi");
+    			attr(path8, "class", "svelte-s24gyi");
 
-    			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
+    			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[5] == 0
     			? paths.muteClose
     			: paths.volumeLeftLine);
 
-    			attr(path9, "class", "svelte-amv8oi");
+    			attr(path9, "class", "svelte-s24gyi");
     			attr(svg5, "xmlns", XMLNS);
     			attr(svg5, "viewBox", viewBox);
-    			attr(button5, "class", "svelte-amv8oi");
+    			attr(button5, "class", "svelte-s24gyi");
     			attr(input1, "type", "range");
     			attr(input1, "min", "0");
     			attr(input1, "max", "1");
     			attr(input1, "step", "0.01");
-    			input1.value = /*volume*/ ctx[4];
-    			attr(input1, "class", "svelte-amv8oi");
-    			attr(div4, "class", "volume-control svelte-amv8oi");
-    			attr(div5, "class", "audio-player svelte-amv8oi");
+    			input1.value = /*volume*/ ctx[5];
+    			attr(input1, "class", "svelte-s24gyi");
+    			attr(div4, "class", "volume-control svelte-s24gyi");
+    			attr(div5, "class", "audio-player svelte-s24gyi");
     		},
     		m(target, anchor) {
     			insert(target, div5, anchor);
@@ -646,14 +650,14 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen(button0, "click", /*prevTrack*/ ctx[10]),
-    					listen(button1, "click", /*playPause*/ ctx[5]),
-    					listen(button2, "click", /*nextTrack*/ ctx[9]),
-    					listen(button3, "click", /*toggleShuffle*/ ctx[11]),
-    					listen(button4, "click", /*toggleRepeat*/ ctx[12]),
-    					listen(input0, "input", /*changeDuration*/ ctx[6]),
-    					listen(button5, "click", /*toggleMute*/ ctx[8]),
-    					listen(input1, "input", /*changeVolume*/ ctx[7])
+    					listen(button0, "click", /*prevTrack*/ ctx[11]),
+    					listen(button1, "click", /*playPause*/ ctx[6]),
+    					listen(button2, "click", /*nextTrack*/ ctx[10]),
+    					listen(button3, "click", /*toggleShuffle*/ ctx[12]),
+    					listen(button4, "click", /*toggleRepeat*/ ctx[13]),
+    					listen(input0, "input", /*changeDuration*/ ctx[7]),
+    					listen(button5, "click", /*toggleMute*/ ctx[9]),
+    					listen(input1, "input", /*changeVolume*/ ctx[8])
     				];
 
     				mounted = true;
@@ -677,31 +681,35 @@ var app = (function () {
     				if_block0 = null;
     			}
 
-    			if (dirty & /*currentTime*/ 4 && t5_value !== (t5_value = /*formatTime*/ ctx[13](/*currentTime*/ ctx[2]) + "")) set_data(t5, t5_value);
-
-    			if (dirty & /*duration*/ 8) {
-    				attr(input0, "max", /*duration*/ ctx[3]);
+    			if (dirty & /*repeat*/ 4 && button4_class_value !== (button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[2] ? '' : 'repeat') + " svelte-s24gyi"))) {
+    				attr(button4, "class", button4_class_value);
     			}
 
-    			if (dirty & /*currentTime*/ 4) {
-    				input0.value = /*currentTime*/ ctx[2];
+    			if (dirty & /*currentTime*/ 8 && t5_value !== (t5_value = /*formatTime*/ ctx[14](/*currentTime*/ ctx[3]) + "")) set_data(t5, t5_value);
+
+    			if (dirty & /*duration*/ 16) {
+    				attr(input0, "max", /*duration*/ ctx[4]);
     			}
 
-    			if (dirty & /*duration*/ 8 && t8_value !== (t8_value = /*formatTime*/ ctx[13](/*duration*/ ctx[3]) + "")) set_data(t8, t8_value);
+    			if (dirty & /*currentTime*/ 8) {
+    				input0.value = /*currentTime*/ ctx[3];
+    			}
 
-    			if (dirty & /*isMuted, volume*/ 18 && path8_d_value !== (path8_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
+    			if (dirty & /*duration*/ 16 && t8_value !== (t8_value = /*formatTime*/ ctx[14](/*duration*/ ctx[4]) + "")) set_data(t8, t8_value);
+
+    			if (dirty & /*isMuted, volume*/ 34 && path8_d_value !== (path8_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[5] == 0
     			? paths.muteSpeaker
     			: paths.volumeSpeaker)) {
     				attr(path8, "d", path8_d_value);
     			}
 
-    			if (dirty & /*isMuted, volume*/ 18 && path9_d_value !== (path9_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[4] == 0
+    			if (dirty & /*isMuted, volume*/ 34 && path9_d_value !== (path9_d_value = /*isMuted*/ ctx[1] || /*volume*/ ctx[5] == 0
     			? paths.muteClose
     			: paths.volumeLeftLine)) {
     				attr(path9, "d", path9_d_value);
     			}
 
-    			if (!/*isMuted*/ ctx[1] && /*volume*/ ctx[4] != 0) {
+    			if (!/*isMuted*/ ctx[1] && /*volume*/ ctx[5] != 0) {
     				if (if_block1) {
     					if_block1.p(ctx, dirty);
     				} else {
@@ -714,8 +722,8 @@ var app = (function () {
     				if_block1 = null;
     			}
 
-    			if (dirty & /*volume*/ 16) {
-    				input1.value = /*volume*/ ctx[4];
+    			if (dirty & /*volume*/ 32) {
+    				input1.value = /*volume*/ ctx[5];
     			}
     		},
     		i: noop,
@@ -739,6 +747,7 @@ var app = (function () {
     	let audio;
     	let isPlaying = false;
     	let isMuted = false;
+    	let repeat = false;
     	let currentTime = 0;
     	let duration = 0;
     	let volume = 1;
@@ -750,7 +759,7 @@ var app = (function () {
     		audio.volume = volume;
     		audio.addEventListener('timeupdate', updateTime);
     		audio.addEventListener('loadedmetadata', updateDuration);
-    		audio.addEventListener('ended', nextTrack);
+    		audio.addEventListener('ended', handleTrackEnd);
     	});
 
     	const playPause = () => {
@@ -764,20 +773,20 @@ var app = (function () {
     	};
 
     	const updateTime = () => {
-    		$$invalidate(2, currentTime = audio.currentTime);
+    		$$invalidate(3, currentTime = audio.currentTime);
     	};
 
     	const updateDuration = () => {
-    		$$invalidate(3, duration = audio.duration);
+    		$$invalidate(4, duration = audio.duration);
     	};
 
     	const changeDuration = event => {
     		audio.currentTime = event.target.value;
-    		$$invalidate(2, currentTime = audio.currentTime);
+    		$$invalidate(3, currentTime = audio.currentTime);
     	};
 
     	const changeVolume = event => {
-    		$$invalidate(4, volume = parseFloat(event.target.value));
+    		$$invalidate(5, volume = parseFloat(event.target.value));
     		audio.volume = volume;
     		$$invalidate(1, isMuted = volume === 0);
     	};
@@ -787,17 +796,29 @@ var app = (function () {
 
     		if (isMuted) {
     			cachedVolume = volume;
-    			$$invalidate(4, volume = 0);
+    			$$invalidate(5, volume = 0);
     		} else {
-    			$$invalidate(4, volume = cachedVolume);
+    			$$invalidate(5, volume = cachedVolume);
     		}
 
     		audio.muted = isMuted;
     		audio.volume = volume;
     	};
 
+    	const handleTrackEnd = () => {
+    		if (repeat) {
+    			audio.currentTime = 0;
+    			audio.play();
+    		} else {
+    			nextTrack();
+    		}
+    	};
+
     	const nextTrack = () => {
-    		currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+    		if (!repeat) {
+    			currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+    		}
+
     		audio.src = tracks[currentTrackIndex].src;
     		audio.play();
     		$$invalidate(0, isPlaying = true);
@@ -814,6 +835,7 @@ var app = (function () {
     	};
 
     	const toggleRepeat = () => {
+    		$$invalidate(2, repeat = !repeat);
     	};
 
     	const formatTime = seconds => {
@@ -825,6 +847,7 @@ var app = (function () {
     	return [
     		isPlaying,
     		isMuted,
+    		repeat,
     		currentTime,
     		duration,
     		volume,
