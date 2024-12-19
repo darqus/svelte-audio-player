@@ -113,3 +113,19 @@ To use the AudioPlayer component in any JavaScript project, follow these steps:
   </body>
 </html>
 ```
+
+## dev mode
+
+```sh
+yarn dev
+```
+
+use Live share extention for live reload propject in dev mode
+
+## prod mode
+
+```sh
+yarn build
+```
+
+this command minify bundle for use in prod
