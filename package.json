@@ -1,24 +1,24 @@
 {
-  "name": "audio-player-svelte",
+  "name": "svelte-audio-player",
   "version": "1.0.0",
-  "description": "A customizable HTML audio player with Svelte",
-  "main": "src/main.js",
+  "private": true,
+  "type": "module",
   "scripts": {
+    "build": "rollup -c",
     "dev": "rollup -c -w",
-    "build": "rollup -c"
-  },
-  "dependencies": {
-    "svelte": "^3.0.0"
+    "start": "sirv public --no-clear"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "rollup": "^2.0.0",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "sass": "^1.83.0"
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "rollup": "^3.15.0",
+    "rollup-plugin-css-only": "^4.3.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.1.2",
+    "svelte": "^3.55.0"
   },
-  "author": "Darqus",
-  "license": "MIT"
+  "dependencies": {
+    "sirv-cli": "^2.0.0"
+  }
 }
