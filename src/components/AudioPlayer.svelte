@@ -250,6 +250,8 @@
     --gap: 10px;
     --control-size: 2rem;
     --control-color: #888;
+    --text-color: #888;
+    --name-color: #222;
     --duration: 0.3s;
     --opacity-hover: 0.6;
     --opacity-focus: 0.7;
@@ -277,11 +279,11 @@
   }
 
   .track-name strong {
-    color: #888;
+    color: var(--text-color);
   }
 
   .track-name marquee {
-    color: #222;
+    color: var(--name-color);
   }
 
   .track-ranges {
@@ -334,7 +336,7 @@
     font-size: 1rem;
     font-weight: bold;
     font-family: monospace;
-    color: #888;
+    color: var(--text-color);
   }
 
   .volume-control {
