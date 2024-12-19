@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Audio Player</title>
+    <title>Svelte Audio Player Integration</title>
     <link
       rel="icon"
       type="image/png"
@@ -17,18 +17,36 @@
       rel="stylesheet"
       href="style.css"
     />
-    <!-- audio player styles -->
+    <!-- svelte audio player styles -->
     <link
       rel="stylesheet"
       href="build/bundle.css"
     />
-    <!-- bundle player js -->
-    <script
-      defer
-      src="build/bundle.js"
-    ></script>
   </head>
   <body>
     <div id="audio-player-svelte"></div>
+    <script type="module">
+      import AudioPlayer from './build/bundle.js'
+
+      const app = new AudioPlayer({
+        target: document.getElementById('audio-player-svelte'),
+        props: {
+          tracks: [
+            {
+              src: 'tracks/01. Antonyo feat. Bradley - Supernatural Lover (Original Mix).mp3',
+              title:
+                '01. Antonyo feat. Bradley - Supernatural Lover (Original Mix)',
+            },
+            {
+              src: 'tracks/02. Mark Picchiotti, Kenyata - Rumors (Mark Picchiotti Vocal).mp3',
+              title:
+                '02. Mark Picchiotti, Kenyata - Rumors (Mark Picchiotti Vocal)',
+            },
+            { src: 'tracks/01. NWO.mp3', title: '01. NWO' },
+            { src: 'tracks/02. Just One Fix.mp3', title: '02. Just One Fix' },
+          ],
+        },
+      })
+    </script>
   </body>
 </html>
