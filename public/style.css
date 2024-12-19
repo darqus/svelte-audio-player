@@ -9,7 +9,7 @@ body {
   background-color: #f0f0f0;
 }
 
-#app {
+#audio-player-svelte {
   height: inherit;
   display: grid;
   align-items: center;

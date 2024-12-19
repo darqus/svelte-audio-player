@@ -992,7 +992,7 @@ var app = (function () {
     }
 
     const app = new App({
-      target: document.getElementById('app'),
+      target: document.getElementById('audio-player-svelte'),
       props: {
         tracks: [
           { src: 'tracks/01. NWO.mp3', title: '01. NWO' },
