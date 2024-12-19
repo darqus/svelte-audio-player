@@ -281,6 +281,10 @@
     --control-size-small: 1.4rem;
     --current-time-width: 30px;
     --duration-time-width: 40px;
+    --track-background-color: #ccc;
+    --track-background-color-focus: #c5c5c5;
+    --thumb-background-color: #aaa;
+    --track-height: 5px;
     --control-color: #888;
     --text-color: #888;
     --name-color: #222;
@@ -405,8 +409,114 @@
     opacity: var(--opacity-hover);
   }
 
-  .volume-control input {
+  /* General styles */
+  .volume-control input[type='range'],
+  .progress-control input[type='range'] {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
     margin: 0;
+    background: transparent; /* Otherwise white in Chrome */
+  }
+
+  /* WebKit-specific styles */
+  .volume-control input[type='range']::-webkit-slider-runnable-track,
+  .progress-control input[type='range']::-webkit-slider-runnable-track {
+    width: 100%;
+    height: var(--track-height);
+    cursor: pointer;
+    animate: 0.2s;
+    background: var(--track-background-color);
+    border-radius: 4px;
+  }
+
+  .volume-control input[type='range']::-webkit-slider-thumb,
+  .progress-control input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--thumb-background-color);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -4px; /* Center the thumb on the track */
+  }
+
+  /* Mozilla-specific styles */
+  .volume-control input[type='range']::-moz-range-track,
+  .progress-control input[type='range']::-moz-range-track {
+    width: 100%;
+    height: var(--track-height);
+    cursor: pointer;
+    background: var(--track-background-color);
+    border-radius: 4px;
+  }
+
+  .volume-control input[type='range']::-moz-range-thumb,
+  .progress-control input[type='range']::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--thumb-background-color);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /* IE-specific styles */
+  .volume-control input[type='range']::-ms-track,
+  .progress-control input[type='range']::-ms-track {
+    width: 100%;
+    height: var(--track-height);
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  .volume-control input[type='range']::-ms-fill-lower,
+  .progress-control input[type='range']::-ms-fill-lower {
+    background: var(--track-background-color);
+    border-radius: 4px;
+  }
+
+  .volume-control input[type='range']::-ms-fill-upper,
+  .progress-control input[type='range']::-ms-fill-upper {
+    background: var(--track-background-color);
+    border-radius: 4px;
+  }
+
+  .volume-control input[type='range']::-ms-thumb,
+  .progress-control input[type='range']::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--thumb-background-color);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  /* Additional styles */
+  .volume-control input[type='range']:focus,
+  .progress-control input[type='range']:focus {
+    outline: none;
+  }
+
+  .volume-control input[type='range']:focus::-webkit-slider-runnable-track,
+  .progress-control input[type='range']:focus::-webkit-slider-runnable-track {
+    background: var(--track-background-color-focus);
+  }
+
+  .volume-control input[type='range']:focus::-moz-range-track,
+  .progress-control input[type='range']:focus::-moz-range-track {
+    background: var(--track-background-color-focus);
+  }
+
+  .volume-control input[type='range']:focus::-ms-fill-lower,
+  .progress-control input[type='range']:focus::-ms-fill-lower {
+    background: var(--track-background-color-focus);
+  }
+
+  .volume-control input[type='range']:focus::-ms-fill-upper,
+  .progress-control input[type='range']:focus::-ms-fill-upper {
+    background: var(--track-background-color-focus);
   }
 
   @media (min-width: 800px) {

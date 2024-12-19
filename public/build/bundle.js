@@ -371,7 +371,7 @@ function create_if_block_1(ctx) {
 		c() {
 			path = svg_element("path");
 			attr(path, "d", paths.pauseRight);
-			attr(path, "class", "svelte-hmnva");
+			attr(path, "class", "svelte-1u5p8hp");
 		},
 		m(target, anchor) {
 			insert(target, path, anchor);
@@ -391,7 +391,7 @@ function create_if_block(ctx) {
 		c() {
 			path = svg_element("path");
 			attr(path, "d", paths.volumeRightLine);
-			attr(path, "class", "svelte-hmnva");
+			attr(path, "class", "svelte-1u5p8hp");
 		},
 		m(target, anchor) {
 			insert(target, path, anchor);
@@ -545,78 +545,79 @@ function create_fragment(ctx) {
 			t21 = space();
 			input1 = element("input");
 			attr(path0, "d", paths.previousLeft);
-			attr(path0, "class", "svelte-hmnva");
+			attr(path0, "class", "svelte-1u5p8hp");
 			attr(path1, "d", paths.previousRight);
-			attr(path1, "class", "svelte-hmnva");
+			attr(path1, "class", "svelte-1u5p8hp");
 			attr(svg0, "xmlns", XMLNS);
 			attr(svg0, "viewBox", viewBox);
-			attr(button0, "class", "svelte-hmnva");
+			attr(button0, "class", "svelte-1u5p8hp");
 			attr(path2, "d", path2_d_value = /*isPlaying*/ ctx[1] ? paths.pauseLeft : paths.play);
-			attr(path2, "class", "svelte-hmnva");
+			attr(path2, "class", "svelte-1u5p8hp");
 			attr(svg1, "xmlns", XMLNS);
 			attr(svg1, "viewBox", viewBox);
-			attr(button1, "class", "svelte-hmnva");
+			attr(button1, "class", "svelte-1u5p8hp");
 			attr(path3, "d", paths.nextLeft);
-			attr(path3, "class", "svelte-hmnva");
+			attr(path3, "class", "svelte-1u5p8hp");
 			attr(path4, "d", paths.nextRight);
-			attr(path4, "class", "svelte-hmnva");
+			attr(path4, "class", "svelte-1u5p8hp");
 			attr(svg2, "xmlns", XMLNS);
 			attr(svg2, "viewBox", viewBox);
-			attr(button2, "class", "svelte-hmnva");
+			attr(button2, "class", "svelte-1u5p8hp");
 			attr(path5, "d", paths.shuffle);
-			attr(path5, "class", "svelte-hmnva");
+			attr(path5, "class", "svelte-1u5p8hp");
 			attr(svg3, "xmlns", XMLNS);
 			attr(svg3, "viewBox", viewBox);
-			attr(button3, "class", button3_class_value = "" + (null_to_empty(/*shuffle*/ ctx[3] ? '' : 'shuffle') + " svelte-hmnva"));
+			attr(button3, "class", button3_class_value = "" + (null_to_empty(/*shuffle*/ ctx[3] ? '' : 'shuffle') + " svelte-1u5p8hp"));
 			attr(path6, "d", paths.repeatLeft);
-			attr(path6, "class", "svelte-hmnva");
+			attr(path6, "class", "svelte-1u5p8hp");
 			attr(path7, "d", paths.repeatRight);
-			attr(path7, "class", "svelte-hmnva");
+			attr(path7, "class", "svelte-1u5p8hp");
 			attr(svg4, "xmlns", XMLNS);
 			attr(svg4, "viewBox", viewBox);
-			attr(button4, "class", button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[4] ? '' : 'repeat') + " svelte-hmnva"));
-			attr(div0, "class", "buttons-control svelte-hmnva");
-			attr(strong0, "class", "svelte-hmnva");
-			attr(strong1, "class", "svelte-hmnva");
+			attr(button4, "class", button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[4] ? '' : 'repeat') + " svelte-1u5p8hp"));
+			attr(div0, "class", "buttons-control svelte-1u5p8hp");
+			attr(strong0, "class", "svelte-1u5p8hp");
+			attr(strong1, "class", "svelte-1u5p8hp");
 			attr(marquee, "behavior", "alternate");
 			attr(marquee, "width", "100%");
 			attr(marquee, "direction", "left");
 			attr(marquee, "scrollamount", "2");
-			attr(marquee, "class", "svelte-hmnva");
-			attr(div1, "class", "track-name svelte-hmnva");
-			attr(div2, "class", "current-time svelte-hmnva");
+			attr(marquee, "class", "svelte-1u5p8hp");
+			attr(div1, "class", "track-name svelte-1u5p8hp");
+			attr(div2, "class", "current-time svelte-1u5p8hp");
 			attr(input0, "type", "range");
 			attr(input0, "min", MIN_DURATION);
 			attr(input0, "max", /*duration*/ ctx[6]);
 			attr(input0, "step", STEP_DURATION);
 			input0.value = /*currentTime*/ ctx[5];
-			attr(div3, "class", "duration-time svelte-hmnva");
-			attr(div4, "class", "progress-control svelte-hmnva");
+			attr(input0, "class", "svelte-1u5p8hp");
+			attr(div3, "class", "duration-time svelte-1u5p8hp");
+			attr(div4, "class", "progress-control svelte-1u5p8hp");
 
 			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[2] || /*volume*/ ctx[7] == 0
 			? paths.muteSpeaker
 			: paths.volumeSpeaker);
 
-			attr(path8, "class", "svelte-hmnva");
+			attr(path8, "class", "svelte-1u5p8hp");
 
 			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[2] || /*volume*/ ctx[7] == 0
 			? paths.muteClose
 			: paths.volumeLeftLine);
 
-			attr(path9, "class", "svelte-hmnva");
+			attr(path9, "class", "svelte-1u5p8hp");
 			attr(svg5, "xmlns", XMLNS);
 			attr(svg5, "viewBox", viewBox);
-			attr(button5, "class", "svelte-hmnva");
+			attr(button5, "class", "svelte-1u5p8hp");
 			attr(input1, "type", "range");
 			attr(input1, "min", "0");
 			attr(input1, "max", "1");
 			attr(input1, "step", "0.01");
 			input1.value = /*volume*/ ctx[7];
-			attr(input1, "class", "svelte-hmnva");
-			attr(div5, "class", "volume-control svelte-hmnva");
-			attr(div6, "class", "track-ranges svelte-hmnva");
-			attr(div7, "class", "track-info svelte-hmnva");
-			attr(div8, "class", "audio-player svelte-hmnva");
+			attr(input1, "class", "svelte-1u5p8hp");
+			attr(div5, "class", "volume-control svelte-1u5p8hp");
+			attr(div6, "class", "track-ranges svelte-1u5p8hp");
+			attr(div7, "class", "track-info svelte-1u5p8hp");
+			attr(div8, "class", "audio-player svelte-1u5p8hp");
 		},
 		m(target, anchor) {
 			insert(target, div8, anchor);
@@ -717,11 +718,11 @@ function create_fragment(ctx) {
 				if_block0 = null;
 			}
 
-			if (dirty & /*shuffle*/ 8 && button3_class_value !== (button3_class_value = "" + (null_to_empty(/*shuffle*/ ctx[3] ? '' : 'shuffle') + " svelte-hmnva"))) {
+			if (dirty & /*shuffle*/ 8 && button3_class_value !== (button3_class_value = "" + (null_to_empty(/*shuffle*/ ctx[3] ? '' : 'shuffle') + " svelte-1u5p8hp"))) {
 				attr(button3, "class", button3_class_value);
 			}
 
-			if (dirty & /*repeat*/ 16 && button4_class_value !== (button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[4] ? '' : 'repeat') + " svelte-hmnva"))) {
+			if (dirty & /*repeat*/ 16 && button4_class_value !== (button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[4] ? '' : 'repeat') + " svelte-1u5p8hp"))) {
 				attr(button4, "class", button4_class_value);
 			}
 
