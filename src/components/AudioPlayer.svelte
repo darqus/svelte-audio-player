@@ -275,7 +275,7 @@
 
 <style>
   :root {
-    --box-shadow-color: #888;
+    --box-shadow-color: #00000012;
     --gap: 10px;
     --control-size: 2rem;
     --control-size-small: 1.4rem;
@@ -294,11 +294,12 @@
   }
 
   .audio-player {
-    border-radius: var(--gap);
-    padding: var(--gap);
-    box-shadow: 0 0 10px var(--box-shadow-color);
     display: grid;
     gap: var(--gap);
+    border: 1px solid #ebebeb;
+    border-radius: var(--gap);
+    padding: var(--gap);
+    box-shadow: 0 7px 16px 0 var(--box-shadow-color);
   }
 
   .track-info {
