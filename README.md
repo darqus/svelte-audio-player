@@ -95,17 +95,30 @@ To use the AudioPlayer component in any JavaScript project, follow these steps:
         props: {
           tracks: [
             {
-              src: 'tracks/01. Antonyo feat. Bradley - Supernatural Lover (Original Mix).mp3',
-              title:
-                '01. Antonyo feat. Bradley - Supernatural Lover (Original Mix)',
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1594629860.mp3',
+              author: 'ЁЛКА',
+              title: 'Мне Легко',
             },
             {
-              src: 'tracks/02. Mark Picchiotti, Kenyata - Rumors (Mark Picchiotti Vocal).mp3',
-              title:
-                '02. Mark Picchiotti, Kenyata - Rumors (Mark Picchiotti Vocal)',
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1601897430.mp3',
+              author: 'ISB',
+              title: 'Who I Am',
             },
-            { src: 'tracks/01. NWO.mp3', title: '01. NWO' },
-            { src: 'tracks/02. Just One Fix.mp3', title: '02. Just One Fix' },
+            {
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1594629860.mp3',
+              author: 'ЁЛКА X АНТ',
+              title: 'Комната',
+            },
+            {
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1601289714.mp3',
+              author: 'ЁЛМАРИ КРАЙМБРЕРИ',
+              title: 'Океан',
+            },
+            {
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1601027082.mp3',
+              author: 'ПОЛИНА ГАГАРИНА',
+              title: 'На Расстоянии',
+            },
           ],
         },
       })
