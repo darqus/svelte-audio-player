@@ -138,81 +138,74 @@
 </script>
 
 <div class="audio-player">
-  <div class="buttons-control">
-    <!-- {elapsedTime} -->
-    <button on:click={prevTrack}>
-      <svg
-        {XMLNS}
-        {viewBox}
-      >
-        <path d={paths.previousLeft}></path>
-        <path d={paths.previousRight}></path>
-      </svg>
-    </button>
+  <div class="track-name">
+    <strong>{currentTrackIndex + 1} / {tracks.length}</strong>
 
-    <button on:click={playPause}>
-      <svg
-        {XMLNS}
-        {viewBox}
-      >
-        <path d={isPlaying ? paths.pauseLeft : paths.play}></path>
-
-        {#if isPlaying}
-          <path d={paths.pauseRight}></path>
-        {/if}
-      </svg>
-    </button>
-
-    <button on:click={nextTrack}>
-      <svg
-        {XMLNS}
-        {viewBox}
-      >
-        <path d={paths.nextLeft}></path>
-        <path d={paths.nextRight}></path>
-      </svg>
-    </button>
-
-    <button
-      on:click={toggleShuffle}
-      class={shuffle ? '' : 'shuffle'}
-    >
-      <svg
-        {XMLNS}
-        {viewBox}
-      >
-        <path d={paths.shuffle}></path>
-      </svg>
-    </button>
-
-    <button
-      on:click={toggleRepeat}
-      class={repeat ? '' : 'repeat'}
-    >
-      <svg
-        {XMLNS}
-        {viewBox}
-      >
-        <path d={paths.repeatLeft}></path>
-        <path d={paths.repeatRight}></path>
-      </svg>
-    </button>
+    <div class="title">
+      {tracks[currentTrackIndex].author} – «{tracks[currentTrackIndex].title}»
+    </div>
   </div>
 
   <div class="track-info">
-    <div class="track-name">
-      <strong>{currentTrackIndex + 1} [{tracks.length}]</strong>
-      <marquee
-        behavior="alternate"
-        width="100%"
-        direction="left"
-        scrollamount="2"
+    <div class="buttons-control">
+      <!-- {elapsedTime} -->
+      <button on:click={prevTrack}>
+        <svg
+          {XMLNS}
+          {viewBox}
+        >
+          <path d={paths.previousLeft}></path>
+          <path d={paths.previousRight}></path>
+        </svg>
+      </button>
+
+      <button on:click={playPause}>
+        <svg
+          {XMLNS}
+          {viewBox}
+        >
+          <path d={isPlaying ? paths.pauseLeft : paths.play}></path>
+
+          {#if isPlaying}
+            <path d={paths.pauseRight}></path>
+          {/if}
+        </svg>
+      </button>
+
+      <button on:click={nextTrack}>
+        <svg
+          {XMLNS}
+          {viewBox}
+        >
+          <path d={paths.nextLeft}></path>
+          <path d={paths.nextRight}></path>
+        </svg>
+      </button>
+
+      <button
+        on:click={toggleShuffle}
+        class={shuffle ? '' : 'shuffle'}
       >
-        {tracks[currentTrackIndex].author}:
-        <strong>
-          [{tracks[currentTrackIndex].title}]
-        </strong>
-      </marquee>
+        <svg
+          {XMLNS}
+          {viewBox}
+        >
+          <path d={paths.shuffle}></path>
+        </svg>
+      </button>
+
+      <button
+        on:click={toggleRepeat}
+        class={repeat ? '' : 'repeat'}
+      >
+        <svg
+          {XMLNS}
+          {viewBox}
+        >
+          <path d={paths.repeatLeft}></path>
+          <path d={paths.repeatRight}></path>
+        </svg>
+      </button>
     </div>
 
     <div class="track-ranges">
@@ -302,11 +295,7 @@
     border-radius: var(--gap);
     padding: var(--gap);
     box-shadow: 0 7px 16px 0 var(--box-shadow-color);
-  }
-
-  .track-info {
-    display: grid;
-    grid-template-rows: auto 1fr;
+    background-color: #fff;
   }
 
   .track-name {
@@ -315,14 +304,27 @@
     font-size: 1rem;
     gap: var(--gap);
     align-items: end;
+    font-size: 0.8rem;
+    max-width: 530px;
+    align-items: center;
   }
 
   .track-name strong {
     color: var(--text-color);
+    font-weight: bold;
   }
 
-  .track-name marquee {
+  .track-name .title {
     color: var(--name-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .track-info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--gap);
   }
 
   .track-ranges {
@@ -529,7 +531,11 @@
 
   @media (min-width: 800px) {
     .audio-player {
-      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    .track-name {
+      max-width: 740px;
     }
 
     .progress-control {

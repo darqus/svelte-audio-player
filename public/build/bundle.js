@@ -371,7 +371,7 @@ function create_if_block_1(ctx) {
 		c() {
 			path = svg_element("path");
 			attr(path, "d", paths.pauseRight);
-			attr(path, "class", "svelte-1oinw5e");
+			attr(path, "class", "svelte-t4q7hi");
 		},
 		m(target, anchor) {
 			insert(target, path, anchor);
@@ -383,7 +383,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (257:12) {#if !isMuted && volume != 0}
+// (250:12) {#if !isMuted && volume != 0}
 function create_if_block(ctx) {
 	let path;
 
@@ -391,7 +391,7 @@ function create_if_block(ctx) {
 		c() {
 			path = svg_element("path");
 			attr(path, "d", paths.volumeRightLine);
-			attr(path, "class", "svelte-1oinw5e");
+			attr(path, "class", "svelte-t4q7hi");
 		},
 		m(target, anchor) {
 			insert(target, path, anchor);
@@ -404,76 +404,73 @@ function create_if_block(ctx) {
 }
 
 function create_fragment(ctx) {
-	let div8;
+	let div9;
+	let div1;
+	let strong;
+	let t0_value = /*currentTrackIndex*/ ctx[8] + 1 + "";
+	let t0;
+	let t1;
+	let t2_value = /*tracks*/ ctx[0].length + "";
+	let t2;
+	let t3;
 	let div0;
+	let t4_value = /*tracks*/ ctx[0][/*currentTrackIndex*/ ctx[8]].author + "";
+	let t4;
+	let t5;
+	let t6_value = /*tracks*/ ctx[0][/*currentTrackIndex*/ ctx[8]].title + "";
+	let t6;
+	let t7;
+	let t8;
+	let div8;
+	let div2;
 	let button0;
 	let svg0;
 	let path0;
 	let path1;
-	let t0;
+	let t9;
 	let button1;
 	let svg1;
 	let path2;
 	let path2_d_value;
-	let t1;
+	let t10;
 	let button2;
 	let svg2;
 	let path3;
 	let path4;
-	let t2;
+	let t11;
 	let button3;
 	let svg3;
 	let path5;
 	let button3_class_value;
-	let t3;
+	let t12;
 	let button4;
 	let svg4;
 	let path6;
 	let path7;
 	let button4_class_value;
-	let t4;
-	let div7;
-	let div1;
-	let strong0;
-	let t5_value = /*currentTrackIndex*/ ctx[8] + 1 + "";
-	let t5;
-	let t6;
-	let t7_value = /*tracks*/ ctx[0].length + "";
-	let t7;
-	let t8;
-	let t9;
-	let marquee;
-	let t10_value = /*tracks*/ ctx[0][/*currentTrackIndex*/ ctx[8]].author + "";
-	let t10;
-	let t11;
-	let strong1;
-	let t12;
-	let t13_value = /*tracks*/ ctx[0][/*currentTrackIndex*/ ctx[8]].title + "";
 	let t13;
+	let div7;
+	let div5;
+	let div3;
+	let span0;
+	let t14_value = /*formatTime*/ ctx[18](/*currentTime*/ ctx[5], false) + "";
 	let t14;
 	let t15;
-	let div6;
-	let div4;
-	let div2;
-	let span0;
-	let t16_value = /*formatTime*/ ctx[18](/*currentTime*/ ctx[5], false) + "";
-	let t16;
-	let t17;
 	let input0;
-	let t18;
-	let div3;
+	let t16;
+	let div4;
 	let span1;
-	let t19_value = /*formatTime*/ ctx[18](/*currentTime*/ ctx[5], true) + "";
-	let t19;
-	let t20;
-	let div5;
+	let t17_value = /*formatTime*/ ctx[18](/*currentTime*/ ctx[5], true) + "";
+	let t17;
+	let t18;
+	let div6;
 	let button5;
 	let svg5;
 	let path8;
 	let path8_d_value;
 	let path9;
 	let path9_d_value;
-	let t21;
+	let t19;
 	let input1;
 	let mounted;
 	let dispose;
@@ -482,206 +479,195 @@ function create_fragment(ctx) {
 
 	return {
 		c() {
-			div8 = element("div");
+			div9 = element("div");
+			div1 = element("div");
+			strong = element("strong");
+			t0 = text(t0_value);
+			t1 = text(" / ");
+			t2 = text(t2_value);
+			t3 = space();
 			div0 = element("div");
+			t4 = text(t4_value);
+			t5 = text(" – «");
+			t6 = text(t6_value);
+			t7 = text("»");
+			t8 = space();
+			div8 = element("div");
+			div2 = element("div");
 			button0 = element("button");
 			svg0 = svg_element("svg");
 			path0 = svg_element("path");
 			path1 = svg_element("path");
-			t0 = space();
+			t9 = space();
 			button1 = element("button");
 			svg1 = svg_element("svg");
 			path2 = svg_element("path");
 			if (if_block0) if_block0.c();
-			t1 = space();
+			t10 = space();
 			button2 = element("button");
 			svg2 = svg_element("svg");
 			path3 = svg_element("path");
 			path4 = svg_element("path");
-			t2 = space();
+			t11 = space();
 			button3 = element("button");
 			svg3 = svg_element("svg");
 			path5 = svg_element("path");
-			t3 = space();
+			t12 = space();
 			button4 = element("button");
 			svg4 = svg_element("svg");
 			path6 = svg_element("path");
 			path7 = svg_element("path");
-			t4 = space();
+			t13 = space();
 			div7 = element("div");
-			div1 = element("div");
-			strong0 = element("strong");
-			t5 = text(t5_value);
-			t6 = text(" [");
-			t7 = text(t7_value);
-			t8 = text("]");
-			t9 = space();
-			marquee = element("marquee");
-			t10 = text(t10_value);
-			t11 = text(":\n        ");
-			strong1 = element("strong");
-			t12 = text("[");
-			t13 = text(t13_value);
-			t14 = text("]");
-			t15 = space();
-			div6 = element("div");
-			div4 = element("div");
-			div2 = element("div");
-			span0 = element("span");
-			t16 = text(t16_value);
-			t17 = space();
-			input0 = element("input");
-			t18 = space();
-			div3 = element("div");
-			span1 = element("span");
-			t19 = text(t19_value);
-			t20 = space();
 			div5 = element("div");
+			div3 = element("div");
+			span0 = element("span");
+			t14 = text(t14_value);
+			t15 = space();
+			input0 = element("input");
+			t16 = space();
+			div4 = element("div");
+			span1 = element("span");
+			t17 = text(t17_value);
+			t18 = space();
+			div6 = element("div");
 			button5 = element("button");
 			svg5 = svg_element("svg");
 			path8 = svg_element("path");
 			path9 = svg_element("path");
 			if (if_block1) if_block1.c();
-			t21 = space();
+			t19 = space();
 			input1 = element("input");
+			attr(strong, "class", "svelte-t4q7hi");
+			attr(div0, "class", "title svelte-t4q7hi");
+			attr(div1, "class", "track-name svelte-t4q7hi");
 			attr(path0, "d", paths.previousLeft);
-			attr(path0, "class", "svelte-1oinw5e");
+			attr(path0, "class", "svelte-t4q7hi");
 			attr(path1, "d", paths.previousRight);
-			attr(path1, "class", "svelte-1oinw5e");
+			attr(path1, "class", "svelte-t4q7hi");
 			attr(svg0, "xmlns", XMLNS);
 			attr(svg0, "viewBox", viewBox);
-			attr(button0, "class", "svelte-1oinw5e");
+			attr(button0, "class", "svelte-t4q7hi");
 			attr(path2, "d", path2_d_value = /*isPlaying*/ ctx[1] ? paths.pauseLeft : paths.play);
-			attr(path2, "class", "svelte-1oinw5e");
+			attr(path2, "class", "svelte-t4q7hi");
 			attr(svg1, "xmlns", XMLNS);
 			attr(svg1, "viewBox", viewBox);
-			attr(button1, "class", "svelte-1oinw5e");
+			attr(button1, "class", "svelte-t4q7hi");
 			attr(path3, "d", paths.nextLeft);
-			attr(path3, "class", "svelte-1oinw5e");
+			attr(path3, "class", "svelte-t4q7hi");
 			attr(path4, "d", paths.nextRight);
-			attr(path4, "class", "svelte-1oinw5e");
+			attr(path4, "class", "svelte-t4q7hi");
 			attr(svg2, "xmlns", XMLNS);
 			attr(svg2, "viewBox", viewBox);
-			attr(button2, "class", "svelte-1oinw5e");
+			attr(button2, "class", "svelte-t4q7hi");
 			attr(path5, "d", paths.shuffle);
-			attr(path5, "class", "svelte-1oinw5e");
+			attr(path5, "class", "svelte-t4q7hi");
 			attr(svg3, "xmlns", XMLNS);
 			attr(svg3, "viewBox", viewBox);
-			attr(button3, "class", button3_class_value = "" + (null_to_empty(/*shuffle*/ ctx[3] ? '' : 'shuffle') + " svelte-1oinw5e"));
+			attr(button3, "class", button3_class_value = "" + (null_to_empty(/*shuffle*/ ctx[3] ? '' : 'shuffle') + " svelte-t4q7hi"));
 			attr(path6, "d", paths.repeatLeft);
-			attr(path6, "class", "svelte-1oinw5e");
+			attr(path6, "class", "svelte-t4q7hi");
 			attr(path7, "d", paths.repeatRight);
-			attr(path7, "class", "svelte-1oinw5e");
+			attr(path7, "class", "svelte-t4q7hi");
 			attr(svg4, "xmlns", XMLNS);
 			attr(svg4, "viewBox", viewBox);
-			attr(button4, "class", button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[4] ? '' : 'repeat') + " svelte-1oinw5e"));
-			attr(div0, "class", "buttons-control svelte-1oinw5e");
-			attr(strong0, "class", "svelte-1oinw5e");
-			attr(strong1, "class", "svelte-1oinw5e");
-			attr(marquee, "behavior", "alternate");
-			attr(marquee, "width", "100%");
-			attr(marquee, "direction", "left");
-			attr(marquee, "scrollamount", "2");
-			attr(marquee, "class", "svelte-1oinw5e");
-			attr(div1, "class", "track-name svelte-1oinw5e");
-			attr(div2, "class", "current-time svelte-1oinw5e");
+			attr(button4, "class", button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[4] ? '' : 'repeat') + " svelte-t4q7hi"));
+			attr(div2, "class", "buttons-control svelte-t4q7hi");
+			attr(div3, "class", "current-time svelte-t4q7hi");
 			attr(input0, "type", "range");
 			attr(input0, "min", MIN_DURATION);
 			attr(input0, "max", /*duration*/ ctx[6]);
 			attr(input0, "step", STEP_DURATION);
 			input0.value = /*currentTime*/ ctx[5];
-			attr(input0, "class", "svelte-1oinw5e");
-			attr(div3, "class", "duration-time svelte-1oinw5e");
-			attr(div4, "class", "progress-control svelte-1oinw5e");
+			attr(input0, "class", "svelte-t4q7hi");
+			attr(div4, "class", "duration-time svelte-t4q7hi");
+			attr(div5, "class", "progress-control svelte-t4q7hi");
 
 			attr(path8, "d", path8_d_value = /*isMuted*/ ctx[2] || /*volume*/ ctx[7] == 0
 			? paths.muteSpeaker
 			: paths.volumeSpeaker);
 
-			attr(path8, "class", "svelte-1oinw5e");
+			attr(path8, "class", "svelte-t4q7hi");
 
 			attr(path9, "d", path9_d_value = /*isMuted*/ ctx[2] || /*volume*/ ctx[7] == 0
 			? paths.muteClose
 			: paths.volumeLeftLine);
 
-			attr(path9, "class", "svelte-1oinw5e");
+			attr(path9, "class", "svelte-t4q7hi");
 			attr(svg5, "xmlns", XMLNS);
 			attr(svg5, "viewBox", viewBox);
-			attr(button5, "class", "svelte-1oinw5e");
+			attr(button5, "class", "svelte-t4q7hi");
 			attr(input1, "type", "range");
 			attr(input1, "min", "0");
 			attr(input1, "max", "1");
 			attr(input1, "step", "0.01");
 			input1.value = /*volume*/ ctx[7];
-			attr(input1, "class", "svelte-1oinw5e");
-			attr(div5, "class", "volume-control svelte-1oinw5e");
-			attr(div6, "class", "track-ranges svelte-1oinw5e");
-			attr(div7, "class", "track-info svelte-1oinw5e");
-			attr(div8, "class", "audio-player svelte-1oinw5e");
+			attr(input1, "class", "svelte-t4q7hi");
+			attr(div6, "class", "volume-control svelte-t4q7hi");
+			attr(div7, "class", "track-ranges svelte-t4q7hi");
+			attr(div8, "class", "track-info svelte-t4q7hi");
+			attr(div9, "class", "audio-player svelte-t4q7hi");
 		},
 		m(target, anchor) {
-			insert(target, div8, anchor);
-			append(div8, div0);
-			append(div0, button0);
+			insert(target, div9, anchor);
+			append(div9, div1);
+			append(div1, strong);
+			append(strong, t0);
+			append(strong, t1);
+			append(strong, t2);
+			append(div1, t3);
+			append(div1, div0);
+			append(div0, t4);
+			append(div0, t5);
+			append(div0, t6);
+			append(div0, t7);
+			append(div9, t8);
+			append(div9, div8);
+			append(div8, div2);
+			append(div2, button0);
 			append(button0, svg0);
 			append(svg0, path0);
 			append(svg0, path1);
-			append(div0, t0);
-			append(div0, button1);
+			append(div2, t9);
+			append(div2, button1);
 			append(button1, svg1);
 			append(svg1, path2);
 			if (if_block0) if_block0.m(svg1, null);
-			append(div0, t1);
-			append(div0, button2);
+			append(div2, t10);
+			append(div2, button2);
 			append(button2, svg2);
 			append(svg2, path3);
 			append(svg2, path4);
-			append(div0, t2);
-			append(div0, button3);
+			append(div2, t11);
+			append(div2, button3);
 			append(button3, svg3);
 			append(svg3, path5);
-			append(div0, t3);
-			append(div0, button4);
+			append(div2, t12);
+			append(div2, button4);
 			append(button4, svg4);
 			append(svg4, path6);
 			append(svg4, path7);
-			append(div8, t4);
+			append(div8, t13);
 			append(div8, div7);
-			append(div7, div1);
-			append(div1, strong0);
-			append(strong0, t5);
-			append(strong0, t6);
-			append(strong0, t7);
-			append(strong0, t8);
-			append(div1, t9);
-			append(div1, marquee);
-			append(marquee, t10);
-			append(marquee, t11);
-			append(marquee, strong1);
-			append(strong1, t12);
-			append(strong1, t13);
-			append(strong1, t14);
-			append(div7, t15);
+			append(div7, div5);
+			append(div5, div3);
+			append(div3, span0);
+			append(span0, t14);
+			append(div5, t15);
+			append(div5, input0);
+			append(div5, t16);
+			append(div5, div4);
+			append(div4, span1);
+			append(span1, t17);
+			append(div7, t18);
 			append(div7, div6);
-			append(div6, div4);
-			append(div4, div2);
-			append(div2, span0);
-			append(span0, t16);
-			append(div4, t17);
-			append(div4, input0);
-			append(div4, t18);
-			append(div4, div3);
-			append(div3, span1);
-			append(span1, t19);
-			append(div6, t20);
-			append(div6, div5);
-			append(div5, button5);
+			append(div6, button5);
 			append(button5, svg5);
 			append(svg5, path8);
 			append(svg5, path9);
 			if (if_block1) if_block1.m(svg5, null);
-			append(div5, t21);
-			append(div5, input1);
+			append(div6, t19);
+			append(div6, input1);
 
 			if (!mounted) {
 				dispose = [
@@ -701,6 +687,11 @@ function create_fragment(ctx) {
 			}
 		},
 		p(ctx, [dirty]) {
+			if (dirty & /*currentTrackIndex*/ 256 && t0_value !== (t0_value = /*currentTrackIndex*/ ctx[8] + 1 + "")) set_data(t0, t0_value);
+			if (dirty & /*tracks*/ 1 && t2_value !== (t2_value = /*tracks*/ ctx[0].length + "")) set_data(t2, t2_value);
+			if (dirty & /*tracks, currentTrackIndex*/ 257 && t4_value !== (t4_value = /*tracks*/ ctx[0][/*currentTrackIndex*/ ctx[8]].author + "")) set_data(t4, t4_value);
+			if (dirty & /*tracks, currentTrackIndex*/ 257 && t6_value !== (t6_value = /*tracks*/ ctx[0][/*currentTrackIndex*/ ctx[8]].title + "")) set_data(t6, t6_value);
+
 			if (dirty & /*isPlaying*/ 2 && path2_d_value !== (path2_d_value = /*isPlaying*/ ctx[1] ? paths.pauseLeft : paths.play)) {
 				attr(path2, "d", path2_d_value);
 			}
@@ -718,19 +709,15 @@ function create_fragment(ctx) {
 				if_block0 = null;
 			}
 
-			if (dirty & /*shuffle*/ 8 && button3_class_value !== (button3_class_value = "" + (null_to_empty(/*shuffle*/ ctx[3] ? '' : 'shuffle') + " svelte-1oinw5e"))) {
+			if (dirty & /*shuffle*/ 8 && button3_class_value !== (button3_class_value = "" + (null_to_empty(/*shuffle*/ ctx[3] ? '' : 'shuffle') + " svelte-t4q7hi"))) {
 				attr(button3, "class", button3_class_value);
 			}
 
-			if (dirty & /*repeat*/ 16 && button4_class_value !== (button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[4] ? '' : 'repeat') + " svelte-1oinw5e"))) {
+			if (dirty & /*repeat*/ 16 && button4_class_value !== (button4_class_value = "" + (null_to_empty(/*repeat*/ ctx[4] ? '' : 'repeat') + " svelte-t4q7hi"))) {
 				attr(button4, "class", button4_class_value);
 			}
 
-			if (dirty & /*currentTrackIndex*/ 256 && t5_value !== (t5_value = /*currentTrackIndex*/ ctx[8] + 1 + "")) set_data(t5, t5_value);
-			if (dirty & /*tracks*/ 1 && t7_value !== (t7_value = /*tracks*/ ctx[0].length + "")) set_data(t7, t7_value);
-			if (dirty & /*tracks, currentTrackIndex*/ 257 && t10_value !== (t10_value = /*tracks*/ ctx[0][/*currentTrackIndex*/ ctx[8]].author + "")) set_data(t10, t10_value);
-			if (dirty & /*tracks, currentTrackIndex*/ 257 && t13_value !== (t13_value = /*tracks*/ ctx[0][/*currentTrackIndex*/ ctx[8]].title + "")) set_data(t13, t13_value);
-			if (dirty & /*currentTime*/ 32 && t16_value !== (t16_value = /*formatTime*/ ctx[18](/*currentTime*/ ctx[5], false) + "")) set_data(t16, t16_value);
+			if (dirty & /*currentTime*/ 32 && t14_value !== (t14_value = /*formatTime*/ ctx[18](/*currentTime*/ ctx[5], false) + "")) set_data(t14, t14_value);
 
 			if (dirty & /*duration*/ 64) {
 				attr(input0, "max", /*duration*/ ctx[6]);
@@ -740,7 +727,7 @@ function create_fragment(ctx) {
 				input0.value = /*currentTime*/ ctx[5];
 			}
 
-			if (dirty & /*currentTime*/ 32 && t19_value !== (t19_value = /*formatTime*/ ctx[18](/*currentTime*/ ctx[5], true) + "")) set_data(t19, t19_value);
+			if (dirty & /*currentTime*/ 32 && t17_value !== (t17_value = /*formatTime*/ ctx[18](/*currentTime*/ ctx[5], true) + "")) set_data(t17, t17_value);
 
 			if (dirty & /*isMuted, volume*/ 132 && path8_d_value !== (path8_d_value = /*isMuted*/ ctx[2] || /*volume*/ ctx[7] == 0
 			? paths.muteSpeaker
@@ -774,7 +761,7 @@ function create_fragment(ctx) {
 		i: noop,
 		o: noop,
 		d(detaching) {
-			if (detaching) detach(div8);
+			if (detaching) detach(div9);
 			if (if_block0) if_block0.d();
 			if (if_block1) if_block1.d();
 			mounted = false;
