@@ -19,26 +19,39 @@ A customizable HTML audio player built with Svelte.
 npm install svelte-audio-player
 ```
 
-## Usage for Svelte
+## Integtation for Svelte
 
 To use the AudioPlayer component in your Svelte application, follow these steps:
 
 1. Import the AudioPlayer component from the package.
 2. Include the component in your Svelte template.
 
-```js
+```html
 <script>
   import AudioPlayer from 'svelte-audio-player/src/components/AudioPlayer.svelte';
 </script>
 
-<AudioPlayer />
+<AudioPlayer
+  tracks={[
+    {
+      src: 'tracks/01. Antonyo feat. Bradley - Supernatural Lover (Original Mix).mp3',
+      title: '01. Antonyo feat. Bradley - Supernatural Lover (Original Mix)',
+    },
+    {
+      src: 'tracks/02. Mark Picchiotti, Kenyata - Rumors (Mark Picchiotti Vocal).mp3',
+      title: '02. Mark Picchiotti, Kenyata - Rumors (Mark Picchiotti Vocal)',
+    },
+    { src: 'tracks/01. NWO.mp3', title: '01. NWO' },
+    { src: 'tracks/02. Just One Fix.mp3', title: '02. Just One Fix' },
+  ]}
+/>
 ```
 
 You can customize the player by passing props to the component. Refer to the documentation for available options.
 
 This is a basic implementation. You can further customize the styles and functionality as needed.
 
-## Usage for any projects
+## Integtation for html projects
 
 To use the AudioPlayer component in any JavaScript project, follow these steps:
 
@@ -100,7 +113,3 @@ To use the AudioPlayer component in any JavaScript project, follow these steps:
   </body>
 </html>
 ```
-
-You can customize the player by passing props to the component. Refer to the documentation for available options.
-
-This is a basic implementation. You can further customize the styles and functionality as needed.
