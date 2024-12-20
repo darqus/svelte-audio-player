@@ -2,7 +2,6 @@
 
 A customizable HTML audio player built with Svelte. [Demo Player Link →](https://darqus.github.io/svelte-audio-player/dist/)
 
-
 ## Features
 
 - Play/Pause
@@ -170,7 +169,7 @@ this command minify bundle for use in prod
 
 ## Font Family is stored in the Google Fonts Collection
 
-[LATO](https://fonts.google.com/specimen/Lato) — Regular & Bold 
+[LATO](https://fonts.google.com/specimen/Lato) — Regular & Bold
 
 ---
 
