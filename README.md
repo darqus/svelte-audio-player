@@ -21,6 +21,8 @@ See [link](https://darqus.github.io/svelte-audio-player/dist/)
 
 ```bash
 npm install svelte-audio-player
+#or
+yarn add svelte-audio-player
 ```
 
 ## Integtation for Svelte
