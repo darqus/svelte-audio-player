@@ -138,7 +138,7 @@
 
 <div class="svelte-audio-player">
   <div class="track-name">
-    <strong>{currentTrackIndex + 1} / {tracks.length}</strong>
+    <div class="counter">{currentTrackIndex + 1} / {tracks.length}</div>
 
     <div class="title">
       {tracks[currentTrackIndex].author} – «{tracks[currentTrackIndex].title}»

@@ -13,8 +13,9 @@
   .track-name {
     display: grid;
     grid-template-columns: auto 1fr;
+    grid-template-rows: 18px 1fr;
     font-size: 1rem;
-    gap: $gap;
+    column-gap: $gap;
     align-items: end;
     font-size: 0.8rem;
     max-width: 530px;
@@ -24,9 +25,9 @@
       max-width: 740px;
     }
 
-    strong {
+    .counter {
       color: $text-color;
-      font-weight: bold;
+      font-weight: 700;
     }
 
     .title {
@@ -34,6 +35,8 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      display: grid;
+      align-items: center;
     }
   }
 
