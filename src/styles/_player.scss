@@ -98,7 +98,7 @@
     @include respond-to('small') {
       grid-template-columns:
         $current-time-width
-        minmax(250px, 300px)
+        minmax(130px, 250px)
         $duration-time-width;
     }
 
