@@ -2,6 +2,10 @@
 
 A customizable HTML audio player built with Svelte.
 
+## Demo
+
+See [link](https://darqus.github.io/svelte-audio-player/dist/)
+
 ## Features
 
 - Play/Pause
@@ -147,7 +151,7 @@ To use the AudioPlayer component in any JavaScript project, follow these steps:
 </html>
 ```
 
-## dev mode
+## Dev mode
 
 ```sh
 yarn dev
@@ -155,7 +159,7 @@ yarn dev
 
 use Live share extention for live reload propject in dev mode
 
-## prod mode
+## Prod mode
 
 ```sh
 yarn build
@@ -163,14 +167,10 @@ yarn build
 
 this command minify bundle for use in prod
 
-## design
+## Design
 
 See [Figma](https://www.figma.com/design/EqWAcGxTamQNTwlV3gIsRd/PLAYER-%E2%80%94-Open-Sourse?node-id=24-767&t=a6ZWbZjLS1Ly7G4i-0)
 
 Desinger: [Rustam Samiev](https://bento.me/foxxx)
 
 Github: [Repo](https://github.com/hellorustam)
-
-## demo
-
-See [link](https://darqus.github.io/svelte-audio-player/dist/)
