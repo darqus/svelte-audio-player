@@ -50,7 +50,7 @@
     .buttons-control {
       display: grid;
       grid-template-columns: repeat(5, $control-size-molile);
-      gap: $gap;
+      gap: 5px;
       align-items: center;
       justify-content: space-between;
 
