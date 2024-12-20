@@ -3,7 +3,6 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 import sveltePreprocess from 'svelte-preprocess'
 
 export default defineConfig({
-  base: './', // Set base to relative path
   plugins: [
     svelte({
       preprocess: sveltePreprocess(),
