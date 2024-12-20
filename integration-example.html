@@ -9,7 +9,7 @@
     <title>Svelte Audio Player Integration</title>
     <link
       rel="icon"
-      type="image/svg"
+      type="image/svg+xml"
       href="dist/vite.svg"
     />
     <!-- common styles -->
@@ -20,18 +20,17 @@
     <!-- svelte audio player styles -->
     <link
       rel="stylesheet"
-      href="dist/assets/index.css"
+      href="dist/svelte-audio-player.css"
     />
     <script
-      type="module"
-      crossorigin
-      src="./dist/assets/index.js"
+      defer
+      src="dist/index.es.js"
     ></script>
   </head>
   <body>
     <div id="svelte-audio-player"></div>
-    <script>
-      import AudioPlayer from './dist/assets/index.js'
+    <script type="module">
+      import AudioPlayer from './dist/index.es.js'
 
       const app = new AudioPlayer({
         target: document.getElementById('svelte-audio-player'),
