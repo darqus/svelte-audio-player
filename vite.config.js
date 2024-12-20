@@ -3,6 +3,6 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'audio-player',
+  outDir: 'dist',
   plugins: [svelte()],
 })
