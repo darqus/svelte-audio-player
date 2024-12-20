@@ -12,7 +12,6 @@
   let showElapsedTime = false
   let currentTime = 0
   let duration = 0
-  let elapsedTime = 0
   let volume = 1
   let currentTrackIndex = 0
   let cachedVolume = volume
@@ -148,7 +147,6 @@
 
   <div class="track-info">
     <div class="buttons-control">
-      <!-- {elapsedTime} -->
       <button
         on:click={prevTrack}
         aria-label="Previous Track"
