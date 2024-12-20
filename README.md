@@ -160,4 +160,4 @@ this command minify bundle for use in prod
 
 ## demo
 
-See [link](https://darqus.github.io/audio-player/public/)
+See [link](https://darqus.github.io/audio-player/dist/)
