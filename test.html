@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Svelte Audio Player Integration</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="dist/vite.svg"
+    />
+    <!-- common styles -->
+    <link
+      rel="stylesheet"
+      href="src/app.css"
+    />
+    <!-- svelte audio player styles -->
+    <link
+      rel="stylesheet"
+      href="dist/svelte-audio-player.css"
+    />
+  </head>
+  <body>
+    <div id="audio-player-svelte"></div>
+    <script type="module">
+      import AudioPlayer from './dist/svelte-audio-player.js'
+
+      const app = new AudioPlayer({
+        target: document.getElementById('audio-player-svelte'),
+        props: {
+          tracks: [
+            {
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1594629860.mp3',
+              author: 'ЁЛКА',
+              title: 'Мне Легко',
+            },
+            {
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1601897430.mp3',
+              author: 'ISB',
+              title: 'Who I Am',
+            },
+            {
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1594629860.mp3',
+              author: 'ЁЛКА X АНТ',
+              title: 'Комната',
+            },
+            {
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1601289714.mp3',
+              author: 'ЁЛМАРИ КРАЙМБРЕРИ',
+              title: 'Океан',
+            },
+            {
+              src: 'https://muz-tv.ru/storage/files/chart-tracks/1601027082.mp3',
+              author: 'ПОЛИНА ГАГАРИНА',
+              title: 'На Расстоянии',
+            },
+          ],
+        },
+      })
+    </script>
+  </body>
+</html>
