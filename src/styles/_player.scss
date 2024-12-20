@@ -5,7 +5,7 @@
   display: grid;
   gap: $gap;
   border: 1px solid $player-border-color;
-  border-radius: $gap;
+  border-radius: $player-border-radius;
   padding: $gap;
   box-shadow: 0 7px 16px 0 $player-box-shadow-color;
   background-color: $white;
