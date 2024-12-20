@@ -1,10 +1,7 @@
 # Svelte Audio Player Package
 
-A customizable HTML audio player built with Svelte.
+A customizable HTML audio player built with Svelte. **[Demo Player for Preview](https://darqus.github.io/svelte-audio-player/dist/)**
 
-## Demo
-
-See [link](https://darqus.github.io/svelte-audio-player/dist/)
 
 ## Features
 
@@ -21,8 +18,6 @@ See [link](https://darqus.github.io/svelte-audio-player/dist/)
 
 ```bash
 npm install svelte-audio-player
-#or
-yarn add svelte-audio-player
 ```
 
 ## Integtation for Svelte
@@ -153,7 +148,7 @@ To use the AudioPlayer component in any JavaScript project, follow these steps:
 </html>
 ```
 
-## Dev mode
+## dev mode
 
 ```sh
 yarn dev
@@ -161,7 +156,7 @@ yarn dev
 
 use Live share extention for live reload propject in dev mode
 
-## Prod mode
+## prod mode
 
 ```sh
 yarn build
@@ -169,10 +164,6 @@ yarn build
 
 this command minify bundle for use in prod
 
-## Design
+---
 
-See [Figma](https://www.figma.com/design/EqWAcGxTamQNTwlV3gIsRd/PLAYER-%E2%80%94-Open-Sourse?node-id=24-767&t=a6ZWbZjLS1Ly7G4i-0)
-
-Desinger: [Rustam Samiev](https://bento.me/foxxx)
-
-Github: [Repo](https://github.com/hellorustam)
+Designed by Rustam Samiev — [Profile Bento](https://bento.me/foxxx)  //  [Github](https://github.com/hellorustam) // [Player Figma Files](https://www.figma.com/design/EqWAcGxTamQNTwlV3gIsRd/PLAYER-%E2%80%94-Open-Sourse?node-id=24-767&t=a6ZWbZjLS1Ly7G4i-0)
