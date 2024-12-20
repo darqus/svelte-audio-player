@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #dedede;
+}
+
+#svelte-audio-player {
+  height: inherit;
+  display: grid;
+  align-items: center;
+}
