@@ -14,15 +14,13 @@
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 18px 1fr;
-    font-size: 1rem;
     column-gap: $gap;
-    align-items: end;
     font-size: 0.8rem;
-    max-width: 530px;
+    max-width: 300px;
     align-items: center;
 
     @include respond-to('small') {
-      max-width: 740px;
+      max-width: 680px;
     }
 
     .counter {
@@ -35,7 +33,6 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      display: grid;
       align-items: center;
     }
   }
