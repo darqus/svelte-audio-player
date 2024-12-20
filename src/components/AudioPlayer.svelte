@@ -21,7 +21,7 @@
   const MIN_DURATION = 0
   const STEP_DURATION = 0.01
 
-  const XMLNS = 'http://www.w3.org/2000/svg'
+  const xmlns = 'http://www.w3.org/2000/svg'
   const viewBox = '0 0 32 32'
 
   onMount(() => {
@@ -154,7 +154,7 @@
         aria-label="Previous Track"
       >
         <svg
-          xmlns={XMLNS}
+          {xmlns}
           {viewBox}
         >
           <path d={paths.previousLeft}></path>
@@ -167,7 +167,7 @@
         aria-label={isPlaying ? 'Pause' : 'Play'}
       >
         <svg
-          xmlns={XMLNS}
+          {xmlns}
           {viewBox}
         >
           <path d={isPlaying ? paths.pauseLeft : paths.play}></path>
@@ -183,7 +183,7 @@
         aria-label="Next Track"
       >
         <svg
-          xmlns={XMLNS}
+          {xmlns}
           {viewBox}
         >
           <path d={paths.nextLeft}></path>
@@ -197,7 +197,7 @@
         aria-label="Shuffle"
       >
         <svg
-          xmlns={XMLNS}
+          {xmlns}
           {viewBox}
         >
           <path d={paths.shuffle}></path>
@@ -209,7 +209,7 @@
         aria-label="Repeat"
       >
         <svg
-          xmlns={XMLNS}
+          {xmlns}
           {viewBox}
         >
           <path d={paths.repeatLeft}></path>
@@ -248,7 +248,7 @@
           aria-label={isMuted ? 'Unmute' : 'Mute'}
         >
           <svg
-            xmlns={XMLNS}
+            {xmlns}
             {viewBox}
           >
             <path
