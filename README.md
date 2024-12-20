@@ -101,12 +101,12 @@ To use the AudioPlayer component in any JavaScript project, follow these steps:
     />
   </head>
   <body>
-    <div id="audio-player-svelte"></div>
+    <div id="svelte-audio-player"></div>
     <script type="module">
       import AudioPlayer from './dist/assets/main.js'
 
       const app = new AudioPlayer({
-        target: document.getElementById('audio-player-svelte'),
+        target: document.getElementById('svelte-audio-player'),
         props: {
           tracks: [
             {
