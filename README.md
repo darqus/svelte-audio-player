@@ -87,23 +87,23 @@ To use the AudioPlayer component in any JavaScript project, follow these steps:
     <link
       rel="icon"
       type="image/png"
-      href="favicon.png"
+      href="dist/vite.svg"
     />
     <!-- common styles -->
     <link
       rel="stylesheet"
-      href="style.css"
+      href="src/app.css"
     />
     <!-- svelte audio player styles -->
     <link
       rel="stylesheet"
-      href="build/bundle.css"
+      href="dist/assets/svelte-audio-player.css"
     />
   </head>
   <body>
     <div id="audio-player-svelte"></div>
     <script type="module">
-      import AudioPlayer from './build/bundle.js'
+      import AudioPlayer from './dist/assets/main.js'
 
       const app = new AudioPlayer({
         target: document.getElementById('audio-player-svelte'),
