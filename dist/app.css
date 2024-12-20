@@ -13,4 +13,5 @@ body {
   height: inherit;
   display: grid;
   align-items: center;
+  padding: 20px;
 }
