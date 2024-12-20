@@ -163,6 +163,14 @@ yarn build
 
 this command minify bundle for use in prod
 
+## design
+
+See [Figma](https://www.figma.com/design/EqWAcGxTamQNTwlV3gIsRd/PLAYER-%E2%80%94-Open-Sourse?node-id=24-767&t=a6ZWbZjLS1Ly7G4i-0)
+
+Desinger: [Rustam Samiev](https://bento.me/foxxx)
+
+Github: [Repo](https://github.com/hellorustam)
+
 ## demo
 
 See [link](https://darqus.github.io/svelte-audio-player/dist/)
