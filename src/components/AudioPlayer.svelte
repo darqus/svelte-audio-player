@@ -149,9 +149,12 @@
   <div class="track-info">
     <div class="buttons-control">
       <!-- {elapsedTime} -->
-      <button on:click={prevTrack}>
+      <button
+        on:click={prevTrack}
+        aria-label="Previous Track"
+      >
         <svg
-          {XMLNS}
+          xmlns={XMLNS}
           {viewBox}
         >
           <path d={paths.previousLeft}></path>
@@ -159,9 +162,12 @@
         </svg>
       </button>
 
-      <button on:click={playPause}>
+      <button
+        on:click={playPause}
+        aria-label={isPlaying ? 'Pause' : 'Play'}
+      >
         <svg
-          {XMLNS}
+          xmlns={XMLNS}
           {viewBox}
         >
           <path d={isPlaying ? paths.pauseLeft : paths.play}></path>
@@ -172,9 +178,12 @@
         </svg>
       </button>
 
-      <button on:click={nextTrack}>
+      <button
+        on:click={nextTrack}
+        aria-label="Next Track"
+      >
         <svg
-          {XMLNS}
+          xmlns={XMLNS}
           {viewBox}
         >
           <path d={paths.nextLeft}></path>
@@ -185,21 +194,22 @@
       <button
         on:click={toggleShuffle}
         class={shuffle ? '' : 'shuffle'}
+        aria-label="Shuffle"
       >
         <svg
-          {XMLNS}
+          xmlns={XMLNS}
           {viewBox}
         >
           <path d={paths.shuffle}></path>
         </svg>
       </button>
-
       <button
         on:click={toggleRepeat}
         class={repeat ? '' : 'repeat'}
+        aria-label="Repeat"
       >
         <svg
-          {XMLNS}
+          xmlns={XMLNS}
           {viewBox}
         >
           <path d={paths.repeatLeft}></path>
@@ -223,6 +233,8 @@
         />
         <div class="duration-time">
           <span
+            role="button"
+            tabindex="0"
             on:click={toggleTimeDisplay}
             on:keydown={(e) => e.key === 'Enter' && toggleTimeDisplay()}
           >
@@ -230,11 +242,13 @@
           </span>
         </div>
       </div>
-
       <div class="volume-control">
-        <button on:click={toggleMute}>
+        <button
+          on:click={toggleMute}
+          aria-label={isMuted ? 'Unmute' : 'Mute'}
+        >
           <svg
-            {XMLNS}
+            xmlns={XMLNS}
             {viewBox}
           >
             <path
