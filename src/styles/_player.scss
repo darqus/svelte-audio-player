@@ -39,10 +39,11 @@
 
   .track-info {
     display: grid;
-    grid-template-rows: auto auto;
-    gap: $gap;
+    row-gap: $gap;
 
     @include respond-to('small') {
+      display: grid;
+      column-gap: $gap;
       grid-template-columns: auto 1fr;
     }
   }
