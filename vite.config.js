@@ -1,4 +1,3 @@
-// filepath: /home/eo/projects/github/audio-player/vite.config.js
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import sveltePreprocess from 'svelte-preprocess'
@@ -14,22 +13,12 @@ export default defineConfig({
     outDir: 'dist', // Set output directory
     assetsDir: 'assets', // Set assets directory
     rollupOptions: {
-      input: {
-        main: 'src/main.js', // Main entry point
-        integration: 'src/integration.js', // New entry point
-      },
       output: {
         format: 'es', // Export as ES module
         entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',
         assetFileNames: 'assets/[name].[ext]',
       },
-    },
-    lib: {
-      entry: 'src/components/AudioPlayer.svelte',
-      name: 'AudioPlayer',
-      fileName: (format) => `index.${format}.js`,
-      formats: ['es'],
     },
   },
 })

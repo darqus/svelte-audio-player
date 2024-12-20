@@ -1,6 +1,8 @@
 import { mount } from 'svelte'
 
-const app = mount(App, {
+import AudioPlayer from './components/AudioPlayer.svelte'
+
+const app = mount(AudioPlayer, {
   target: document.getElementById('svelte-audio-player'),
   props: {
     tracks: [
