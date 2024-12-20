@@ -1,5 +1,4 @@
 import AudioPlayer from './components/AudioPlayer.svelte'
-import './app.css'
 
 const app = new AudioPlayer({
   target: document.getElementById('svelte-audio-player'),
@@ -19,4 +18,4 @@ const app = new AudioPlayer({
   },
 })
 
-// export default app
+export default app

@@ -13,7 +13,18 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Set output directory
     assetsDir: 'assets', // Set assets directory
-    rollupOptions: {},
+    rollupOptions: {
+      input: {
+        main: 'src/main.js', // Main entry point
+        integration: 'src/integration.js', // New entry point
+      },
+      output: {
+        format: 'es', // Export as ES module
+        entryFileNames: 'assets/[name].js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].[ext]',
+      },
+    },
     lib: {
       entry: 'src/components/AudioPlayer.svelte',
       name: 'AudioPlayer',
