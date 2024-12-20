@@ -1,10 +1,7 @@
 # Svelte Audio Player Package
 
-A customizable HTML audio player built with Svelte.
+A customizable HTML audio player built with Svelte. [Demo Player Link →](https://darqus.github.io/svelte-audio-player/dist/)
 
-## Demo
-
-See [link](https://darqus.github.io/svelte-audio-player/dist/)
 
 ## Features
 
@@ -169,10 +166,14 @@ yarn build
 
 this command minify bundle for use in prod
 
-## Design
+---
 
-See [Figma](https://www.figma.com/design/EqWAcGxTamQNTwlV3gIsRd/PLAYER-%E2%80%94-Open-Sourse?node-id=24-767&t=a6ZWbZjLS1Ly7G4i-0)
+## Font Family is stored in the Google Fonts Collection
 
-Desinger: [Rustam Samiev](https://bento.me/foxxx)
+[LATO](https://fonts.google.com/specimen/Lato) — Regular & Bold 
 
-Github: [Repo](https://github.com/hellorustam)
+---
+
+Designed by Rustam Samiev
+
+[Profile Bento](https://bento.me/foxxx) // [GitHUB](https://github.com/hellorustam) // [Player Figma Files](https://www.figma.com/design/EqWAcGxTamQNTwlV3gIsRd/PLAYER-%E2%80%94-Open-Sourse?node-id=24-767&t=a6ZWbZjLS1Ly7G4i-0)
