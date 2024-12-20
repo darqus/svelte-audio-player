@@ -20,20 +20,21 @@
     <!-- svelte audio player styles -->
     <link
       rel="stylesheet"
-      href="dist/svelte-audio-player.css"
+      href="dist/assets/svelte-audio-player.css"
     />
+    <!-- svelte audio player bundle -->
     <script
       defer
-      src="dist/svelte-audio-player.js"
+      src="dist/assets/main.js"
     ></script>
   </head>
   <body>
-    <div id="audio-player-svelte"></div>
+    <div id="svelte-audio-player"></div>
     <script type="module">
-      import AudioPlayer from './dist/svelte-audio-player.js'
+      import AudioPlayer from './dist/assets/main.js'
 
       const app = new AudioPlayer({
-        target: document.getElementById('audio-player-svelte'),
+        target: document.getElementById('svelte-audio-player'),
         props: {
           tracks: [
             {

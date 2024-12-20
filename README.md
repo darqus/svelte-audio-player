@@ -99,6 +99,11 @@ To use the AudioPlayer component in any JavaScript project, follow these steps:
       rel="stylesheet"
       href="dist/assets/svelte-audio-player.css"
     />
+    <!-- svelte audio player bundle -->
+    <script
+      defer
+      src="dist/assets/main.js"
+    ></script>
   </head>
   <body>
     <div id="svelte-audio-player"></div>
