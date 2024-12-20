@@ -49,10 +49,14 @@
 
     .buttons-control {
       display: grid;
-      grid-template-columns: repeat(5, $control-size);
+      grid-template-columns: repeat(5, $control-size-molile);
       gap: $gap;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+
+      @include respond-to('small') {
+        grid-template-columns: repeat(5, $control-size);
+      }
 
       button {
         display: grid;
