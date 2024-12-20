@@ -1,19 +1,20 @@
+@use 'variables' as *;
 @use 'breakpoints' as *;
 
 .svelte-audio-player {
   display: grid;
-  gap: var(--gap);
+  gap: $gap;
   border: 1px solid #ebebeb;
-  border-radius: var(--gap);
-  padding: var(--gap);
-  box-shadow: 0 7px 16px 0 var(--box-shadow-color);
+  border-radius: $gap;
+  padding: $gap;
+  box-shadow: 0 7px 16px 0 $box-shadow-color;
   background-color: #fff;
 
   .track-name {
     display: grid;
     grid-template-columns: auto 1fr;
     font-size: 1rem;
-    gap: var(--gap);
+    gap: $gap;
     align-items: end;
     font-size: 0.8rem;
     max-width: 530px;
@@ -24,12 +25,12 @@
     }
 
     strong {
-      color: var(--text-color);
+      color: $text-color;
       font-weight: bold;
     }
 
     .title {
-      color: var(--name-color);
+      color: $name-color;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -39,7 +40,7 @@
   .track-info {
     display: grid;
     grid-template-rows: auto auto;
-    gap: var(--gap);
+    gap: $gap;
 
     @include respond-to('small') {
       grid-template-columns: auto 1fr;
@@ -49,13 +50,13 @@
   .track-ranges {
     display: grid;
     grid-template-columns: auto auto;
-    gap: var(--gap);
+    gap: $gap;
   }
 
   .buttons-control {
     display: grid;
-    grid-template-columns: repeat(5, var(--control-size));
-    gap: var(--gap);
+    grid-template-columns: repeat(5, $control-size);
+    gap: $gap;
     align-items: center;
 
     button {
@@ -64,18 +65,18 @@
       border: none;
       cursor: pointer;
       padding: 0;
-      transition: opacity var(--duration);
+      transition: opacity $duration;
 
       svg path {
-        fill: var(--control-color);
+        fill: $control-color;
       }
 
       &:focus {
-        opacity: var(--opacity-focus);
+        opacity: $opacity-focus;
       }
 
       &:hover {
-        opacity: var(--opacity-hover);
+        opacity: $opacity-hover;
       }
 
       &.repeat,
@@ -88,24 +89,24 @@
   .progress-control {
     display: grid;
     grid-template-columns:
-      var(--current-time-width)
+      $current-time-width
       minmax(80px, 120px)
-      var(--duration-time-width);
+      $duration-time-width;
     align-items: center;
-    gap: var(--gap);
+    gap: $gap;
 
     @include respond-to('small') {
       grid-template-columns:
-        var(--current-time-width)
+        $current-time-width
         minmax(250px, 300px)
-        var(--duration-time-width);
+        $duration-time-width;
     }
 
     .current-time,
     .duration-time {
       display: grid;
       font-size: 0.9rem;
-      color: var(--text-color);
+      color: $text-color;
     }
 
     input[type='range'] {
@@ -117,19 +118,19 @@
 
       &::-webkit-slider-runnable-track {
         width: 100%;
-        height: var(--track-height);
+        height: $track-height;
         cursor: pointer;
         animate: 0.2s;
-        background: var(--track-background-color);
-        border-radius: var(--track-border-radius);
+        background: $track-background-color;
+        border-radius: $track-border-radius;
       }
 
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: var(--thumb-size);
-        height: var(--thumb-size);
-        background-color: var(--thumb-background-color);
+        width: $thumb-size;
+        height: $thumb-size;
+        background-color: $thumb-background-color;
         border-radius: 50%;
         cursor: pointer;
         margin-top: -4px;
@@ -139,18 +140,18 @@
 
       &::-moz-range-track {
         width: 100%;
-        height: var(--track-height);
+        height: $track-height;
         cursor: pointer;
-        background-color: var(--track-background-color);
-        border-radius: var(--track-border-radius);
+        background-color: $track-background-color;
+        border-radius: $track-border-radius;
         border: 2px solid #fff;
         box-shadow: 0px 1px 4px 0px #00000026;
       }
 
       &::-moz-range-thumb {
-        width: var(--thumb-size);
-        height: var(--thumb-size);
-        background-color: var(--thumb-background-color);
+        width: $thumb-size;
+        height: $thumb-size;
+        background-color: $thumb-background-color;
         border-radius: 50%;
         cursor: pointer;
         border: 2px solid #fff;
@@ -159,7 +160,7 @@
 
       &::-ms-track {
         width: 100%;
-        height: var(--track-height);
+        height: $track-height;
         cursor: pointer;
         background-color: transparent;
         border-color: transparent;
@@ -167,19 +168,19 @@
       }
 
       &::-ms-fill-lower {
-        background-color: var(--track-background-color);
-        border-radius: var(--track-border-radius);
+        background-color: $track-background-color;
+        border-radius: $track-border-radius;
       }
 
       &::-ms-fill-upper {
-        background-color: var(--track-background-color);
-        border-radius: var(--track-border-radius);
+        background-color: $track-background-color;
+        border-radius: $track-border-radius;
       }
 
       &::-ms-thumb {
-        width: var(--thumb-size);
-        height: var(--thumb-size);
-        background-color: var(--thumb-background-color);
+        width: $thumb-size;
+        height: $thumb-size;
+        background-color: $thumb-background-color;
         border-radius: 50%;
         cursor: pointer;
       }
@@ -188,19 +189,19 @@
         outline: none;
 
         &::-webkit-slider-runnable-track {
-          background-color: var(--track-background-color-focus);
+          background-color: $track-background-color-focus;
         }
 
         &::-moz-range-track {
-          background-color: var(--track-background-color-focus);
+          background-color: $track-background-color-focus;
         }
 
         &::-ms-fill-lower {
-          background-color: var(--track-background-color-focus);
+          background-color: $track-background-color-focus;
         }
 
         &::-ms-fill-upper {
-          background-color: var(--track-background-color-focus);
+          background-color: $track-background-color-focus;
         }
       }
     }
@@ -209,14 +210,14 @@
   .volume-control {
     display: grid;
     grid-template-columns:
-      var(--control-size-small)
+      $control-size-small
       minmax(40px, 60px);
     gap: 2px;
     align-items: center;
 
     @include respond-to('small') {
       grid-template-columns:
-        var(--control-size-small)
+        $control-size-small
         minmax(50px, 100px);
     }
 
@@ -226,18 +227,18 @@
       border: none;
       cursor: pointer;
       padding: 0;
-      transition: opacity var(--duration);
+      transition: opacity $duration;
 
       svg path {
-        fill: var(--control-color);
+        fill: $control-color;
       }
 
       &:focus {
-        opacity: var(--opacity-focus);
+        opacity: $opacity-focus;
       }
 
       &:hover {
-        opacity: var(--opacity-hover);
+        opacity: $opacity-hover;
       }
     }
 
@@ -250,19 +251,19 @@
 
       &::-webkit-slider-runnable-track {
         width: 100%;
-        height: var(--track-height);
+        height: $track-height;
         cursor: pointer;
         animate: 0.2s;
-        background: var(--track-background-color);
-        border-radius: var(--track-border-radius);
+        background: $track-background-color;
+        border-radius: $track-border-radius;
       }
 
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: var(--thumb-size);
-        height: var(--thumb-size);
-        background-color: var(--thumb-background-color);
+        width: $thumb-size;
+        height: $thumb-size;
+        background-color: $thumb-background-color;
         border-radius: 50%;
         cursor: pointer;
         margin-top: -4px;
@@ -272,18 +273,18 @@
 
       &::-moz-range-track {
         width: 100%;
-        height: var(--track-height);
+        height: $track-height;
         cursor: pointer;
-        background-color: var(--track-background-color);
-        border-radius: var(--track-border-radius);
+        background-color: $track-background-color;
+        border-radius: $track-border-radius;
         border: 2px solid #fff;
         box-shadow: 0px 1px 4px 0px #00000026;
       }
 
       &::-moz-range-thumb {
-        width: var(--thumb-size);
-        height: var(--thumb-size);
-        background-color: var(--thumb-background-color);
+        width: $thumb-size;
+        height: $thumb-size;
+        background-color: $thumb-background-color;
         border-radius: 50%;
         cursor: pointer;
         border: 2px solid #fff;
@@ -292,7 +293,7 @@
 
       &::-ms-track {
         width: 100%;
-        height: var(--track-height);
+        height: $track-height;
         cursor: pointer;
         background-color: transparent;
         border-color: transparent;
@@ -300,19 +301,19 @@
       }
 
       &::-ms-fill-lower {
-        background-color: var(--track-background-color);
-        border-radius: var(--track-border-radius);
+        background-color: $track-background-color;
+        border-radius: $track-border-radius;
       }
 
       &::-ms-fill-upper {
-        background-color: var(--track-background-color);
-        border-radius: var(--track-border-radius);
+        background-color: $track-background-color;
+        border-radius: $track-border-radius;
       }
 
       &::-ms-thumb {
-        width: var(--thumb-size);
-        height: var(--thumb-size);
-        background-color: var(--thumb-background-color);
+        width: $thumb-size;
+        height: $thumb-size;
+        background-color: $thumb-background-color;
         border-radius: 50%;
         cursor: pointer;
       }
@@ -321,19 +322,19 @@
         outline: none;
 
         &::-webkit-slider-runnable-track {
-          background-color: var(--track-background-color-focus);
+          background-color: $track-background-color-focus;
         }
 
         &::-moz-range-track {
-          background-color: var(--track-background-color-focus);
+          background-color: $track-background-color-focus;
         }
 
         &::-ms-fill-lower {
-          background-color: var(--track-background-color-focus);
+          background-color: $track-background-color-focus;
         }
 
         &::-ms-fill-upper {
-          background-color: var(--track-background-color-focus);
+          background-color: $track-background-color-focus;
         }
       }
     }
