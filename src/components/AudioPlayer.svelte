@@ -137,7 +137,7 @@
   }
 </script>
 
-<div class="audio-player">
+<div class="svelte-audio-player">
   <div class="track-name">
     <strong>{currentTrackIndex + 1} / {tracks.length}</strong>
 
