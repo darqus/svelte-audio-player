@@ -46,44 +46,45 @@
       column-gap: $gap;
       grid-template-columns: auto 1fr;
     }
-  }
 
-  .track-ranges {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: $gap;
-  }
-
-  .buttons-control {
-    display: grid;
-    grid-template-columns: repeat(5, $control-size);
-    gap: $gap;
-    align-items: center;
-
-    button {
+    .buttons-control {
       display: grid;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: opacity $duration;
+      grid-template-columns: repeat(5, $control-size);
+      gap: $gap;
+      align-items: center;
+      justify-content: center;
 
-      svg path {
-        fill: $control-color;
-      }
+      button {
+        display: grid;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: opacity $duration;
 
-      &:focus {
-        opacity: $opacity-focus;
-      }
+        svg path {
+          fill: $control-color;
+        }
 
-      &:hover {
-        opacity: $opacity-hover;
-      }
+        &:focus {
+          opacity: $opacity-focus;
+        }
 
-      &.repeat,
-      &.shuffle {
-        opacity: 0.2;
+        &:hover {
+          opacity: $opacity-hover;
+        }
+
+        &.repeat,
+        &.shuffle {
+          opacity: 0.2;
+        }
       }
+    }
+
+    .track-ranges {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: $gap;
     }
   }
 
