@@ -4,11 +4,11 @@
 .svelte-audio-player {
   display: grid;
   gap: $gap;
-  border: 1px solid #ebebeb;
+  border: 1px solid $player-border-color;
   border-radius: $gap;
   padding: $gap;
-  box-shadow: 0 7px 16px 0 $box-shadow-color;
-  background-color: #fff;
+  box-shadow: 0 7px 16px 0 $player-box-shadow-color;
+  background-color: $white;
 
   .track-name {
     display: grid;
@@ -134,8 +134,8 @@
         border-radius: 50%;
         cursor: pointer;
         margin-top: -4px;
-        border: 2px solid #fff;
-        box-shadow: 0px 1px 4px 0px #00000026;
+        border: 2px solid $white;
+        box-shadow: 0px 1px 4px 0px $range-control-box-shadow-color;
       }
 
       &::-moz-range-track {
@@ -144,8 +144,8 @@
         cursor: pointer;
         background-color: $track-background-color;
         border-radius: $track-border-radius;
-        border: 2px solid #fff;
-        box-shadow: 0px 1px 4px 0px #00000026;
+        border: 2px solid $white;
+        box-shadow: 0px 1px 4px 0px $range-control-box-shadow-color;
       }
 
       &::-moz-range-thumb {
@@ -154,8 +154,8 @@
         background-color: $thumb-background-color;
         border-radius: 50%;
         cursor: pointer;
-        border: 2px solid #fff;
-        box-shadow: 0px 1px 4px 0px #00000026;
+        border: 2px solid $white;
+        box-shadow: 0px 1px 4px 0px $range-control-box-shadow-color;
       }
 
       &::-ms-track {
@@ -267,8 +267,8 @@
         border-radius: 50%;
         cursor: pointer;
         margin-top: -4px;
-        border: 2px solid #fff;
-        box-shadow: 0px 1px 4px 0px #00000026;
+        border: 2px solid $white;
+        box-shadow: 0px 1px 4px 0px $range-control-box-shadow-color;
       }
 
       &::-moz-range-track {
@@ -277,8 +277,8 @@
         cursor: pointer;
         background-color: $track-background-color;
         border-radius: $track-border-radius;
-        border: 2px solid #fff;
-        box-shadow: 0px 1px 4px 0px #00000026;
+        border: 2px solid $white;
+        box-shadow: 0px 1px 4px 0px $range-control-box-shadow-color;
       }
 
       &::-moz-range-thumb {
@@ -287,8 +287,8 @@
         background-color: $thumb-background-color;
         border-radius: 50%;
         cursor: pointer;
-        border: 2px solid #fff;
-        box-shadow: 0px 1px 4px 0px #00000026;
+        border: 2px solid $white;
+        box-shadow: 0px 1px 4px 0px $range-control-box-shadow-color;
       }
 
       &::-ms-track {
