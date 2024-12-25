@@ -35,7 +35,7 @@
     min="0"
     max="1"
     step="0.01"
-    bind:value={position}
+    value={position}
     on:input={onInput}
   />
   <div class="duration-time">
