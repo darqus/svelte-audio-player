@@ -1,5 +1,6 @@
 <script>
   import { paths } from '../config.js'
+  import RangeControl from './RangeControl.svelte'
   export let volume
   export let isMuted
   export let onInput
@@ -24,13 +25,8 @@
       {/if}
     </svg>
   </button>
-
-  <input
-    type="range"
-    min="0"
-    max="1"
-    step="0.01"
+  <RangeControl
     value={volume}
-    on:input={onInput}
+    {onInput}
   />
 </div>

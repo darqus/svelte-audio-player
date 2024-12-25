@@ -6,6 +6,8 @@
   export let onInput
   export let onToggleTimeDisplay
 
+  import RangeControl from './RangeControl.svelte'
+
   const formatTime = (seconds, isElapsedTime) => {
     if (isNaN(seconds)) return '0:00'
 
@@ -30,13 +32,9 @@
   <div class="current-time">
     <span>{formatTime(currentTime, false)}</span>
   </div>
-  <input
-    type="range"
-    min="0"
-    max="1"
-    step="0.01"
+  <RangeControl
     value={position}
-    on:input={onInput}
+    {onInput}
   />
   <div class="duration-time">
     <span
