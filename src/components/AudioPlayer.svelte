@@ -301,14 +301,12 @@
         {position}
         {showElapsedTime}
         onInput={changeDuration}
-        onChange={changeDuration}
         onToggleTimeDisplay={toggleTimeDisplay}
       />
       <RangeVolume
         {volume}
         {isMuted}
         onInput={changeVolume}
-        onChange={changeVolume}
         onToggleMute={toggleMute}
       />
     </div>

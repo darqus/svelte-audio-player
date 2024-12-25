@@ -4,7 +4,6 @@
   export let position
   export let showElapsedTime
   export let onInput
-  export let onChange
   export let onToggleTimeDisplay
 
   import RangeControl from './RangeControl.svelte'
@@ -36,7 +35,6 @@
   <RangeControl
     value={position}
     {onInput}
-    {onChange}
   />
   <div class="duration-time">
     <span
