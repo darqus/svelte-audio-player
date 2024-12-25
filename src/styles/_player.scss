@@ -218,7 +218,7 @@
     grid-template-columns:
       $control-size-small
       minmax(40px, 60px);
-    gap: 2px;
+    gap: 6px;
     align-items: center;
 
     @include respond-to('small') {

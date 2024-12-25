@@ -1,6 +1,10 @@
 <script>
   import { onMount } from 'svelte'
   import { paths } from './config.js'
+  import TrackName from './controls/TrackName.svelte'
+  import ButtonSvg from './controls/ButtonSvg.svelte'
+  import RangeDuration from './controls/RangeDuration.svelte'
+  import RangeVolume from './controls/RangeVolume.svelte'
 
   export let tracks = []
 
@@ -35,8 +39,6 @@
   let cachedVolume =
     parseFloat(localStorage.getItem(LS_KEYS.cachedVolume)) || volume
   // let preset = 'full' // 'minimal', 'normal', 'full'
-
-  const VIEW_BOX = '0 0 32 32'
 
   onMount(() => {
     if (tracks.length > 0) {
@@ -252,143 +254,61 @@
 </script>
 
 <div class="svelte-audio-player">
-  <div class="track-name">
-    <div class="counter">{currentTrackIndex + 1} / {tracks.length}</div>
-
-    <div class="title">
-      {tracks[currentTrackIndex].author} – «{tracks[currentTrackIndex].title}»
-    </div>
-  </div>
+  <TrackName
+    {currentTrackIndex}
+    {tracks}
+  />
 
   <div class="track-info">
     <div class="buttons-control">
-      <button
-        on:click={prevTrack}
-        aria-label="Previous Track"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox={VIEW_BOX}
-        >
-          <path d={paths.previousLeft}></path>
-          <path d={paths.previousRight}></path>
-        </svg>
-      </button>
-
-      <button
-        on:click={playPause}
-        aria-label={isPlaying ? 'Pause' : 'Play'}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox={VIEW_BOX}
-        >
-          <path d={isPlaying ? paths.pauseLeft : paths.play}></path>
-
-          {#if isPlaying}
-            <path d={paths.pauseRight}></path>
-          {/if}
-        </svg>
-      </button>
-
-      <button
-        on:click={nextTrack}
-        aria-label="Next Track"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox={VIEW_BOX}
-        >
-          <path d={paths.nextLeft}></path>
-          <path d={paths.nextRight}></path>
-        </svg>
-      </button>
-
-      <button
-        on:click={toggleShuffle}
-        class={shuffle ? '' : 'shuffle'}
-        aria-label="Shuffle"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox={VIEW_BOX}
-        >
-          <path d={paths.shuffle}></path>
-        </svg>
-      </button>
-      <button
-        on:click={toggleRepeat}
-        class={repeat ? '' : 'repeat'}
-        aria-label="Repeat"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox={VIEW_BOX}
-        >
-          <path d={paths.repeatLeft}></path>
-          <path d={paths.repeatRight}></path>
-        </svg>
-      </button>
+      <ButtonSvg
+        onClick={prevTrack}
+        ariaLabel="Previous Track"
+        pathLeft={paths.previousLeft}
+        pathRight={paths.previousRight}
+      />
+      <ButtonSvg
+        onClick={playPause}
+        ariaLabel={isPlaying ? 'Pause' : 'Play'}
+        pathLeft={isPlaying ? paths.pauseLeft : paths.play}
+        pathRight={isPlaying ? paths.pauseRight : null}
+      />
+      <ButtonSvg
+        onClick={nextTrack}
+        ariaLabel="Next Track"
+        pathLeft={paths.nextLeft}
+        pathRight={paths.nextRight}
+      />
+      <ButtonSvg
+        onClick={toggleShuffle}
+        className={shuffle ? '' : 'shuffle'}
+        ariaLabel="Shuffle"
+        pathLeft={paths.shuffle}
+      />
+      <ButtonSvg
+        onClick={toggleRepeat}
+        className={repeat ? '' : 'repeat'}
+        ariaLabel="Repeat"
+        pathLeft={paths.repeatLeft}
+        pathRight={paths.repeatRight}
+      />
     </div>
 
     <div class="track-ranges">
-      <div class="progress-control">
-        <div class="current-time">
-          <span>{formatTime(currentTime, false)}</span>
-        </div>
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          bind:value={position}
-          on:input={changeDuration}
-        />
-        <div class="duration-time">
-          <span
-            role="button"
-            tabindex="0"
-            on:click={toggleTimeDisplay}
-            on:keydown={(e) => e.key === 'Enter' && toggleTimeDisplay()}
-          >
-            {formatTime(currentTime, true)}
-          </span>
-        </div>
-      </div>
-      <div class="volume-control">
-        <button
-          on:click={toggleMute}
-          aria-label={isMuted ? 'Unmute' : 'Mute'}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox={VIEW_BOX}
-          >
-            <path
-              d={isMuted || volume == 0
-                ? paths.muteSpeaker
-                : paths.volumeSpeaker}
-            ></path>
-            <path
-              d={isMuted || volume == 0
-                ? paths.muteClose
-                : paths.volumeLeftLine}
-            ></path>
-            {#if !isMuted && volume != 0}
-              <path d={paths.volumeRightLine}></path>
-            {/if}
-          </svg>
-        </button>
-
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={volume}
-          on:input={changeVolume}
-        />
-      </div>
+      <RangeDuration
+        {currentTime}
+        {duration}
+        {position}
+        {showElapsedTime}
+        onInput={changeDuration}
+        onToggleTimeDisplay={toggleTimeDisplay}
+      />
+      <RangeVolume
+        {volume}
+        {isMuted}
+        onInput={changeVolume}
+        onToggleMute={toggleMute}
+      />
     </div>
   </div>
 </div>
