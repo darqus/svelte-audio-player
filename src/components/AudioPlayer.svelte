@@ -114,8 +114,17 @@
         handler(savedValue)
       } else {
         // Set default value in localStorage
-        const defaultValue = eval(key)
-        localStorage.setItem(key, JSON.stringify(defaultValue))
+        const defaultValues = {
+          [LS_KEYS.volume]: volume,
+          [LS_KEYS.cachedVolume]: cachedVolume,
+          [LS_KEYS.shuffle]: shuffle,
+          [LS_KEYS.repeat]: repeat,
+          [LS_KEYS.showElapsedTime]: showElapsedTime,
+          [LS_KEYS.currentTrackIndex]: currentTrackIndex,
+          [LS_KEYS.currentTime]: currentTime,
+          [LS_KEYS.isMuted]: isMuted,
+        }
+        localStorage.setItem(key, JSON.stringify(defaultValues[key]))
       }
     })
   })
