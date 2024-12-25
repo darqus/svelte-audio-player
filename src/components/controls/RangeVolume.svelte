@@ -4,6 +4,7 @@
   export let volume
   export let isMuted
   export let onInput
+  export let onChange
   export let onToggleMute
 </script>
 
@@ -28,5 +29,6 @@
   <RangeControl
     value={volume}
     {onInput}
+    {onChange}
   />
 </div>

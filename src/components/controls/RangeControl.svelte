@@ -1,6 +1,7 @@
 <script>
   export let value
   export let onInput
+  export let onChange
 </script>
 
 <input
@@ -10,4 +11,5 @@
   step="0.01"
   {value}
   on:input={onInput}
+  on:change={onChange}
 />
